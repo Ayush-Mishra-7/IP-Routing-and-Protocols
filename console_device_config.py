@@ -644,12 +644,53 @@ class ConsoleDeviceConfigurator:
 from config_ip_address import build_router_commands
 from config_static_routes import get_static_route_commands
 from utils import kill_common_terminal_apps
+from get_config import get_running_config
+from datetime import datetime
 
+
+def save_config_to_file(router_name: str, config_content: str):
+    """Save the configuration content to a timestamped file."""
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"{router_name}_{timestamp}.txt"
+    directory = "config"
+    
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+        
+    filepath = os.path.join(directory, filename)
+    with open(filepath, "w") as f:
+        f.write(config_content)
+    
+    logger.info(f"Configuration saved to {filepath}")
 
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 def main():
+    # User Menu
+    print("\n" + "=" * 60)
+    print("  CISCO ROUTER CONFIGURATION & BACKUP TOOL")
+    print("=" * 60)
+    print("Select an option:")
+    print("  [1] Configure devices & Backup")
+    print("  [2] Backup running-config ONLY")
+    choice = input("\nEnter your choice (1 or 2): ").strip()
+    
+    do_configure = False
+    do_backup = False
+    
+    if choice == "1":
+        do_configure = True
+        do_backup = True
+        logger.info("Selected: Configure & Backup")
+    elif choice == "2":
+        do_configure = False
+        do_backup = True
+        logger.info("Selected: Backup ONLY")
+    else:
+        print("Invalid choice. Exiting.")
+        return
+
     # Resolve config path relative to this script
     script_dir = os.path.dirname(os.path.abspath(__file__))
     config_path = os.path.join(script_dir, CONFIG_FILE)
@@ -701,17 +742,29 @@ def main():
                     cfg.disconnect_from_device()
                     continue
 
-                # 3. Build and apply the configuration
-                commands = build_router_commands(expected_name, router)
-                static_routes = get_static_route_commands(router)
-                commands.extend(static_routes)
-                logger.info(f"Sending {len(commands)} commands to {expected_name} ...")
-                cfg.configure_device(commands)
+                # 3. Configure (if requested)
+                if do_configure:
+                    commands = build_router_commands(expected_name, router)
+                    static_routes = get_static_route_commands(router)
+                    commands.extend(static_routes)
+                    logger.info(f"Sending {len(commands)} commands to {expected_name} ...")
+                    cfg.configure_device(commands)
+                    results[expected_name] = "CONFIGURED"
 
-                results[expected_name] = "SUCCESS"
-                logger.info(f"{expected_name} configured successfully [OK]")
+                # 4. Backup (if requested)
+                if do_backup:
+                    logger.info(f"Backing up running-config for {expected_name} ...")
+                    running_config = get_running_config(cfg)
+                    save_config_to_file(expected_name, running_config)
+                    
+                    if results.get(expected_name) == "CONFIGURED":
+                        results[expected_name] = "CONFIGURED & BACKED UP"
+                    else:
+                        results[expected_name] = "BACKED UP"
 
-                # 4. Clean disconnect before closing COM6
+                logger.info(f"{expected_name} processing complete [OK]")
+
+                # 5. Clean disconnect before closing COM6
                 cfg.disconnect_from_device()
 
             finally:
