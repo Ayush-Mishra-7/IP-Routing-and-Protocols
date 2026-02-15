@@ -1,0 +1,919 @@
+2026-02-13 14:26:10,883 [INFO] Loading router config from C:\Users\dayus\Documents\IP-Routing-and-Protocols\routers_config.json
+2026-02-13 14:26:10,883 [INFO] Found 4 router(s) to configure
+2026-02-13 14:26:10,884 [INFO] 
+2026-02-13 14:26:10,884 [INFO] ============================================================
+2026-02-13 14:26:10,884 [INFO]   R1  ï¿½  telnet 1.1.1.1 2002
+2026-02-13 14:26:10,884 [INFO] ============================================================
+2026-02-13 14:26:10,884 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-13 14:26:14,556 [INFO] Wake output: commserver#
+
+commserver#
+
+commserver#
+
+commserver#
+
+commserver#
+
+commserver#
+2026-02-13 14:26:14,580 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-13 14:26:14,581 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-13 14:26:14,581 [INFO] Serial connection ready on COM6
+2026-02-13 14:26:14,582 [INFO] Preparing line 2 before telnet (attempt 1/3) ...
+2026-02-13 14:26:14,582 [INFO]   clear line 2  (attempt 1/3)
+2026-02-13 14:26:16,685 [INFO]   clear line 2  (attempt 2/3)
+2026-02-13 14:26:18,788 [INFO]   clear line 2  (attempt 3/3)
+2026-02-13 14:26:20,891 [INFO]   Cleared line 2 (3 times)
+2026-02-13 14:26:20,891 [INFO] Telneting to 1.1.1.1 2002 ...
+2026-02-13 14:26:23,993 [INFO] Telnet output: telnet 1.1.1.1 2002
+
+Trying 1.1.1.1, 2002 ... Open
+2026-02-13 14:26:23,994 [INFO] Waiting for router output to settle ...
+2026-02-13 14:26:29,103 [INFO] Router prompt: R1>
+
+R1>
+
+R1>
+
+R1>
+2026-02-13 14:26:30,206 [INFO] Detected hostname: 'R1'
+2026-02-13 14:26:30,206 [INFO] [OK] Hostname verified: 'R1' matches expected 'R1'
+2026-02-13 14:26:30,207 [INFO] Sending 8 commands to R1 ...
+2026-02-13 14:26:31,309 [INFO] Router mode detected: user
+2026-02-13 14:26:31,309 [INFO] Entering enable mode ...
+2026-02-13 14:26:35,715 [INFO]   interface Loopback0                       ->  interface Loopback0
+
+R1(config-if)#
+
+R1(config-if)#
+2026-02-13 14:26:36,817 [INFO]   ip address 11.11.11.11 255.255.255.255    ->  ip address 11.11.11.11 255.255.255.255
+
+R1(config-if)#
+
+R1(config-if)#
+2026-02-13 14:26:37,920 [INFO]   no shutdown                               ->  no shutdown
+
+R1(config-if)#
+
+R1(config-if)#
+2026-02-13 14:26:39,022 [INFO]   exit                                      ->  exit
+
+R1(config)#
+
+R1(config)#
+2026-02-13 14:26:40,125 [INFO]   interface Gi0/0                           ->  interface Gi0/0
+
+R1(config-if)#
+
+R1(config-if)#
+2026-02-13 14:26:41,227 [INFO]   ip address 10.0.0.5 255.255.255.252       ->  ip address 10.0.0.5 255.255.255.252
+
+R1(config-if)#
+
+R1(config-if)#
+2026-02-13 14:26:42,329 [INFO]   no shutdown                               ->  no shutdown
+
+R1(config-if)#
+
+R1(config-if)#
+2026-02-13 14:26:43,432 [INFO]   exit                                      ->  exit
+
+R1(config)#
+
+R1(config)#
+2026-02-13 14:26:47,635 [INFO] Save config: write memory
+
+
+*Feb 13 23:29:13.552: %LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to reset
+
+*Feb 13 23:29:13.708: %SYS-5-CONFIG_I: Configured from console by console
+
+Building configur
+2026-02-13 14:26:47,636 [INFO] R1 configured successfully [OK]
+2026-02-13 14:26:47,636 [INFO] Disconnecting from device ...
+2026-02-13 14:26:49,639 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-02-13 14:26:54,450 [INFO]   Comm server prompt: commserver#
+
+commserver#
+2026-02-13 14:26:54,451 [INFO] Disconnected from device [OK]
+2026-02-13 14:26:54,504 [INFO] Serial connection closed
+2026-02-13 14:26:56,505 [INFO] 
+2026-02-13 14:26:56,505 [INFO] ============================================================
+2026-02-13 14:26:56,506 [INFO]   R2  ï¿½  telnet 1.1.1.1 2003
+2026-02-13 14:26:56,506 [INFO] ============================================================
+2026-02-13 14:26:56,506 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-13 14:27:00,179 [INFO] Wake output: commserver#
+
+commserver#
+
+commserver#
+
+commserver#
+
+commserver#
+
+commserver#
+2026-02-13 14:27:00,180 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-13 14:27:00,180 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-13 14:27:00,181 [INFO] Serial connection ready on COM6
+2026-02-13 14:27:00,181 [INFO] Preparing line 3 before telnet (attempt 1/3) ...
+2026-02-13 14:27:00,182 [INFO]   clear line 3  (attempt 1/3)
+2026-02-13 14:27:02,285 [INFO]   clear line 3  (attempt 2/3)
+2026-02-13 14:27:04,387 [INFO]   clear line 3  (attempt 3/3)
+2026-02-13 14:27:06,490 [INFO]   Cleared line 3 (3 times)
+2026-02-13 14:27:06,490 [INFO] Telneting to 1.1.1.1 2003 ...
+2026-02-13 14:27:09,592 [INFO] Telnet output: telnet 1.1.1.1 2003
+
+Trying 1.1.1.1, 2003 ... Open
+
+
+
+uter address
+
+   ^
+
+% Invalid input detected at '^' marker.
+
+
+
+R2>
+
+R2>commserver>
+
+% Bad IP address or host name
+
+% Unknown command or computer name, or unable to find computer address
+
+R2>
+
+R2>commserver>R2>
+
+% Bad IP address or host name
+
+% Un
+2026-02-13 14:27:09,593 [INFO] Waiting for router output to settle ...
+2026-02-13 14:27:19,129 [INFO] Router prompt: uter address
+
+   ^
+
+% Invalid input detected at '^' marker.
+
+
+
+R2>
+
+R2>
+
+R2>
+
+R2>% Invalid input detected at '^' marker.
+
+   ^
+
+% Invalid input detected at '^' marker.
+
+
+
+R2>
+
+R2>
+
+R2>
+
+R2>commserver>
+
+% Bad IP address or host name
+
+% Unknown command or computer name, or unable to find computer addr
+2026-02-13 14:27:20,231 [INFO] Detected hostname: 'R2'
+2026-02-13 14:27:20,232 [INFO] [OK] Hostname verified: 'R2' matches expected 'R2'
+2026-02-13 14:27:20,233 [INFO] Sending 16 commands to R2 ...
+2026-02-13 14:27:21,335 [INFO] Router mode detected: user
+2026-02-13 14:27:21,336 [INFO] Entering enable mode ...
+2026-02-13 14:27:25,741 [INFO]   interface Loopback0                       ->  interface Loopback0
+
+R2(config-if)#
+
+R2(config-if)#
+2026-02-13 14:27:26,845 [INFO]
+
+R2(config-if)#
+
+R2(config-if)#
+2026-02-13 14:27:27,947 [INFO]   no shutdown                               ->  *Feb 13 22:39:14.916: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to upno shutdown
+
+R2(config-if)#
+
+R2(config-if)#
+2026-02-13 14:27:29,050 [INFO]   exit                                      ->  exit
+
+R2(config)#
+
+R2(config)#
+2026-02-13 14:27:30,152 [INFO]   interface Gi0/0                           ->  interface Gi0/0
+
+R2(config-if)#
+
+R2(config-if)#
+2026-02-13 14:27:31,254 [INFO]   ip address 10.0.0.6 255.255.255.252       ->  ip address 10.0.0.6 255.255.255.252
+
+R2(config-if)#
+
+R2(config-if)#
+2026-02-13 14:27:32,355 [INFO]   no shutdown                               ->  no shutdown
+
+R2(config-if)#
+
+R2(config-if)#
+2026-02-13 14:27:33,458 [INFO]   exit                                      ->  exit
+
+R2(config)#
+
+R2(config)#
+2026-02-13 14:27:34,560 [INFO]   interface Serial0/0/0                     ->  interface Serial0/0/0
+
+R2(config-if)#
+
+R2(config-if)#
+2026-02-13 14:27:35,662 [INFO]   ip address 10.0.0.13 255.255.255.252      ->  ip address 10.0.0.13 255.255.255.252
+
+R2(config-if)#
+
+R2(config-if)#
+
+*Feb 13 22:39:22.548: %LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to reset
+2026-02-13 14:27:36,764 [INFO]   no shutdown                               ->  no shutdown
+
+R2(config-if)#
+
+R2(config-if)#
+2026-02-13 14:27:37,867 [INFO]   exit                                      ->  exit
+
+R2(config)#
+
+R2(config)#
+2026-02-13 14:27:38,969 [INFO]   interface Serial0/2/0                     ->  interface Serial0/2/0
+
+R2(config-if)#
+
+R2(config-if)#
+2026-02-13 14:27:40,072 [INFO]   ip address 10.0.0.17 255.255.255.252      ->  *Feb 13 22:39:26.508: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to up
+
+*Feb 13 22:39:26.956: %LINK-3-UPDOWN: Interface Serial0/0/0, changed state to down
+
+*Feb 13 22:39:27.508: %LINE
+2026-02-13 14:27:41,174 [INFO]   no shutdown                               ->  no shutdown
+
+R2(config-if)#
+
+R2(config-if)#
+2026-02-13 14:27:42,276 [INFO]   exit                                      ->  exit
+
+R2(config)#
+
+R2(config)#
+2026-02-13 14:27:46,481 [INFO] Save config: write memory
+
+Building configuration...
+
+
+
+*Feb 13 22:39:31.528: %SYS-5-CONFIG_I: Configured from console by console
+2026-02-13 14:27:46,481 [INFO] R2 configured successfully [OK]
+2026-02-13 14:27:46,481 [INFO] Disconnecting from device ...
+2026-02-13 14:27:48,484 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-02-13 14:27:53,292 [INFO]   Comm server prompt: commserver#
+
+commserver#
+2026-02-13 14:27:53,292 [INFO] Disconnected from device [OK]
+2026-02-13 14:27:53,344 [INFO] Serial connection closed
+2026-02-13 14:27:55,345 [INFO] 
+2026-02-13 14:27:55,345 [INFO] ============================================================
+2026-02-13 14:27:55,345 [INFO]   R3  ï¿½  telnet 1.1.1.1 2004
+2026-02-13 14:27:55,346 [INFO] ============================================================
+2026-02-13 14:27:55,346 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-13 14:27:59,018 [INFO] Wake output: commserver#
+
+commserver#
+
+commserver#
+
+commserver#
+
+commserver#
+
+commserver#
+2026-02-13 14:27:59,019 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-13 14:27:59,019 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-13 14:27:59,019 [INFO] Serial connection ready on COM6
+2026-02-13 14:27:59,020 [INFO] Preparing line 4 before telnet (attempt 1/3) ...
+2026-02-13 14:27:59,020 [INFO]   clear line 4  (attempt 1/3)
+2026-02-13 14:28:01,122 [INFO]   clear line 4  (attempt 2/3)
+2026-02-13 14:28:03,225 [INFO]   clear line 4  (attempt 3/3)
+2026-02-13 14:28:05,328 [INFO]   Cleared line 4 (3 times)
+2026-02-13 14:28:05,328 [INFO] Telneting to 1.1.1.1 2004 ...
+2026-02-13 14:28:08,431 [INFO] Telnet output: telnet 1.1.1.1 2004
+
+Trying 1.1.1.1, 2004 ... Open
+
+
+
+Unknown command or computer name, or unable to find computer address
+
+   ^
+
+% Invalid input detected at '^' marker.
+
+
+
+R3>
+
+R3>commserver>
+
+% Bad IP address or host name
+
+% Unknown command or computer name, or unable to find computer address
+
+R3>
+2026-02-13 14:28:08,432 [INFO] Waiting for router output to settle ...
+2026-02-13 14:28:17,061 [INFO] Router prompt: address
+
+     ^
+
+% Invalid input detected at '^' marker.
+
+
+
+R3>
+
+R3>^
+
+% Bad IP address or host name
+
+% Unknown command or computer name, or unable to find computer address
+
+R3>
+
+R3>% Invalid input detected at '^' marker.
+
+   ^
+
+% Invalid input detected at '^' marker.
+
+
+
+R3>
+
+R3>
+
+R3>
+
+R3>commserver
+2026-02-13 14:28:18,163 [INFO] Detected hostname: 'R3'
+2026-02-13 14:28:18,164 [INFO] [OK] Hostname verified: 'R3' matches expected 'R3'
+2026-02-13 14:28:18,164 [INFO] Sending 12 commands to R3 ...
+2026-02-13 14:28:19,266 [INFO] Router mode detected: user
+2026-02-13 14:28:19,266 [INFO] Entering enable mode ...
+2026-02-13 14:28:23,673 [INFO]   interface Loopback0                       ->  interface Loopback0
+
+R3(config-if)#
+
+R3(config-if)#
+2026-02-13 14:28:24,775 [INFO]   ip address 33.33.33.33 255.255.255.255    ->  ip address 33.33.33.33 255.255.255.255
+
+R3(config-if)#
+
+R3(config-if)#
+2026-02-13 14:28:25,978 [INFO]   no shutdown                               ->  no shutdown
+
+R3(config-if)#
+
+R3(config-if)#
+
+*Feb 13 22:08:13.607: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+2026-02-13 14:28:27,080 [INFO]   exit                                      ->  exit
+
+R3(config)#
+
+R3(config)#
+2026-02-13 14:28:28,182 [INFO]   interface Gi0/0                           ->  interface Gi0/0
+
+R3(config-if)#
+
+R3(config-if)#
+2026-02-13 14:28:29,284 [INFO]   ip address 10.0.0.9 255.255.255.252       ->  ip address 10.0.0.9 255.255.255.252
+
+R3(config-if)#
+
+R3(config-if)#
+2026-02-13 14:28:30,386 [INFO]   no shutdown                               ->  no shutdown
+
+R3(config-if)#
+
+R3(config-if)#
+2026-02-13 14:28:31,488 [INFO]   exit                                      ->  exit
+
+R3(config)#
+
+R3(config)#
+2026-02-13 14:28:32,590 [INFO]   interface Serial0/0/0                     ->  interface Serial0/0/0
+
+R3(config-if)#
+
+R3(config-if)#
+2026-02-13 14:28:33,693 [INFO]   ip address 10.0.0.14 255.255.255.252      ->  *Feb 13 22:08:21.339: %LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to resetip address 10.0.0.14 255.255.255.252
+
+R3(config-if)#
+
+R3(config-if)#
+2026-02-13 14:28:34,795 [INFO]   no shutdown                               ->  no shutdown
+
+R3(config-if)#
+
+R3(config-if)#
+2026-02-13 14:28:35,897 [INFO]   exit                                      ->  exit
+
+R3(config)#
+
+R3(config)#
+2026-02-13 14:28:40,101 [INFO] Save config: write memory
+
+Building configuration...
+
+
+
+
+
+*Feb 13 22:08:25.907: %SYS-5-CONFIG_I: Configured from console by console
+
+*Feb 13 22:08:26.323: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEth
+2026-02-13 14:28:40,102 [INFO] R3 configured successfully [OK]
+2026-02-13 14:28:40,102 [INFO] Disconnecting from device ...
+2026-02-13 14:28:42,105 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-02-13 14:28:46,911 [INFO]   Comm server prompt: commserver#
+
+commserver#
+2026-02-13 14:28:46,911 [INFO] Disconnected from device [OK]
+2026-02-13 14:28:46,965 [INFO] Serial connection closed
+2026-02-13 14:28:48,966 [INFO] 
+2026-02-13 14:28:48,966 [INFO] ============================================================
+2026-02-13 14:28:48,967 [INFO]   R4  ï¿½  telnet 1.1.1.1 2005
+2026-02-13 14:28:48,968 [INFO] ============================================================
+2026-02-13 14:28:48,968 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-13 14:28:52,640 [INFO] Wake output: commserver#
+
+commserver#
+
+commserver#
+
+commserver#
+
+commserver#
+
+commserver#
+2026-02-13 14:28:52,641 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-13 14:28:52,641 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-13 14:28:52,642 [INFO] Serial connection ready on COM6
+2026-02-13 14:28:52,642 [INFO] Preparing line 5 before telnet (attempt 1/3) ...
+2026-02-13 14:28:52,642 [INFO]   clear line 5  (attempt 1/3)
+2026-02-13 14:28:54,745 [INFO]   clear line 5  (attempt 2/3)
+2026-02-13 14:28:56,848 [INFO]   clear line 5  (attempt 3/3)
+2026-02-13 14:28:58,951 [INFO]   Cleared line 5 (3 times)
+2026-02-13 14:28:58,952 [INFO] Telneting to 1.1.1.1 2005 ...
+2026-02-13 14:29:02,053 [INFO] Telnet output: telnet 1.1.1.1 2005
+
+Trying 1.1.1.1, 2005 ... Open
+
+
+
+r unable to find computer address
+
+   ^
+
+% Invalid input detected at '^' marker.
+
+
+
+R4>
+
+R4>commserver>
+
+% Bad IP address or host name
+
+% Unknown command or computer name, or unable to find computer address
+
+R4>
+
+R4>commserver>% Invalid input det
+2026-02-13 14:29:02,054 [INFO] Waiting for router output to settle ...
+2026-02-13 14:29:11,492 [INFO] Router prompt: alid input detected at '^' marker.
+
+   ^
+
+% Invalid input detected at '^' marker.
+
+
+
+R4>
+
+R4>
+
+R4>
+
+R4>commserver>
+
+% Bad IP address or host name
+
+% Unknown command or computer name, or unable to find computer address
+
+R4>
+
+R4>commserver>% Unknown command or computer name, or unable to find computer
+2026-02-13 14:29:12,595 [INFO] Detected hostname: 'R4'
+2026-02-13 14:29:12,595 [INFO] [OK] Hostname verified: 'R4' matches expected 'R4'
+2026-02-13 14:29:12,595 [INFO] Sending 12 commands to R4 ...
+2026-02-13 14:29:13,698 [INFO] Router mode detected: user
+2026-02-13 14:29:13,699 [INFO] Entering enable mode ...
+2026-02-13 14:29:18,105 [INFO]   interface Loopback0                       ->  interface Loopback0
+
+R4(config-if)#
+
+R4(config-if)#
+2026-02-13 14:29:19,207 [INFO]   ip address 44.44.44.44 255.255.255.255    ->  ip address 44.44.44.44 255.255.255.255
+
+R4(config-if)#
+
+R4(config-if)#
+2026-02-13 14:29:20,310 [INFO]   no shutdown                               ->  no shutdown
+
+R4(config-if)#
+
+R4(config-if)#
+2026-02-13 14:29:21,413 [INFO]   exit                                      ->  *Feb 13 23:03:59.747: %LINK-3-UPDOWN: Interface Loopback0, changed state to up
+
+*Feb 13 23:04:00.747: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to upexit
+
+R4(config)#
+
+R
+2026-02-13 14:29:22,515 [INFO]   interface Gi0/0                           ->  interface Gi0/0
+
+R4(config-if)#
+
+R4(config-if)#
+2026-02-13 14:29:23,617 [INFO]   ip address 10.0.0.10 255.255.255.252      ->  ip address 10.0.0.10 255.255.255.252
+
+R4(config-if)#
+
+R4(config-if)#
+2026-02-13 14:29:24,720 [INFO]   no shutdown                               ->  no shutdown
+
+R4(config-if)#
+
+R4(config-if)#
+2026-02-13 14:29:25,822 [INFO]   exit                                      ->  exit
+
+R4(config)#
+
+R4(config)#
+2026-02-13 14:29:26,923 [INFO]   interface Serial0/2/0                     ->  interface Serial0/2/0
+
+R4(config-if)#
+
+R4(config-if)#
+2026-02-13 14:29:28,026 [INFO]   ip address 10.0.0.18 255.255.255.252      ->  ip address 10.0.0.18 255.255.255.252
+
+R4(config-if)#
+
+R4(config-if)#
+2026-02-13 14:29:29,128 [INFO]   no shutdown                               ->  no shutdown
+
+R4(config-if)#
+
+R4(config-if)#
+2026-02-13 14:29:30,230 [INFO]   exit                                      ->  exit
+
+R4(config)#
+
+R4(config)#
+2026-02-13 14:29:34,434 [INFO] Save config: *Feb 13 23:04:10.951: %SYS-5-CONFIG_I: Configured from console by consolewrite memory
+
+Building configuration...
+2026-02-13 14:29:34,435 [INFO] R4 configured successfully [OK]
+2026-02-13 14:29:34,436 [INFO] Disconnecting from device ...
+2026-02-13 14:29:36,439 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-02-13 14:29:41,247 [INFO]   Comm server prompt: commserver#
+
+commserver#
+2026-02-13 14:29:41,247 [INFO] Disconnected from device [OK]
+2026-02-13 14:29:41,301 [INFO] Serial connection closed
+2026-02-13 15:07:33,226 [INFO] Loading router config from C:\Users\dayus\Documents\IP-Routing-and-Protocols\routers_config.json
+2026-02-13 15:07:33,226 [INFO] Found 4 router(s) to configure
+2026-02-13 15:07:33,226 [INFO] 
+2026-02-13 15:07:33,227 [INFO] ============================================================
+2026-02-13 15:07:33,227 [INFO]   R1  —  telnet 1.1.1.1 2002
+2026-02-13 15:07:33,227 [INFO] ============================================================
+2026-02-13 15:07:33,227 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-13 15:07:36,895 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-02-13 15:07:36,896 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-13 15:07:36,896 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-13 15:07:36,896 [INFO] Serial connection ready on COM6
+2026-02-13 15:07:36,897 [INFO] Preparing line 2 before telnet (attempt 1/3) ...
+2026-02-13 15:07:36,897 [INFO]   clear line 2  (attempt 1/3)
+2026-02-13 15:07:39,000 [INFO]   clear line 2  (attempt 2/3)
+2026-02-13 15:07:41,103 [INFO]   clear line 2  (attempt 3/3)
+2026-02-13 15:07:43,206 [INFO]   Cleared line 2 (3 times)
+2026-02-13 15:07:43,206 [INFO] Telneting to 1.1.1.1 2002 ...
+2026-02-13 15:07:46,911 [INFO] Telnet output: telnet 1.1.1.1 2002
+Trying 1.1.1.1, 2002 ... Open
+
+er name, or unable to fiable to find comp tamcommand or computer          name, orr unable to fiable to find comp tamcommand or computer name, or   
+2026-02-13 15:07:46,912 [INFO] Waiting for router output to settle ...
+2026-02-13 15:07:52,020 [INFO] Router prompt: ^
+% Invalid input detected at '^' marker.
+
+R1>
+R1>
+R1>
+R1>
+2026-02-13 15:07:53,123 [INFO] Detected hostname: 'R1'
+2026-02-13 15:07:53,123 [INFO] [OK] Hostname verified: 'R1' matches expected 'R1'
+2026-02-13 15:07:53,123 [INFO] Sending 8 commands to R1 ...
+2026-02-13 15:07:54,225 [INFO] Router mode detected: user
+2026-02-13 15:07:54,226 [INFO] Entering enable mode ...
+2026-02-13 15:07:58,430 [INFO]   interface Loopback0
+2026-02-13 15:07:59,432 [INFO]   ip address 11.11.11.11 255.255.255.255
+2026-02-13 15:08:00,434 [INFO]   no shutdown
+2026-02-13 15:08:01,437 [INFO]   exit
+2026-02-13 15:08:02,438 [INFO]   interface Gi0/0
+2026-02-13 15:08:03,440 [INFO]   ip address 10.0.0.5 255.255.255.252
+2026-02-13 15:08:04,441 [INFO]   no shutdown
+2026-02-13 15:08:05,544 [INFO]   exit                                      ->  % Bad IP address or host name
+Translating "lab123"...domain server (255.255.255.255)
+2026-02-13 15:08:09,546 [INFO] Save config: 
+2026-02-13 15:08:09,547 [INFO] R1 configured successfully [OK]
+2026-02-13 15:08:09,547 [INFO] Disconnecting from device ...
+2026-02-13 15:08:11,551 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-02-13 15:08:16,358 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-02-13 15:08:16,358 [INFO] Disconnected from device [OK]
+2026-02-13 15:08:16,411 [INFO] Serial connection closed
+2026-02-13 15:08:18,413 [INFO] 
+2026-02-13 15:08:18,413 [INFO] ============================================================
+2026-02-13 15:08:18,413 [INFO]   R2  —  telnet 1.1.1.1 2003
+2026-02-13 15:08:18,413 [INFO] ============================================================
+2026-02-13 15:08:18,414 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-13 15:08:22,087 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-02-13 15:08:22,088 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-13 15:08:22,089 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-13 15:08:22,089 [INFO] Serial connection ready on COM6
+2026-02-13 15:08:22,089 [INFO] Preparing line 3 before telnet (attempt 1/3) ...
+2026-02-13 15:08:22,090 [INFO]   clear line 3  (attempt 1/3)
+2026-02-13 15:08:24,193 [INFO]   clear line 3  (attempt 2/3)
+2026-02-13 15:08:26,296 [INFO]   clear line 3  (attempt 3/3)
+2026-02-13 15:08:28,399 [INFO]   Cleared line 3 (3 times)
+2026-02-13 15:08:28,399 [INFO] Telneting to 1.1.1.1 2003 ...
+2026-02-13 15:08:31,501 [INFO] Telnet output: telnet 1.1.1.1 2003
+Trying 1.1.1.1, 2003 ... Open
+2026-02-13 15:08:31,501 [INFO] Waiting for router output to settle ...
+2026-02-13 15:08:36,611 [INFO] Router prompt: R2#
+R2#
+R2#
+R2#
+2026-02-13 15:08:37,712 [INFO] Detected hostname: 'R2'
+2026-02-13 15:08:37,713 [INFO] [OK] Hostname verified: 'R2' matches expected 'R2'
+2026-02-13 15:08:37,714 [INFO] Sending 16 commands to R2 ...
+2026-02-13 15:08:38,816 [INFO] Router mode detected: privileged
+2026-02-13 15:08:38,816 [INFO] Already in privileged EXEC mode — skipping enable
+2026-02-13 15:08:41,021 [INFO]   interface Loopback0                       ->  interface Loopback0
+R2(config-if)#
+R2(config-if)#
+2026-02-13 15:08:42,123 [INFO]   ip address 22.22.22.22 255.255.255.255    ->  ip address 22.22.22.22 255.255.255.255
+R2(config-if)#
+R2(config-if)#
+2026-02-13 15:08:43,226 [INFO]   no shutdown                               ->  no shutdown
+R2(config-if)#
+R2(config-if)#
+2026-02-13 15:08:44,328 [INFO]   exit                                      ->  exit
+R2(config)#
+R2(config)#
+2026-02-13 15:08:45,430 [INFO]   interface Gi0/0                           ->  interface Gi0/0
+R2(config-if)#
+R2(config-if)#
+2026-02-13 15:08:46,533 [INFO]   ip address 10.0.0.6 255.255.255.252       ->  ip address 10.0.0.6 255.255.255.252
+R2(config-if)#
+R2(config-if)#
+2026-02-13 15:08:47,634 [INFO]   no shutdown                               ->  no shutdown
+R2(config-if)#
+R2(config-if)#
+2026-02-13 15:08:48,736 [INFO]   exit                                      ->  exit
+R2(config)#
+R2(config)#
+2026-02-13 15:08:49,838 [INFO]   interface Serial0/0/0                     ->  interface Serial0/0/0
+R2(config-if)#
+R2(config-if)#
+2026-02-13 15:08:50,941 [INFO]   ip address 10.0.0.13 255.255.255.252      ->  ip address 10.0.0.13 255.255.255.252
+R2(config-if)#
+R2(config-if)#
+2026-02-13 15:08:52,043 [INFO]   no shutdown                               ->  no shutdown
+R2(config-if)#
+R2(config-if)#
+2026-02-13 15:08:53,146 [INFO]   exit                                      ->  exit
+R2(config)#
+R2(config)#
+2026-02-13 15:08:54,249 [INFO]   interface Serial0/1/0                     ->  interface Serial0/1/0
+R2(config-if)#
+R2(config-if)#
+2026-02-13 15:08:55,351 [INFO]   ip address 10.0.0.17 255.255.255.252      ->  ip address 10.0.0.17 255.255.255.252
+R2(config-if)#
+R2(config-if)#
+2026-02-13 15:08:56,453 [INFO]   no shutdown                               ->  no shutdown
+R2(config-if)#
+R2(config-if)#
+2026-02-13 15:08:57,555 [INFO]   exit                                      ->  exit
+R2(config)#
+R2(config)#
+2026-02-13 15:09:01,759 [INFO] Save config: write memory
+
+*Feb 13 23:20:46.131: %SYS-5-CONFIG_I: Configured from console by console
+Building configuration...
+
+[OK]
+R2#
+R2#
+2026-02-13 15:09:01,759 [INFO] R2 configured successfully [OK]
+2026-02-13 15:09:01,760 [INFO] Disconnecting from device ...
+2026-02-13 15:09:03,763 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-02-13 15:09:08,571 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-02-13 15:09:08,571 [INFO] Disconnected from device [OK]
+2026-02-13 15:09:08,625 [INFO] Serial connection closed
+2026-02-13 15:09:10,625 [INFO] 
+2026-02-13 15:09:10,626 [INFO] ============================================================
+2026-02-13 15:09:10,627 [INFO]   R3  —  telnet 1.1.1.1 2004
+2026-02-13 15:09:10,627 [INFO] ============================================================
+2026-02-13 15:09:10,627 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-13 15:09:14,300 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-02-13 15:09:14,301 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-13 15:09:14,301 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-13 15:09:14,302 [INFO] Serial connection ready on COM6
+2026-02-13 15:09:14,302 [INFO] Preparing line 4 before telnet (attempt 1/3) ...
+2026-02-13 15:09:14,303 [INFO]   clear line 4  (attempt 1/3)
+2026-02-13 15:09:16,405 [INFO]   clear line 4  (attempt 2/3)
+2026-02-13 15:09:18,508 [INFO]   clear line 4  (attempt 3/3)
+2026-02-13 15:09:20,611 [INFO]   Cleared line 4 (3 times)
+2026-02-13 15:09:20,612 [INFO] Telneting to 1.1.1.1 2004 ...
+2026-02-13 15:09:23,717 [INFO] Telnet output: telnet 1.1.1.1 2004
+Trying 1.1.1.1, 2004 ... Open
+2026-02-13 15:09:23,717 [INFO] Waiting for router output to settle ...
+2026-02-13 15:09:28,827 [INFO] Router prompt: R3#
+R3#
+R3#
+R3#
+2026-02-13 15:09:29,929 [INFO] Detected hostname: 'R3'
+2026-02-13 15:09:29,930 [INFO] [OK] Hostname verified: 'R3' matches expected 'R3'
+2026-02-13 15:09:29,930 [INFO] Sending 12 commands to R3 ...
+2026-02-13 15:09:31,032 [INFO] Router mode detected: privileged
+2026-02-13 15:09:31,033 [INFO] Already in privileged EXEC mode — skipping enable
+2026-02-13 15:09:33,236 [INFO]   interface Loopback0                       ->  interface Loopback0
+R3(config-if)#
+R3(config-if)#
+2026-02-13 15:09:34,338 [INFO]   ip address 33.33.33.33 255.255.255.255    ->  ip address 33.33.33.33 255.255.255.255
+R3(config-if)#
+R3(config-if)#
+2026-02-13 15:09:35,441 [INFO]   no shutdown                               ->  no shutdown
+R3(config-if)#
+R3(config-if)#
+2026-02-13 15:09:36,543 [INFO]   exit                                      ->  exit
+R3(config)#
+R3(config)#
+2026-02-13 15:09:37,645 [INFO]   interface Gi0/0                           ->  interface Gi0/0
+R3(config-if)#
+R3(config-if)#
+2026-02-13 15:09:38,747 [INFO]   ip address 10.0.0.9 255.255.255.252       ->  ip address 10.0.0.9 255.255.255.252
+R3(config-if)#
+R3(config-if)#
+2026-02-13 15:09:39,849 [INFO]   no shutdown                               ->  no shutdown
+R3(config-if)#
+R3(config-if)#
+2026-02-13 15:09:40,952 [INFO]   exit                                      ->  exit
+R3(config)#
+R3(config)#
+2026-02-13 15:09:42,054 [INFO]   interface Serial0/0/0                     ->  interface Serial0/0/0
+R3(config-if)#
+R3(config-if)#
+2026-02-13 15:09:43,156 [INFO]   ip address 10.0.0.14 255.255.255.252      ->  ip address 10.0.0.14 255.255.255.252
+R3(config-if)#
+R3(config-if)#
+2026-02-13 15:09:44,258 [INFO]   no shutdown                               ->  no shutdown
+R3(config-if)#
+R3(config-if)#
+2026-02-13 15:09:45,360 [INFO]   exit                                      ->  exit
+R3(config)#
+R3(config)#
+2026-02-13 15:09:49,565 [INFO] Save config: write memory
+Building configuration...
+
+
+*Feb 13 22:49:35.319: %SYS-5-CONFIG_I: Configured from console by console
+2026-02-13 15:09:49,566 [INFO] R3 configured successfully [OK]
+2026-02-13 15:09:49,566 [INFO] Disconnecting from device ...
+2026-02-13 15:09:51,570 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-02-13 15:09:56,376 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-02-13 15:09:56,377 [INFO] Disconnected from device [OK]
+2026-02-13 15:09:56,430 [INFO] Serial connection closed
+2026-02-13 15:09:58,432 [INFO] 
+2026-02-13 15:09:58,433 [INFO] ============================================================
+2026-02-13 15:09:58,433 [INFO]   R4  —  telnet 1.1.1.1 2005
+2026-02-13 15:09:58,434 [INFO] ============================================================
+2026-02-13 15:09:58,434 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-13 15:10:02,107 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-02-13 15:10:02,107 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-13 15:10:02,108 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-13 15:10:02,108 [INFO] Serial connection ready on COM6
+2026-02-13 15:10:02,109 [INFO] Preparing line 5 before telnet (attempt 1/3) ...
+2026-02-13 15:10:02,109 [INFO]   clear line 5  (attempt 1/3)
+2026-02-13 15:10:04,211 [INFO]   clear line 5  (attempt 2/3)
+2026-02-13 15:10:06,315 [INFO]   clear line 5  (attempt 3/3)
+2026-02-13 15:10:08,419 [INFO]   Cleared line 5 (3 times)
+2026-02-13 15:10:08,419 [INFO] Telneting to 1.1.1.1 2005 ...
+2026-02-13 15:10:11,522 [INFO] Telnet output: telnet 1.1.1.1 2005
+Trying 1.1.1.1, 2005 ... Open
+2026-02-13 15:10:11,523 [INFO] Waiting for router output to settle ...
+2026-02-13 15:10:16,633 [INFO] Router prompt: R4#
+R4#
+R4#
+R4#
+2026-02-13 15:10:17,735 [INFO] Detected hostname: 'R4'
+2026-02-13 15:10:17,735 [INFO] [OK] Hostname verified: 'R4' matches expected 'R4'
+2026-02-13 15:10:17,736 [INFO] Sending 12 commands to R4 ...
+2026-02-13 15:10:18,838 [INFO] Router mode detected: privileged
+2026-02-13 15:10:18,839 [INFO] Already in privileged EXEC mode — skipping enable
+2026-02-13 15:10:21,042 [INFO]   interface Loopback0                       ->  interface Loopback0
+R4(config-if)#
+R4(config-if)#
+2026-02-13 15:10:22,145 [INFO]   ip address 44.44.44.44 255.255.255.255    ->  ip address 44.44.44.44 255.255.255.255
+R4(config-if)#
+R4(config-if)#
+2026-02-13 15:10:23,247 [INFO]   no shutdown                               ->  no shutdown
+R4(config-if)#
+R4(config-if)#
+2026-02-13 15:10:24,349 [INFO]   exit                                      ->  exit
+R4(config)#
+R4(config)#
+2026-02-13 15:10:25,451 [INFO]   interface Gi0/0                           ->  interface Gi0/0
+R4(config-if)#
+R4(config-if)#
+2026-02-13 15:10:26,554 [INFO]   ip address 10.0.0.10 255.255.255.252      ->  ip address 10.0.0.10 255.255.255.252
+R4(config-if)#
+R4(config-if)#
+2026-02-13 15:10:27,656 [INFO]   no shutdown                               ->  no shutdown
+R4(config-if)#
+R4(config-if)#
+2026-02-13 15:10:28,758 [INFO]   exit                                      ->  exit
+R4(config)#
+R4(config)#
+2026-02-13 15:10:29,861 [INFO]   interface Serial0/2/0                     ->  interface Serial0/2/0
+R4(config-if)#
+R4(config-if)#
+2026-02-13 15:10:30,964 [INFO]   ip address 10.0.0.18 255.255.255.252      ->  ip address 10.0.0.18 255.255.255.252
+R4(config-if)#
+R4(config-if)#
+2026-02-13 15:10:32,065 [INFO]   no shutdown                               ->  no shutdown
+R4(config-if)#
+R4(config-if)#
+2026-02-13 15:10:33,168 [INFO]   exit                                      ->  exit
+R4(config)#
+R4(config)#
+2026-02-13 15:10:37,372 [INFO] Save config: write memory
+
+*Feb 13 23:45:13.827: %SYS-5-CONFIG_I: Configured from console by console
+Building configuration...
+2026-02-13 15:10:37,372 [INFO] R4 configured successfully [OK]
+2026-02-13 15:10:37,373 [INFO] Disconnecting from device ...
+2026-02-13 15:10:39,376 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-02-13 15:10:44,182 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-02-13 15:10:44,182 [INFO] Disconnected from device [OK]
+2026-02-13 15:10:44,235 [INFO] Serial connection closed
