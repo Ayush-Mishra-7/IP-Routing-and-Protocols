@@ -1,0 +1,44 @@
+{
+  "routers": [
+    {
+      "RouterName": "R1",
+      "PortNo": 2002,
+      "interfaces": {
+        "Gi0/0": {
+          "ip": "10.0.0.5",
+          "subnet": "255.255.255.252"
+        }
+      }
+    },
+    {
+      "RouterName": "R2",
+      "PortNo": 2003,
+      "interfaces": {
+        "Gi0/0": {
+          "ip": "10.0.0.6",
+          "subnet": "255.255.255.252"
+        }
+      }
+    },
+    {
+      "RouterName": "R3",
+      "PortNo": 2004,
+      "interfaces": {
+        "Gi0/0": {
+          "ip": "10.0.0.9",
+          "subnet": "255.255.255.252"
+        }
+      }
+    },
+    {
+      "RouterName": "R4",
+      "PortNo": 2005,
+      "interfaces": {
+        "Gi0/0": {
+          "ip": "10.0.0.13",
+          "subnet": "255.255.255.252"
+        }
+      }
+    }
+  ]
+}
