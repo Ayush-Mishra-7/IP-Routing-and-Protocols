@@ -11,8 +11,24 @@
       },
       "static_routes": [
         {
-          "destination": "10.0.0.0/24",
-          "next_hop": "10.0.0.1"
+          "destination": "10.0.0.16/29",
+          "next_hop": "10.0.0.6"
+        },
+        {
+          "destination": "10.0.0.24/30",
+          "next_hop": "10.0.0.6"
+        },
+        {
+          "destination": "22.22.22.22/32",
+          "next_hop": "10.0.0.6"
+        },
+        {
+          "destination": "33.33.33.33/32",
+          "next_hop": "10.0.0.6"
+        },
+        {
+          "destination": "44.44.44.44/32",
+          "next_hop": "10.0.0.6"
         }
       ]
     },
@@ -32,7 +48,25 @@
           "ip": "10.0.0.21",
           "subnet": "255.255.255.252"
         }
-      }
+      },
+      "static_routes": [
+        {
+          "destination": "10.0.0.24/30",
+          "next_hop": "10.0.0.18"
+        },
+        {
+          "destination": "33.33.33.33/32",
+          "next_hop": "10.0.0.18"
+        },
+        {
+          "destination": "44.44.44.44/32",
+          "next_hop": "10.0.0.22"
+        },
+        {
+          "destination": "11.11.11.11/32",
+          "next_hop": "10.0.0.5"
+        }
+      ]
     },
     {
       "RouterName": "R3",
@@ -46,7 +80,29 @@
           "ip": "10.0.0.18",
           "subnet": "255.255.255.252"
         }
-      }
+      },
+      "static_routes": [
+        {
+          "destination": "10.0.0.20/30",
+          "next_hop": "10.0.0.17"
+        },
+        {
+          "destination": "10.0.0.4/30",
+          "next_hop": "10.0.0.17"
+        },
+        {
+          "destination": "22.22.22.22/32",
+          "next_hop": "10.0.0.17"
+        },
+        {
+          "destination": "44.44.44.44/32",
+          "next_hop": "10.0.0.26"
+        },
+        {
+          "destination": "11.11.11.11/32",
+          "next_hop": "10.0.0.17"
+        }
+      ]
     },
     {
       "RouterName": "R4",
@@ -60,7 +116,29 @@
           "ip": "10.0.0.22",
           "subnet": "255.255.255.252"
         }
-      }
+      },
+      "static_routes": [
+        {
+          "destination": "10.0.0.16/30",
+          "next_hop": "10.0.0.25"
+        },
+        {
+          "destination": "10.0.0.4/30",
+          "next_hop": "10.0.0.21"
+        },
+        {
+          "destination": "22.22.22.22/32",
+          "next_hop": "10.0.0.21"
+        },
+        {
+          "destination": "11.11.11.11/32",
+          "next_hop": "10.0.0.21"
+        },
+        {
+          "destination": "33.33.33.33/32",
+          "next_hop": "10.0.0.25"
+        }
+      ]
     }
   ]
 }

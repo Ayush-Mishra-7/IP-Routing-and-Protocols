@@ -63,13 +63,6 @@ CLEAR_LINE_ATTEMPTS = 3
 TELNET_MAX_RETRIES = 3
 COMM_SERVER_HOSTNAME = "commserver"
 
-# Loopback IPs per router (keyed by RouterName)
-LOOPBACK_IPS = {
-    "R1": "11.11.11.11",
-    "R2": "22.22.22.22",
-    "R3": "33.33.33.33",
-    "R4": "44.44.44.44",
-}
 
 # ---------------------------------------------------------------------------
 # ConsoleDeviceConfigurator
@@ -115,15 +108,44 @@ class ConsoleDeviceConfigurator:
           - If already in comm server privileged mode (#), skips enable.
           - If in comm server user mode (>), enters enable with password.
         """
+
         logger.info(f"Opening serial connection on {self.port} @ {self.baudrate} baud")
-        self.serial_conn = serial.Serial(
-            port=self.port,
-            baudrate=self.baudrate,
-            timeout=self.timeout,
-            parity=serial.PARITY_NONE,
-            stopbits=serial.STOPBITS_ONE,
-            bytesize=serial.EIGHTBITS,
-        )
+        
+        # Retry loop for serial connection
+        max_attempts = 2
+        for attempt in range(1, max_attempts + 1):
+            try:
+                self.serial_conn = serial.Serial(
+                    port=self.port,
+                    baudrate=self.baudrate,
+                    timeout=self.timeout,
+                    parity=serial.PARITY_NONE,
+                    stopbits=serial.STOPBITS_ONE,
+                    bytesize=serial.EIGHTBITS,
+                )
+                break  # Success!
+            except serial.SerialException as e:
+                # Check for "Access is denied" (Windows error 5 / 13)
+                if "Access is denied" in str(e) or "PermissionError" in str(e):
+                    if attempt < max_attempts:
+                        logger.warning(
+                            f"Serial port access denied. Attempting to close blocking "
+                            f"applications (e.g., PuTTY) before retrying..."
+                        )
+                        killed_apps = kill_common_terminal_apps()
+                        if killed_apps:
+                            logger.info(f"Killed apps: {', '.join(killed_apps)}")
+                        else:
+                            logger.info("No common blocking apps found running.")
+                        
+                        # Wait a moment for the port to release
+                        time.sleep(2)
+                        continue
+                
+                # If not access denied, or retries exhausted, re-raise
+                logger.error(f"Failed to open serial port: {e}")
+                raise
+
         # Give the connection a moment to stabilise
         time.sleep(1)
 
@@ -384,13 +406,22 @@ class ConsoleDeviceConfigurator:
                     return False
 
             # Connection seems OK — wait for initial garbage output to settle.
-            # Routers often dump boot messages / config output when first
-            # connected.  We keep reading until there's no new data for
-            # a couple of seconds.
-            logger.info("Waiting for router output to settle ...")
+            # We actively send Backspace / Enter to help clear any jargon.
+            logger.info("Waiting for router output to settle (max 10s) ...")
             settled_buffer = ""
+            start_wait = time.time()
+            max_wait_seconds = 10
+            
+            # We want to see 'silence' for at least 2 seconds before we consider it settled
+            silence_threshold = 2.0
             silence_start = time.time()
+            
             while True:
+                # Check for timeout
+                if time.time() - start_wait > max_wait_seconds:
+                    logger.info("Max settle time reached. Proceeding...")
+                    break
+                
                 if self.serial_conn.in_waiting:
                     chunk = self.serial_conn.read(
                         self.serial_conn.in_waiting
@@ -398,10 +429,20 @@ class ConsoleDeviceConfigurator:
                     settled_buffer += chunk
                     silence_start = time.time()  # reset silence timer
                 else:
-                    # No new data — check if we've been silent long enough
-                    if time.time() - silence_start >= 3:
+                    # No new data — if we've been silent long enough, we're done
+                    if time.time() - silence_start >= silence_threshold:
                         break
-                time.sleep(0.3)
+                    
+                    # If not silent long enough yet, maybe send a helper char to clear jargon
+                    # Send Backspace (\x08) or Enter (\r\n) occasionally
+                    if (time.time() - start_wait) % 2 < 0.2: 
+                        # slightly random check to ensure we don't spam too fast, 
+                        # but roughly every 2 seconds
+                        self._write("\x08") # Backspace
+                        time.sleep(0.1)
+                
+                time.sleep(0.1)
+
             if settled_buffer:
                 logger.info(
                     f"Garbage/boot output ({len(settled_buffer)} chars) consumed"
@@ -423,28 +464,32 @@ class ConsoleDeviceConfigurator:
     # -- Hostname detection -------------------------------------------------
     def detect_hostname(self) -> str:
         """Send an empty line and parse the router hostname from the prompt.
-
-        Cisco IOS prompts look like:
-            Router>          (user EXEC)
-            Router#          (privileged EXEC)
-            Router(config)#  (global config)
-
-        Returns the hostname string (e.g. 'R1') or '' if undetectable.
+        Retries up to 3 times if not found immediately.
         """
-        self._flush_input()
-        self._write("\r\n")
-        time.sleep(1)
-        output = self._read_all()
+        for attempt in range(1, 4):
+            self._flush_input()
+            self._write("\r\n")
+            time.sleep(2)
+            output = self._read_all()
 
-        # Try to match a Cisco-style prompt   e.g.  R1>  R1#  R1(config)#
-        # Pattern: non-whitespace hostname followed by optional (mode) and > or #
-        match = re.search(r"(\S+?)(?:\([^)]*\))?[>#]\s*$", output, re.MULTILINE)
-        if match:
-            hostname = match.group(1)
-            logger.info(f"Detected hostname: '{hostname}'")
-            return hostname
+            # Try to match a Cisco-style prompt   e.g.  R1>  R1#  R1(config)#
+            # Pattern: non-whitespace hostname followed by optional (mode) and > or #
+            match = re.search(r"(\S+?)(?:\([^)]*\))?[>#]\s*$", output, re.MULTILINE)
+            if match:
+                hostname = match.group(1)
+                logger.info(f"Detected hostname: '{hostname}'")
+                return hostname
+            
+            logger.warning(
+                f"Hostname detection attempt {attempt}/3 failed. "
+                f"Output snippet: {output.strip()[:100]}"
+            )
+            # Send an extra Enter to nudge it
+            if attempt < 3:
+                self._write("\r\n")
+                time.sleep(1)
 
-        logger.warning(f"Could not detect hostname from output: {output.strip()[:200]}")
+        logger.error("Could not detect hostname after 3 attempts.")
         return ""
 
     def verify_hostname(self, expected_name: str) -> bool:
@@ -596,38 +641,9 @@ class ConsoleDeviceConfigurator:
 # ---------------------------------------------------------------------------
 # Config generation
 # ---------------------------------------------------------------------------
-def build_router_commands(router_name: str, router: dict) -> list[str]:
-    """Generate IOS configuration commands for a single router.
-
-    Configures:
-      1. Loopback0 with the pre-defined IP (/32)
-      2. Every interface listed in routers_config.json with its IP + mask
-      3. 'no shutdown' on every interface
-    """
-    commands: list[str] = []
-
-    # --- Loopback0 ---------------------------------------------------------
-    loopback_ip = LOOPBACK_IPS.get(router_name)
-    if loopback_ip:
-        commands += [
-            "interface Loopback0",
-            f"ip address {loopback_ip} 255.255.255.255",
-            "no shutdown",
-            "exit",
-        ]
-
-    # --- Physical / Serial interfaces -------------------------------------
-    for intf_name, intf_cfg in router.get("interfaces", {}).items():
-        ip = intf_cfg["ip"]
-        mask = intf_cfg["subnet"]
-        commands += [
-            f"interface {intf_name}",
-            f"ip address {ip} {mask}",
-            "no shutdown",
-            "exit",
-        ]
-
-    return commands
+from config_ip_address import build_router_commands
+from config_static_routes import get_static_route_commands
+from utils import kill_common_terminal_apps
 
 
 # ---------------------------------------------------------------------------
@@ -687,6 +703,8 @@ def main():
 
                 # 3. Build and apply the configuration
                 commands = build_router_commands(expected_name, router)
+                static_routes = get_static_route_commands(router)
+                commands.extend(static_routes)
                 logger.info(f"Sending {len(commands)} commands to {expected_name} ...")
                 cfg.configure_device(commands)
 
