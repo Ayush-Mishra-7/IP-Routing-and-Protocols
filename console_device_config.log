@@ -599,3 +599,372 @@ R4>
 commserver#
 2026-02-14 15:39:01,506 [INFO] Disconnected from device [OK]
 2026-02-14 15:39:01,557 [INFO] Serial connection closed
+2026-02-16 15:59:06,248 [INFO] Selected: Erase config & Reload
+2026-02-16 15:59:06,272 [INFO] Loading router config from C:\Users\dayus\Documents\IP-Routing-and-Protocols\routers_config.json
+2026-02-16 15:59:06,274 [INFO] Found 4 router(s) to configure
+2026-02-16 15:59:06,274 [INFO] 
+2026-02-16 15:59:06,275 [INFO] ============================================================
+2026-02-16 15:59:06,275 [INFO]   R1  —  telnet 1.1.1.1 2002
+2026-02-16 15:59:06,277 [INFO] ============================================================
+2026-02-16 15:59:06,277 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-16 15:59:06,278 [WARNING] Serial port access denied. Attempting to close blocking applications (e.g., PuTTY) before retrying...
+2026-02-16 15:59:07,062 [INFO] Successfully killed putty.exe
+2026-02-16 15:59:07,063 [INFO] Killed apps: putty.exe
+2026-02-16 15:59:12,758 [INFO] Wake output: R4>
+R4>
+R4>
+R4>
+R4>
+R4>
+2026-02-16 15:59:12,759 [INFO] Detected state: {'location': 'router', 'hostname': 'R4', 'mode': 'user'}
+2026-02-16 15:59:12,760 [WARNING] Stale router session detected (R4, mode=user). Exiting back to comm server ...
+2026-02-16 15:59:19,570 [INFO] Escaped back to comm server
+2026-02-16 15:59:20,671 [INFO] State after escape: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-16 15:59:20,672 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-16 15:59:20,673 [INFO] Serial connection ready on COM6
+2026-02-16 15:59:20,673 [INFO] Preparing line 2 before telnet (attempt 1/3) ...
+2026-02-16 15:59:20,673 [INFO]   clear line 2  (attempt 1/3)
+2026-02-16 15:59:22,776 [INFO]   clear line 2  (attempt 2/3)
+2026-02-16 15:59:24,878 [INFO]   clear line 2  (attempt 3/3)
+2026-02-16 15:59:26,981 [INFO]   Cleared line 2 (3 times)
+2026-02-16 15:59:26,982 [INFO] Telneting to 1.1.1.1 2002 ...
+2026-02-16 15:59:30,083 [INFO] Telnet output: telnet 1.1.1.1 2002
+Trying 1.1.1.1, 2002 ... Open
+2026-02-16 15:59:30,083 [INFO] Waiting for router output to settle (max 10s) ...
+2026-02-16 15:59:34,196 [INFO] Router prompt: R1>
+R1>
+R1>
+R1>
+2026-02-16 15:59:36,298 [INFO] Detected hostname: 'R1'
+2026-02-16 15:59:36,299 [INFO] [OK] Hostname verified: 'R1' matches expected 'R1'
+2026-02-16 15:59:36,300 [INFO] Starting erase & reload process for R1...
+2026-02-16 15:59:36,300 [INFO] Retrieving running-config ...
+2026-02-16 15:59:37,402 [INFO] Router mode detected: user
+2026-02-16 15:59:37,403 [INFO] Entering enable mode ...
+2026-02-16 15:59:45,812 [INFO] Configuration saved to config\R1_20260216_155945.txt
+2026-02-16 15:59:45,812 [INFO] Erasing startup-config (write erase)...
+2026-02-16 15:59:49,915 [INFO] Erase output: 
+2026-02-16 15:59:49,915 [INFO] Reloading device...
+2026-02-16 15:59:54,118 [INFO] Confirming reload...
+2026-02-16 15:59:55,119 [INFO] Reload confirmed. Device should be rebooting. Output: 
+2026-02-16 15:59:55,120 [INFO] R1 erase and reload command completed.
+2026-02-16 15:59:55,120 [INFO] R1 processing complete [OK]
+2026-02-16 15:59:55,120 [INFO] Disconnecting from device ...
+2026-02-16 15:59:57,124 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-02-16 16:00:01,930 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-02-16 16:00:01,930 [INFO] Disconnected from device [OK]
+2026-02-16 16:00:01,984 [INFO] Serial connection closed
+2026-02-16 16:00:03,985 [INFO] 
+2026-02-16 16:00:03,986 [INFO] ============================================================
+2026-02-16 16:00:03,986 [INFO]   R2  —  telnet 1.1.1.1 2003
+2026-02-16 16:00:03,986 [INFO] ============================================================
+2026-02-16 16:00:03,986 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-16 16:00:07,659 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-02-16 16:00:07,659 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-16 16:00:07,660 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-16 16:00:07,660 [INFO] Serial connection ready on COM6
+2026-02-16 16:00:07,660 [INFO] Preparing line 3 before telnet (attempt 1/3) ...
+2026-02-16 16:00:07,661 [INFO]   clear line 3  (attempt 1/3)
+2026-02-16 16:00:09,763 [INFO]   clear line 3  (attempt 2/3)
+2026-02-16 16:00:11,865 [INFO]   clear line 3  (attempt 3/3)
+2026-02-16 16:00:13,968 [INFO]   Cleared line 3 (3 times)
+2026-02-16 16:00:13,968 [INFO] Telneting to 1.1.1.1 2003 ...
+2026-02-16 16:00:17,070 [INFO] Telnet output: telnet 1.1.1.1 2003
+Trying 1.1.1.1, 2003 ... Open
+2026-02-16 16:00:17,070 [INFO] Waiting for router output to settle (max 10s) ...
+2026-02-16 16:00:19,283 [INFO] Garbage/boot output (111 chars) consumed
+2026-02-16 16:00:21,386 [INFO] Router prompt: R2>
+R2>
+2026-02-16 16:00:23,489 [INFO] Detected hostname: 'R2'
+2026-02-16 16:00:23,489 [INFO] [OK] Hostname verified: 'R2' matches expected 'R2'
+2026-02-16 16:00:23,490 [INFO] Starting erase & reload process for R2...
+2026-02-16 16:00:23,490 [INFO] Retrieving running-config ...
+2026-02-16 16:00:24,592 [INFO] Router mode detected: user
+2026-02-16 16:00:24,593 [INFO] Entering enable mode ...
+2026-02-16 16:00:32,999 [INFO] Configuration saved to config\R2_20260216_160032.txt
+2026-02-16 16:00:32,999 [INFO] Erasing startup-config (write erase)...
+2026-02-16 16:00:37,202 [INFO] Erase output: [OK]
+Erase of nvram: complete
+R2#
+R2#
+R2#
+2026-02-16 16:00:37,203 [INFO] Reloading device...
+2026-02-16 16:00:41,407 [INFO] Confirming reload...
+2026-02-16 16:00:42,408 [INFO] Reload confirmed. Device should be rebooting. Output: 
+2026-02-16 16:00:42,409 [INFO] R2 erase and reload command completed.
+2026-02-16 16:00:42,409 [INFO] R2 processing complete [OK]
+2026-02-16 16:00:42,409 [INFO] Disconnecting from device ...
+2026-02-16 16:00:44,413 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-02-16 16:00:49,219 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-02-16 16:00:49,219 [INFO] Disconnected from device [OK]
+2026-02-16 16:00:49,273 [INFO] Serial connection closed
+2026-02-16 16:00:51,274 [INFO] 
+2026-02-16 16:00:51,275 [INFO] ============================================================
+2026-02-16 16:00:51,275 [INFO]   R3  —  telnet 1.1.1.1 2004
+2026-02-16 16:00:51,276 [INFO] ============================================================
+2026-02-16 16:00:51,276 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-16 16:00:54,949 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-02-16 16:00:54,950 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-16 16:00:54,950 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-16 16:00:54,951 [INFO] Serial connection ready on COM6
+2026-02-16 16:00:54,951 [INFO] Preparing line 4 before telnet (attempt 1/3) ...
+2026-02-16 16:00:54,951 [INFO]   clear line 4  (attempt 1/3)
+2026-02-16 16:00:57,054 [INFO]   clear line 4  (attempt 2/3)
+2026-02-16 16:00:59,157 [INFO]   clear line 4  (attempt 3/3)
+2026-02-16 16:01:01,259 [INFO]   Cleared line 4 (3 times)
+2026-02-16 16:01:01,259 [INFO] Telneting to 1.1.1.1 2004 ...
+2026-02-16 16:01:04,361 [INFO] Telnet output: telnet 1.1.1.1 2004
+Trying 1.1.1.1, 2004 ... Open
+2026-02-16 16:01:04,362 [INFO] Waiting for router output to settle (max 10s) ...
+2026-02-16 16:01:08,475 [INFO] Router prompt: R3>
+R3>
+R3>
+R3>
+2026-02-16 16:01:10,577 [INFO] Detected hostname: 'R3'
+2026-02-16 16:01:10,577 [INFO] [OK] Hostname verified: 'R3' matches expected 'R3'
+2026-02-16 16:01:10,578 [INFO] Starting erase & reload process for R3...
+2026-02-16 16:01:10,578 [INFO] Retrieving running-config ...
+2026-02-16 16:01:11,679 [INFO] Router mode detected: user
+2026-02-16 16:01:11,680 [INFO] Entering enable mode ...
+2026-02-16 16:01:20,086 [INFO] Configuration saved to config\R3_20260216_160120.txt
+2026-02-16 16:01:20,087 [INFO] Erasing startup-config (write erase)...
+2026-02-16 16:01:24,190 [INFO] Erase output: 
+2026-02-16 16:01:24,190 [INFO] Reloading device...
+2026-02-16 16:01:28,393 [INFO] Confirming reload...
+2026-02-16 16:01:29,394 [INFO] Reload confirmed. Device should be rebooting. Output: 
+2026-02-16 16:01:29,395 [INFO] R3 erase and reload command completed.
+2026-02-16 16:01:29,396 [INFO] R3 processing complete [OK]
+2026-02-16 16:01:29,396 [INFO] Disconnecting from device ...
+2026-02-16 16:01:31,400 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-02-16 16:01:36,205 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-02-16 16:01:36,205 [INFO] Disconnected from device [OK]
+2026-02-16 16:01:36,257 [INFO] Serial connection closed
+2026-02-16 16:01:38,258 [INFO] 
+2026-02-16 16:01:38,259 [INFO] ============================================================
+2026-02-16 16:01:38,259 [INFO]   R4  —  telnet 1.1.1.1 2005
+2026-02-16 16:01:38,260 [INFO] ============================================================
+2026-02-16 16:01:38,260 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-16 16:01:41,933 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-02-16 16:01:41,934 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-16 16:01:41,934 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-16 16:01:41,934 [INFO] Serial connection ready on COM6
+2026-02-16 16:01:41,935 [INFO] Preparing line 5 before telnet (attempt 1/3) ...
+2026-02-16 16:01:41,935 [INFO]   clear line 5  (attempt 1/3)
+2026-02-16 16:01:44,038 [INFO]   clear line 5  (attempt 2/3)
+2026-02-16 16:01:46,140 [INFO]   clear line 5  (attempt 3/3)
+2026-02-16 16:01:48,243 [INFO]   Cleared line 5 (3 times)
+2026-02-16 16:01:48,243 [INFO] Telneting to 1.1.1.1 2005 ...
+2026-02-16 16:01:51,346 [INFO] Telnet output: telnet 1.1.1.1 2005
+Trying 1.1.1.1, 2005 ... Open
+2026-02-16 16:01:51,346 [INFO] Waiting for router output to settle (max 10s) ...
+2026-02-16 16:01:55,461 [INFO] Router prompt: R4>
+R4>
+R4>
+R4>
+2026-02-16 16:01:57,564 [INFO] Detected hostname: 'R4'
+2026-02-16 16:01:57,565 [INFO] [OK] Hostname verified: 'R4' matches expected 'R4'
+2026-02-16 16:01:57,565 [INFO] Starting erase & reload process for R4...
+2026-02-16 16:01:57,566 [INFO] Retrieving running-config ...
+2026-02-16 16:01:58,667 [INFO] Router mode detected: user
+2026-02-16 16:01:58,667 [INFO] Entering enable mode ...
+2026-02-16 16:02:07,073 [INFO] Configuration saved to config\R4_20260216_160207.txt
+2026-02-16 16:02:07,074 [INFO] Erasing startup-config (write erase)...
+2026-02-16 16:02:11,177 [INFO] Erase output: 
+2026-02-16 16:02:11,178 [INFO] Reloading device...
+2026-02-16 16:02:15,280 [INFO] Confirming reload...
+2026-02-16 16:02:16,382 [INFO] Reload confirmed. Device should be rebooting. Output: R4#
+R4#
+R4#r
+2026-02-16 16:02:16,383 [INFO] R4 erase and reload command completed.
+2026-02-16 16:02:16,384 [INFO] R4 processing complete [OK]
+2026-02-16 16:02:16,384 [INFO] Disconnecting from device ...
+2026-02-16 16:02:18,387 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-02-16 16:02:23,194 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-02-16 16:02:23,195 [INFO] Disconnected from device [OK]
+2026-02-16 16:02:23,249 [INFO] Serial connection closed
+2026-02-16 16:13:03,804 [INFO] Selected: Initialize Devices (Hostname & Password)
+2026-02-16 16:13:03,804 [INFO] Loading router config from C:\Users\dayus\Documents\IP-Routing-and-Protocols\routers_config.json
+2026-02-16 16:13:03,805 [INFO] Found 4 router(s) to configure
+2026-02-16 16:13:03,805 [INFO] 
+2026-02-16 16:13:03,806 [INFO] ============================================================
+2026-02-16 16:13:03,806 [INFO]   R1  —  telnet 1.1.1.1 2002
+2026-02-16 16:13:03,806 [INFO] ============================================================
+2026-02-16 16:13:03,807 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-16 16:13:03,807 [WARNING] Serial port access denied. Attempting to close blocking applications (e.g., PuTTY) before retrying...
+2026-02-16 16:13:04,616 [INFO] Successfully killed putty.exe
+2026-02-16 16:13:04,617 [INFO] Killed apps: putty.exe
+2026-02-16 16:13:10,292 [INFO] Wake output: Router>
+Router>
+Router>
+Router>
+Router>
+Router>
+2026-02-16 16:13:10,292 [INFO] Detected state: {'location': 'router', 'hostname': 'Router', 'mode': 'user'}
+2026-02-16 16:13:10,293 [WARNING] Stale router session detected (Router, mode=user). Exiting back to comm server ...
+2026-02-16 16:13:17,102 [INFO] Escaped back to comm server
+2026-02-16 16:13:18,204 [INFO] State after escape: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-16 16:13:18,205 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-16 16:13:18,205 [INFO] Serial connection ready on COM6
+2026-02-16 16:13:18,205 [INFO] Preparing line 2 before telnet (attempt 1/3) ...
+2026-02-16 16:13:18,206 [INFO]   clear line 2  (attempt 1/3)
+2026-02-16 16:13:20,308 [INFO]   clear line 2  (attempt 2/3)
+2026-02-16 16:13:22,411 [INFO]   clear line 2  (attempt 3/3)
+2026-02-16 16:13:24,513 [INFO]   Cleared line 2 (3 times)
+2026-02-16 16:13:24,514 [INFO] Telneting to 1.1.1.1 2002 ...
+2026-02-16 16:13:27,615 [INFO] Telnet output: telnet 1.1.1.1 2002
+Trying 1.1.1.1, 2002 ... Open
+2026-02-16 16:13:27,616 [INFO] Waiting for router output to settle (max 10s) ...
+2026-02-16 16:13:31,729 [INFO] Router prompt: Router>
+Router>
+Router>
+Router>
+2026-02-16 16:13:33,832 [INFO] Detected hostname: 'Router'
+2026-02-16 16:13:33,832 [ERROR] [FAIL] Hostname MISMATCH: detected 'Router', expected 'R1'
+2026-02-16 16:13:33,833 [ERROR] Hostname verification failed for R1 — skipping config to avoid misconfiguration!
+2026-02-16 16:13:33,833 [INFO] Disconnecting from device ...
+2026-02-16 16:13:35,836 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-02-16 16:13:40,649 [INFO] Serial connection closed
+2026-02-16 16:13:40,650 [INFO] 
+2026-02-16 16:13:40,651 [INFO] ============================================================
+2026-02-16 16:13:40,651 [INFO]   Ctrl+C detected — shutting down gracefully ...
+2026-02-16 16:13:40,651 [INFO] ============================================================
+2026-02-16 16:13:40,651 [INFO] Opening COM6 to clean up any stale router sessions ...
+2026-02-16 16:13:40,651 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-16 16:13:44,323 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-02-16 16:13:44,323 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-16 16:13:44,324 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-16 16:13:44,324 [INFO] Serial connection ready on COM6
+2026-02-16 16:13:44,377 [INFO] Serial connection closed
+2026-02-16 16:13:44,378 [INFO] Cleanup complete [OK]
+2026-02-16 16:18:43,600 [INFO] Selected: Initialize Devices (Hostname & Password)
+2026-02-16 16:18:43,600 [INFO] Loading router config from C:\Users\dayus\Documents\IP-Routing-and-Protocols\routers_config.json
+2026-02-16 16:18:43,601 [INFO] Found 4 router(s) to configure
+2026-02-16 16:18:43,601 [INFO] 
+2026-02-16 16:18:43,601 [INFO] ============================================================
+2026-02-16 16:18:43,601 [INFO]   R1  —  telnet 1.1.1.1 2002
+2026-02-16 16:18:43,601 [INFO] ============================================================
+2026-02-16 16:18:43,602 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-16 16:18:47,271 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-02-16 16:18:47,271 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-16 16:18:47,271 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-16 16:18:47,272 [INFO] Serial connection ready on COM6
+2026-02-16 16:18:47,272 [INFO] Preparing line 2 before telnet (attempt 1/3) ...
+2026-02-16 16:18:47,273 [INFO]   clear line 2  (attempt 1/3)
+2026-02-16 16:18:49,375 [INFO]   clear line 2  (attempt 2/3)
+2026-02-16 16:18:51,477 [INFO]   clear line 2  (attempt 3/3)
+2026-02-16 16:18:53,579 [INFO]   Cleared line 2 (3 times)
+2026-02-16 16:18:53,580 [INFO] Telneting to 1.1.1.1 2002 ...
+2026-02-16 16:18:56,681 [INFO] Telnet output: telnet 1.1.1.1 2002
+Trying 1.1.1.1, 2002 ... Open
+2026-02-16 16:18:56,682 [INFO] Waiting for router output to settle (max 10s) ...
+2026-02-16 16:19:00,794 [INFO] Router prompt: Router>
+Router>
+Router>
+Router>
+2026-02-16 16:19:02,896 [INFO] Detected hostname: 'Router'
+2026-02-16 16:19:02,896 [INFO] Initialization mode: Connected to 'Router'. Proceeding to overwrite hostname to 'R1'...
+2026-02-16 16:19:02,897 [INFO] Initializing device to hostname: R1...
+2026-02-16 16:19:03,998 [INFO] Router mode detected: user
+2026-02-16 16:19:03,999 [INFO] Entering enable mode ...
+2026-02-16 16:19:07,303 [INFO] Setting hostname to R1
+2026-02-16 16:19:08,405 [INFO] Setting enable password to 'lab123'
+2026-02-16 16:19:13,711 [INFO] Save config: write memory
+
+*Feb 17 01:24:37.723: %SYS-5-CONFIG_I: Configured from console by console
+Building configuration...
+2026-02-16 16:19:13,711 [INFO] Initialization of R1 complete.
+2026-02-16 16:19:13,712 [INFO] R1 processing complete [OK]
+2026-02-16 16:19:13,712 [INFO] Disconnecting from device ...
+2026-02-16 16:19:15,718 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-02-16 16:19:20,524 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-02-16 16:19:20,524 [INFO] Disconnected from device [OK]
+2026-02-16 16:19:20,579 [INFO] Serial connection closed
+2026-02-16 16:19:22,580 [INFO] 
+2026-02-16 16:19:22,580 [INFO] ============================================================
+2026-02-16 16:19:22,581 [INFO]   R2  —  telnet 1.1.1.1 2003
+2026-02-16 16:19:22,581 [INFO] ============================================================
+2026-02-16 16:19:22,582 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-16 16:19:26,255 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-02-16 16:19:26,255 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-02-16 16:19:26,255 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-02-16 16:19:26,256 [INFO] Serial connection ready on COM6
+2026-02-16 16:19:26,256 [INFO] Preparing line 3 before telnet (attempt 1/3) ...
+2026-02-16 16:19:26,256 [INFO]   clear line 3  (attempt 1/3)
+2026-02-16 16:19:28,360 [INFO]   clear line 3  (attempt 2/3)
+2026-02-16 16:19:30,463 [INFO]   clear line 3  (attempt 3/3)
+2026-02-16 16:19:32,567 [INFO]   Cleared line 3 (3 times)
+2026-02-16 16:19:32,567 [INFO] Telneting to 1.1.1.1 2003 ...
+2026-02-16 16:19:35,669 [INFO] Telnet output: telnet 1.1.1.1 2003
+Trying 1.1.1.1, 2003 ... Open
+2026-02-16 16:19:35,670 [INFO] Waiting for router output to settle (max 10s) ...
+2026-02-16 16:19:45,723 [INFO] Max settle time reached. Proceeding...
+2026-02-16 16:19:45,724 [INFO] Garbage/boot output (5 chars) consumed
+2026-02-16 16:19:47,827 [INFO] Router prompt: % Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: 
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: 
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes
+2026-02-16 16:19:49,930 [WARNING] Hostname detection attempt 1/3 failed. Output snippet: % Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: 
+2026-02-16 16:19:53,032 [WARNING] Hostname detection attempt 2/3 failed. Output snippet: % Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: 
+2026-02-16 16:19:56,135 [WARNING] Hostname detection attempt 3/3 failed. Output snippet: % Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: 
+2026-02-16 16:19:56,136 [ERROR] Could not detect hostname after 3 attempts.
+2026-02-16 16:19:56,136 [INFO] Initialization mode: Connected to ''. Proceeding to overwrite hostname to 'R2'...
+2026-02-16 16:19:56,137 [INFO] Initializing device to hostname: R2...
+2026-02-16 16:19:56,830 [INFO] Serial connection closed
+2026-02-16 16:19:56,831 [INFO] 
+2026-02-16 16:19:56,831 [INFO] ============================================================
+2026-02-16 16:19:56,831 [INFO]   Ctrl+C detected — shutting down gracefully ...
+2026-02-16 16:19:56,832 [INFO] ============================================================
+2026-02-16 16:19:56,832 [INFO] Opening COM6 to clean up any stale router sessions ...
+2026-02-16 16:19:56,832 [INFO] Opening serial connection on COM6 @ 9600 baud
+2026-02-16 16:20:00,502 [INFO] Wake output: % Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: 
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: 
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes
+2026-02-16 16:20:00,504 [INFO] Detected state: {'location': 'unknown', 'hostname': '', 'mode': 'unknown'}
+2026-02-16 16:20:00,504 [INFO] Entering enable mode on comm server ...
+2026-02-16 16:20:04,707 [WARNING] [WARN] Could not confirm privileged mode — clear line commands may fail
+2026-02-16 16:20:04,708 [INFO] Serial connection ready on COM6
+2026-02-16 16:20:04,761 [INFO] Serial connection closed
+2026-02-16 16:20:04,762 [INFO] Cleanup complete [OK]

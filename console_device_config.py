@@ -645,6 +645,8 @@ from config_ip_address import build_router_commands
 from config_static_routes import get_static_route_commands
 from utils import kill_common_terminal_apps
 from get_config import get_running_config
+from erase_config import erase_and_reload
+from init_devices import initialize_device
 from datetime import datetime
 
 
@@ -667,29 +669,54 @@ def save_config_to_file(router_name: str, config_content: str):
 # Main
 # ---------------------------------------------------------------------------
 def main():
-    # User Menu
-    print("\n" + "=" * 60)
-    print("  CISCO ROUTER CONFIGURATION & BACKUP TOOL")
-    print("=" * 60)
-    print("Select an option:")
-    print("  [1] Configure devices & Backup")
-    print("  [2] Backup running-config ONLY")
-    choice = input("\nEnter your choice (1 or 2): ").strip()
-    
-    do_configure = False
-    do_backup = False
-    
-    if choice == "1":
-        do_configure = True
-        do_backup = True
-        logger.info("Selected: Configure & Backup")
-    elif choice == "2":
+    while True:
+        # User Menu
+        print("\n" + "=" * 60)
+        print("  CISCO ROUTER CONFIGURATION & BACKUP TOOL")
+        print("=" * 60)
+        print("Select an option:")
+        print("  [1] Configure devices & Backup")
+        print("  [2] Backup running-config ONLY")
+        print("  [3] Erase running-config & Reload (DANGER)")
+        print("  [4] Initialize Devices (Hostname & Password)")
+        print("  [q] Quit")
+        choice = input("\nEnter your choice (1, 2, 3, 4 or q): ").strip()
+        
         do_configure = False
-        do_backup = True
-        logger.info("Selected: Backup ONLY")
-    else:
-        print("Invalid choice. Exiting.")
-        return
+        do_backup = False
+        do_erase = False
+        do_init = False
+        
+        if choice.lower() == 'q':
+            return
+
+        if choice == "1":
+            do_configure = True
+            do_backup = True
+            logger.info("Selected: Configure & Backup")
+            break
+        elif choice == "2":
+            do_configure = False
+            do_backup = True
+            logger.info("Selected: Backup ONLY")
+            break
+        elif choice == "3":
+            confirm = input("Type 'yes' to confirm erasing configuration: ").strip()
+            # Strict case-insensitive check for 'yes'
+            if confirm.lower() == 'yes':
+                do_erase = True
+                logger.info("Selected: Erase config & Reload")
+                break
+            else:
+                print("Confirmation failed. Returning to menu...")
+                continue
+        elif choice == "4":
+            do_init = True
+            logger.info("Selected: Initialize Devices (Hostname & Password)")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+            continue
 
     # Resolve config path relative to this script
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -733,14 +760,20 @@ def main():
                     continue
 
                 # 2. Verify we landed on the correct router
-                if not cfg.verify_hostname(expected_name):
-                    logger.error(
-                        f"Hostname verification failed for {expected_name} "
-                        f"— skipping config to avoid misconfiguration!"
-                    )
-                    results[expected_name] = "FAILED (hostname mismatch)"
-                    cfg.disconnect_from_device()
-                    continue
+                #    If initializing, we expect the hostname might be default (e.g. "Router"),
+                #    so we skip the strict check.
+                if do_init:
+                    hostname = cfg.detect_hostname()
+                    logger.info(f"Initialization mode: Connected to '{hostname}'. Proceeding to overwrite hostname to '{expected_name}'...")
+                else:
+                    if not cfg.verify_hostname(expected_name):
+                        logger.error(
+                            f"Hostname verification failed for {expected_name} "
+                            f"— skipping config to avoid misconfiguration!"
+                        )
+                        results[expected_name] = "FAILED (hostname mismatch)"
+                        cfg.disconnect_from_device()
+                        continue
 
                 # 3. Configure (if requested)
                 if do_configure:
@@ -761,6 +794,25 @@ def main():
                         results[expected_name] = "CONFIGURED & BACKED UP"
                     else:
                         results[expected_name] = "BACKED UP"
+
+                # 5. Erase & Reload (if requested)
+                if do_erase:
+                    # erase_and_reload handles its own backup, wipe, and reload
+                    try:
+                        erase_and_reload(cfg, expected_name)
+                        results[expected_name] = "ERASED & RELOADED"
+                    except Exception as e:
+                        logger.error(f"Failed to erase/reload {expected_name}: {e}")
+                        results[expected_name] = f"ERASE FAILED ({e})"
+
+                # 6. Initialize (if requested)
+                if do_init:
+                    try:
+                        initialize_device(cfg, expected_name)
+                        results[expected_name] = "INITIALIZED"
+                    except Exception as e:
+                        logger.error(f"Failed to initialize {expected_name}: {e}")
+                        results[expected_name] = f"INIT FAILED ({e})"
 
                 logger.info(f"{expected_name} processing complete [OK]")
 
