@@ -1,5 +1,6 @@
 import time
 from netmiko import ConnectHandler
+from configure_rip import main as configure_rip_main
 
 # Router configurations
 routers = [
@@ -24,6 +25,7 @@ def run_debug_on_router(router_config, router_name):
         # Connect to the router
         net_connect = ConnectHandler(**router_config)
         net_connect.enable()
+
 
         # Enable terminal monitoring
         net_connect.send_command("term mon")
@@ -52,6 +54,10 @@ def run_debug_on_router(router_config, router_name):
 
     except Exception as e:
         print(f"Error connecting to {router_name}: {str(e)}")
+
+
+
+configure_rip_main()  # Ensure RIP is configured before debugging
 
 # Run on backbone routers
 run_debug_on_router(routers[0], "5R1")

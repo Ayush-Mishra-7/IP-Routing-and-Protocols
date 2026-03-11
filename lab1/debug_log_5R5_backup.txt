@@ -1,0 +1,11 @@
+
+*Mar 11 22:49:02.603: RIP: sending v2 update to 224.0.0.9 via Serial0/2/0 (5.0.34.2)
+*Mar 11 22:49:02.603: RIP: build update entries - suppressing null update
+*Mar 11 22:49:14.839: RIP: received v2 update from 5.0.34.1 on Serial0/2/0
+*Mar 11 22:49:14.839:      5.0.12.0/30 via 0.0.0.0 in 2 hops
+*Mar 11 22:49:14.839:      5.0.234.0/24 via 0.0.0.0 in 1 hops
+*Mar 11 22:49:31.863: RIP: sending v2 update to 224.0.0.9 via Serial0/2/0 (5.0.34.2)
+*Mar 11 22:49:31.863: RIP: build update entries - suppressing null update
+*Mar 11 22:49:41.071: RIP: received v2 update from 5.0.34.1 on Serial0/2/0
+*Mar 11 22:49:41.071:      5.0.12.0/30 via 0.0.0.0 in 2 hops
+*Mar 11 22:49:41.075:      5.0.234.0/24 via 0.0.0.0 in 1 hops
