@@ -1,0 +1,162 @@
+2026-03-11 14:47:32,159 [INFO] loaded 5 routers from /Users/AndyZ/Desktop/IP-Routing-and-Protocols/lab1/router_config.json
+2026-03-11 14:47:32,159 [INFO] RIP commands:
+router rip
+version 2
+no auto-summary
+network 10.0.0.0
+exit
+2026-03-11 14:47:32,159 [INFO] connecting to 10.0.0.1
+2026-03-11 14:47:32,168 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-11 14:47:32,776 [INFO] Authentication (password) successful!
+2026-03-11 14:47:33,125 [INFO] applied config to 10.0.0.1:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R1(config)#router rip
+5R1(config-router)#version 2
+5R1(config-router)#no auto-summary
+5R1(config-router)#network 10.0.0.0
+5R1(config-router)#exit
+5R1(config)#end
+5R1#
+2026-03-11 14:47:33,139 [INFO] connecting to 10.0.0.2
+2026-03-11 14:47:33,144 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-11 14:47:33,735 [INFO] Authentication (password) successful!
+2026-03-11 14:47:34,082 [INFO] applied config to 10.0.0.2:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R2(config)#router rip
+5R2(config-router)#version 2
+5R2(config-router)#no auto-summary
+5R2(config-router)#network 10.0.0.0
+5R2(config-router)#exit
+5R2(config)#end
+5R2#
+2026-03-11 14:47:34,095 [INFO] connecting to 10.0.0.3
+2026-03-11 14:47:34,100 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-11 14:47:34,704 [INFO] Authentication (password) successful!
+2026-03-11 14:47:35,045 [INFO] applied config to 10.0.0.3:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R3(config)#router rip
+5R3(config-router)#version 2
+5R3(config-router)#no auto-summary
+5R3(config-router)#network 10.0.0.0
+5R3(config-router)#exit
+5R3(config)#end
+5R3#
+2026-03-11 14:47:35,058 [INFO] connecting to 10.0.0.4
+2026-03-11 14:47:35,063 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-11 14:47:35,686 [INFO] Authentication (password) successful!
+2026-03-11 14:47:36,033 [INFO] applied config to 10.0.0.4:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R4(config)#router rip
+5R4(config-router)#version 2
+5R4(config-router)#no auto-summary
+5R4(config-router)#network 10.0.0.0
+5R4(config-router)#exit
+5R4(config)#end
+5R4#
+2026-03-11 14:47:36,046 [INFO] connecting to 10.0.0.5
+2026-03-11 14:47:36,050 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-11 14:47:36,640 [INFO] Authentication (password) successful!
+2026-03-11 14:47:36,991 [INFO] applied config to 10.0.0.5:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R5(config)#router rip
+5R5(config-router)#version 2
+5R5(config-router)#no auto-summary
+5R5(config-router)#network 10.0.0.0
+5R5(config-router)#exit
+5R5(config)#end
+5R5#
+2026-03-11 15:06:24,158 [INFO] loaded 5 routers from /Users/AndyZ/Desktop/IP-Routing-and-Protocols/lab1/router_config.json
+2026-03-11 15:06:24,159 [INFO] RIP commands:
+no router rip
+router rip
+version 2
+no auto-summary
+network 5.0.12.0
+network 5.0.234.0
+network 5.0.34.0
+exit
+2026-03-11 15:06:24,159 [INFO] connecting to 10.0.0.1
+2026-03-11 15:06:24,167 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-11 15:06:24,562 [INFO] Authentication (password) successful!
+2026-03-11 15:06:24,956 [INFO] applied config to 10.0.0.1:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R1(config)#no router rip
+5R1(config)#router rip
+5R1(config-router)#version 2
+5R1(config-router)#no auto-summary
+5R1(config-router)#network 5.0.12.0
+5R1(config-router)#network 5.0.234.0
+5R1(config-router)#network 5.0.34.0
+5R1(config-router)#exit
+5R1(config)#end
+5R1#
+2026-03-11 15:06:24,969 [INFO] connecting to 10.0.0.2
+2026-03-11 15:06:24,974 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-11 15:06:25,368 [INFO] Authentication (password) successful!
+2026-03-11 15:06:25,738 [INFO] applied config to 10.0.0.2:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R2(config)#no router rip
+5R2(config)#router rip
+5R2(config-router)#version 2
+5R2(config-router)#no auto-summary
+5R2(config-router)#network 5.0.12.0
+5R2(config-router)#network 5.0.234.0
+5R2(config-router)#network 5.0.34.0
+5R2(config-router)#exit
+5R2(config)#end
+5R2#
+2026-03-11 15:06:25,752 [INFO] connecting to 10.0.0.3
+2026-03-11 15:06:25,757 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-11 15:06:26,173 [INFO] Authentication (password) successful!
+2026-03-11 15:06:26,549 [INFO] applied config to 10.0.0.3:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R3(config)#no router rip
+5R3(config)#router rip
+5R3(config-router)#version 2
+5R3(config-router)#no auto-summary
+5R3(config-router)#network 5.0.12.0
+5R3(config-router)#network 5.0.234.0
+5R3(config-router)#network 5.0.34.0
+5R3(config-router)#exit
+5R3(config)#end
+5R3#
+2026-03-11 15:06:26,562 [INFO] connecting to 10.0.0.4
+2026-03-11 15:06:26,568 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-11 15:06:26,985 [INFO] Authentication (password) successful!
+2026-03-11 15:06:27,367 [INFO] applied config to 10.0.0.4:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R4(config)#no router rip
+5R4(config)#router rip
+5R4(config-router)#version 2
+5R4(config-router)#no auto-summary
+5R4(config-router)#network 5.0.12.0
+5R4(config-router)#network 5.0.234.0
+5R4(config-router)#network 5.0.34.0
+5R4(config-router)#exit
+5R4(config)#end
+5R4#
+2026-03-11 15:06:27,381 [INFO] connecting to 10.0.0.5
+2026-03-11 15:06:27,386 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-11 15:06:27,806 [INFO] Authentication (password) successful!
+2026-03-11 15:06:28,217 [INFO] applied config to 10.0.0.5:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R5(config)#no router rip
+5R5(config)#router rip
+5R5(config-router)#version 2
+5R5(config-router)#no auto-summary
+5R5(config-router)#network 5.0.12.0
+5R5(config-router)#network 5.0.234.0
+5R5(config-router)#network 5.0.34.0
+5R5(config-router)#exit
+5R5(config)#end
+5R5#

@@ -1,41 +1,78 @@
 {
+    "credentials": {
+        "username": "cisco",
+        "password": "lab123",
+        "secret": "lab123"
+    },
     "routers": [
         {
             "RouterName": "5R1",
             "PortNo": 2002,
-            "interfaces": {
+            "management_interfaces": {
                 "Gi0/1": {
                     "ip": "10.0.0.1",
                     "subnet": "255.255.255.0"
+                }
+            },
+            "interfaces": {
+                "Serial0/2/0": {
+                    "ip": "5.0.12.1",
+                    "subnet": "255.255.255.252"
                 }
             }
         },
         {
             "RouterName": "5R2",
             "PortNo": 2003,
-            "interfaces": {
+            "management_interfaces": {
                 "Gi0/1": {
                     "ip": "10.0.0.2",
                     "subnet": "255.255.255.0"
+                }
+            },
+            "interfaces": {
+                "GigabitEthernet0/0": {
+                    "ip": "5.0.234.2",
+                    "subnet": "255.255.255.0"
+                },
+                "Serial0/0/0": {
+                    "ip": "5.0.12.2",
+                    "subnet": "255.255.255.252"
                 }
             }
         },
         {
             "RouterName": "5R3",
             "PortNo": 2004,
-            "interfaces": {
+            "management_interfaces": {
                 "Gi0/1": {
                     "ip": "10.0.0.3",
                     "subnet": "255.255.255.0"
+                }
+            },
+            "interfaces": {
+                "GigabitEthernet0/0": {
+                    "ip": "5.0.234.3",
+                    "subnet": "255.255.255.0"
+                },
+                "Serial0/0/0": {
+                    "ip": "5.0.34.1",
+                    "subnet": "255.255.255.252"
                 }
             }
         },
         {
             "RouterName": "5R4",
             "PortNo": 2005,
-            "interfaces": {
+            "management_interfaces": {
                 "Gi0/1": {
                     "ip": "10.0.0.4",
+                    "subnet": "255.255.255.0"
+                }
+            },
+            "interfaces": {
+                "GigabitEthernet0/0": {
+                    "ip": "5.0.234.4",
                     "subnet": "255.255.255.0"
                 }
             }
@@ -43,10 +80,16 @@
         {
             "RouterName": "5R5",
             "PortNo": 2006,
-            "interfaces": {
+            "management_interfaces": {
                 "Gi0/1": {
                     "ip": "10.0.0.5",
                     "subnet": "255.255.255.0"
+                }
+            },
+            "interfaces": {
+                "Serial0/2/0": {
+                    "ip": "5.0.34.2",
+                    "subnet": "255.255.255.252"
                 }
             }
         }
