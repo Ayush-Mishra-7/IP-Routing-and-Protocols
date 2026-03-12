@@ -1,0 +1,114 @@
+2026-03-12 17:23:12,705 [INFO] loaded 5 routers from /Users/AndyZ/Desktop/IP-Routing-and-Protocols/lab1/router_config.json
+2026-03-12 17:23:12,705 [INFO] OSPF commands:
+no router rip
+no router ospf 1
+router ospf 1
+network 17.17.17.1 0.0.0.0 area 0
+network 17.17.17.2 0.0.0.0 area 0
+network 17.17.17.3 0.0.0.0 area 0
+network 17.17.17.4 0.0.0.0 area 0
+network 17.17.17.5 0.0.0.0 area 0
+network 5.0.12.0 0.0.0.3 area 0
+network 5.0.234.0 0.0.0.255 area 0
+network 5.0.34.0 0.0.0.3 area 0
+exit
+2026-03-12 17:23:12,706 [INFO] connecting to 10.0.0.1
+2026-03-12 17:23:12,715 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:13,110 [INFO] Authentication (password) successful!
+2026-03-12 17:23:13,721 [INFO] applied config to 10.0.0.1:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R1(config)#no router rip
+5R1(config)#no router ospf 1
+5R1(config)#router ospf 1
+5R1(config-router)#network 17.17.17.1 0.0.0.0 area 0
+5R1(config-router)#network 17.17.17.2 0.0.0.0 area 0
+5R1(config-router)#network 17.17.17.3 0.0.0.0 area 0
+5R1(config-router)#network 17.17.17.4 0.0.0.0 area 0
+5R1(config-router)#network 17.17.17.5 0.0.0.0 area 0
+5R1(config-router)#network 5.0.12.0 0.0.0.3 area 0
+5R1(config-router)#network 5.0.234.0 0.0.0.255 area 0
+5R1(config-router)#network 5.0.34.0 0.0.0.3 area 0
+5R1(config-router)#exit
+5R1(config)#end
+5R1#
+2026-03-12 17:23:13,734 [INFO] connecting to 10.0.0.2
+2026-03-12 17:23:13,740 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:14,161 [INFO] Authentication (password) successful!
+2026-03-12 17:23:14,764 [INFO] applied config to 10.0.0.2:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R2(config)#no router rip
+5R2(config)#no router ospf 1
+5R2(config)#router ospf 1
+5R2(config-router)#network 17.17.17.1 0.0.0.0 area 0
+5R2(config-router)#network 17.17.17.2 0.0.0.0 area 0
+5R2(config-router)#network 17.17.17.3 0.0.0.0 area 0
+5R2(config-router)#network 17.17.17.4 0.0.0.0 area 0
+5R2(config-router)#network 17.17.17.5 0.0.0.0 area 0
+5R2(config-router)#network 5.0.12.0 0.0.0.3 area 0
+5R2(config-router)#network 5.0.234.0 0.0.0.255 area 0
+5R2(config-router)#network 5.0.34.0 0.0.0.3 area 0
+5R2(config-router)#exit
+5R2(config)#end
+5R2#
+2026-03-12 17:23:14,777 [INFO] connecting to 10.0.0.3
+2026-03-12 17:23:14,783 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:15,200 [INFO] Authentication (password) successful!
+2026-03-12 17:23:15,816 [INFO] applied config to 10.0.0.3:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R3(config)#no router rip
+5R3(config)#no router ospf 1
+5R3(config)#router ospf 1
+5R3(config-router)#network 17.17.17.1 0.0.0.0 area 0
+5R3(config-router)#network 17.17.17.2 0.0.0.0 area 0
+5R3(config-router)#network 17.17.17.3 0.0.0.0 area 0
+5R3(config-router)#network 17.17.17.4 0.0.0.0 area 0
+5R3(config-router)#network 17.17.17.5 0.0.0.0 area 0
+5R3(config-router)#network 5.0.12.0 0.0.0.3 area 0
+5R3(config-router)#network 5.0.234.0 0.0.0.255 area 0
+5R3(config-router)#network 5.0.34.0 0.0.0.3 area 0
+5R3(config-router)#exit
+5R3(config)#end
+5R3#
+2026-03-12 17:23:15,830 [INFO] connecting to 10.0.0.4
+2026-03-12 17:23:15,835 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:16,260 [INFO] Authentication (password) successful!
+2026-03-12 17:23:16,871 [INFO] applied config to 10.0.0.4:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R4(config)#no router rip
+5R4(config)#no router ospf 1
+5R4(config)#router ospf 1
+5R4(config-router)#network 17.17.17.1 0.0.0.0 area 0
+5R4(config-router)#network 17.17.17.2 0.0.0.0 area 0
+5R4(config-router)#network 17.17.17.3 0.0.0.0 area 0
+5R4(config-router)#network 17.17.17.4 0.0.0.0 area 0
+5R4(config-router)#network 17.17.17.5 0.0.0.0 area 0
+5R4(config-router)#network 5.0.12.0 0.0.0.3 area 0
+5R4(config-router)#network 5.0.234.0 0.0.0.255 area 0
+5R4(config-router)#network 5.0.34.0 0.0.0.3 area 0
+5R4(config-router)#exit
+5R4(config)#end
+5R4#
+2026-03-12 17:23:16,883 [INFO] connecting to 10.0.0.5
+2026-03-12 17:23:16,888 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:17,314 [INFO] Authentication (password) successful!
+2026-03-12 17:23:17,932 [INFO] applied config to 10.0.0.5:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R5(config)#no router rip
+5R5(config)#no router ospf 1
+5R5(config)#router ospf 1
+5R5(config-router)#network 17.17.17.1 0.0.0.0 area 0
+5R5(config-router)#network 17.17.17.2 0.0.0.0 area 0
+5R5(config-router)#network 17.17.17.3 0.0.0.0 area 0
+5R5(config-router)#network 17.17.17.4 0.0.0.0 area 0
+5R5(config-router)#network 17.17.17.5 0.0.0.0 area 0
+5R5(config-router)#network 5.0.12.0 0.0.0.3 area 0
+5R5(config-router)#network 5.0.234.0 0.0.0.255 area 0
+5R5(config-router)#network 5.0.34.0 0.0.0.3 area 0
+5R5(config-router)#exit
+5R5(config)#end
+5R5#

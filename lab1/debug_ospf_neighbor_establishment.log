@@ -1,0 +1,249 @@
+2026-03-12 17:10:09,027 [INFO] Loading configuration...
+2026-03-12 17:10:09,027 [INFO] ✓ Loaded 5 routers from /Users/AndyZ/Desktop/IP-Routing-and-Protocols/lab1/router_config.json
+
+2026-03-12 17:10:09,028 [INFO] Networks to be advertised in OSPF (area 0):
+2026-03-12 17:10:09,028 [INFO]   - 17.17.17.1/24
+2026-03-12 17:10:09,028 [INFO]   - 17.17.17.2/24
+2026-03-12 17:10:09,028 [INFO]   - 17.17.17.3/24
+2026-03-12 17:10:09,028 [INFO]   - 17.17.17.4/24
+2026-03-12 17:10:09,028 [INFO]   - 17.17.17.5/24
+2026-03-12 17:10:09,028 [INFO]   - 5.0.12.0/24
+2026-03-12 17:10:09,028 [INFO]   - 5.0.234.0/24
+2026-03-12 17:10:09,028 [INFO]   - 5.0.34.0/24
+2026-03-12 17:10:09,028 [INFO] 
+2026-03-12 17:10:09,028 [INFO] OSPF commands to be applied:
+2026-03-12 17:10:09,028 [INFO]   > no router rip
+2026-03-12 17:10:09,028 [INFO]   > no router ospf 1router ospf 1
+2026-03-12 17:10:09,028 [INFO]   > network 17.17.17.1 0.0.0.255 area 0
+2026-03-12 17:10:09,028 [INFO]   > network 17.17.17.2 0.0.0.255 area 0
+2026-03-12 17:10:09,028 [INFO]   > network 17.17.17.3 0.0.0.255 area 0
+2026-03-12 17:10:09,028 [INFO]   > network 17.17.17.4 0.0.0.255 area 0
+2026-03-12 17:10:09,028 [INFO]   > network 17.17.17.5 0.0.0.255 area 0
+2026-03-12 17:10:09,028 [INFO]   > network 5.0.12.0 0.0.0.255 area 0
+2026-03-12 17:10:09,028 [INFO]   > network 5.0.234.0 0.0.0.255 area 0
+2026-03-12 17:10:09,028 [INFO]   > network 5.0.34.0 0.0.0.255 area 0
+2026-03-12 17:10:09,028 [INFO]   > exit
+2026-03-12 17:10:09,028 [INFO] 
+2026-03-12 17:10:09,028 [INFO] Target debug router: 5R2
+
+2026-03-12 17:10:09,028 [INFO] 
+======================================================================
+2026-03-12 17:10:09,028 [INFO] STEP 1: Enabling OSPF Debug on R2
+2026-03-12 17:10:09,028 [INFO] ======================================================================
+2026-03-12 17:10:09,028 [INFO] Connecting to R2 (10.0.0.2)
+2026-03-12 17:10:09,037 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:10:09,424 [INFO] Authentication (password) successful!
+2026-03-12 17:10:09,637 [INFO] Configuring logging buffer on R2...
+2026-03-12 17:10:09,741 [INFO] Enabled logging buffer (32KB)
+2026-03-12 17:10:09,741 [INFO] Enabling 'debug ospf adj' on R2...
+2026-03-12 17:10:09,840 [INFO] Debug command sent. Ready to capture neighbor establishment.
+
+2026-03-12 17:10:09,840 [INFO] 
+======================================================================
+2026-03-12 17:10:09,840 [INFO] STEP 2: Configuring OSPF on All Routers
+2026-03-12 17:10:09,840 [INFO] ======================================================================
+2026-03-12 17:10:09,840 [INFO] Configuring 5R1 (10.0.0.1)...
+2026-03-12 17:10:09,846 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:10:10,242 [INFO] Authentication (password) successful!
+2026-03-12 17:10:10,748 [INFO] ✓ OSPF configured on 5R1
+2026-03-12 17:10:10,761 [INFO] Configuring 5R2 (10.0.0.2)...
+2026-03-12 17:10:10,764 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:10:11,384 [INFO] Authentication (password) successful!
+2026-03-12 17:10:11,868 [INFO] ✓ OSPF configured on 5R2
+2026-03-12 17:10:11,883 [INFO] Configuring 5R3 (10.0.0.3)...
+2026-03-12 17:10:11,888 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:10:12,295 [INFO] Authentication (password) successful!
+2026-03-12 17:10:12,793 [INFO] ✓ OSPF configured on 5R3
+2026-03-12 17:10:12,807 [INFO] Configuring 5R4 (10.0.0.4)...
+2026-03-12 17:10:12,811 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:10:13,430 [INFO] Authentication (password) successful!
+2026-03-12 17:10:13,920 [INFO] ✓ OSPF configured on 5R4
+2026-03-12 17:10:13,932 [INFO] Configuring 5R5 (10.0.0.5)...
+2026-03-12 17:10:13,938 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:10:14,564 [INFO] Authentication (password) successful!
+2026-03-12 17:10:15,058 [INFO] ✓ OSPF configured on 5R5
+2026-03-12 17:10:15,072 [INFO] 
+✓ OSPF configuration complete on all routers
+
+2026-03-12 17:10:15,072 [INFO] ======================================================================
+2026-03-12 17:10:15,073 [INFO] STEP 3: Waiting for OSPF Neighbors to Establish
+2026-03-12 17:10:15,073 [INFO] ======================================================================
+2026-03-12 17:10:15,073 [INFO] Waiting 35 seconds for neighbor adjacencies to establish...
+2026-03-12 17:10:15,073 [INFO] (OSPF Hello interval is typically 10 seconds on Ethernet)
+2026-03-12 17:10:15,074 [INFO] (Adjacency formation involves multiple state transitions)
+
+2026-03-12 17:10:15,074 [INFO]   ... 35 seconds remaining
+2026-03-12 17:10:20,095 [INFO]   ... 30 seconds remaining
+2026-03-12 17:10:25,116 [INFO]   ... 25 seconds remaining
+2026-03-12 17:10:30,131 [INFO]   ... 20 seconds remaining
+2026-03-12 17:10:35,144 [INFO]   ... 15 seconds remaining
+2026-03-12 17:10:40,159 [INFO]   ... 10 seconds remaining
+2026-03-12 17:10:45,178 [INFO]   ... 5 seconds remaining
+2026-03-12 17:10:50,189 [INFO] 
+======================================================================
+2026-03-12 17:10:50,190 [INFO] STEP 4: Capturing Debug Output and OSPF Status
+2026-03-12 17:10:50,190 [INFO] ======================================================================
+2026-03-12 17:10:50,190 [INFO] Disabling debug...
+2026-03-12 17:10:50,284 [INFO] ✓ Debug disabled
+
+2026-03-12 17:10:50,285 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:10:50,285 [INFO] OSPF ADJACENCY DEBUG OUTPUT (from logging buffer)
+2026-03-12 17:10:50,285 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:10:50,382 [INFO] Syslog logging: enabled (0 messages dropped, 8 messages rate-limited, 0 flushes, 0 overruns, xml disabled, filtering disabled)
+
+No Active Message Discriminator.
+
+
+
+No Inactive Message Discriminator.
+
+
+    Console logging: level debugging, 97 messages logged, xml disabled,
+                     filtering disabled
+    Monitor logging: level debugging, 0 messages logged, xml disabled,
+                     filtering disabled
+    Buffer logging:  level debugging, 101 messages logged, xml disabled,
+                    filtering disabled
+    Exception Logging: size (4096 bytes)
+    Count and timestamp logging messages: disabled
+    Persistent logging: disabled
+
+No active filter modules.
+
+    Trap logging: level informational, 106 message lines logged
+        Logging Source-Interface:       VRF Name:
+
+2026-03-12 17:10:50,383 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:10:50,383 [INFO] OSPF NEIGHBOR STATUS ON R2
+2026-03-12 17:10:50,383 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:10:50,476 [INFO] 
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+17.17.17.3        0   FULL/DROTHER    00:00:35    5.0.234.3       GigabitEthernet0/0
+17.17.17.4       50   FULL/DR         00:00:39    5.0.234.4       GigabitEthernet0/0
+17.17.17.1        0   FULL/  -        00:00:32    5.0.12.1        Serial0/0/0
+
+2026-03-12 17:10:50,477 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:10:50,477 [INFO] OSPF NEIGHBOR DETAILS (verbose)
+2026-03-12 17:10:50,477 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:10:59,558 [INFO] Translating "verbose"...domain server (255.255.255.255)
+                           ^
+% Invalid input detected at '^' marker.
+
+
+2026-03-12 17:10:59,560 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:10:59,560 [INFO] OSPF PROCESS INFORMATION ON R2
+2026-03-12 17:10:59,561 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:10:59,654 [INFO]  Routing Process "ospf 1" with ID 17.17.17.2
+ Start time: 3w2d, Time elapsed: 00:16:19.736
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ Supports Link-local Signaling (LLS)
+ Supports area transit capability
+ Supports NSSA (compatible with RFC 1587)
+ Event-log enabled, Maximum number of events: 1000, Mode: cyclic
+ Router is not originating router-LSAs with maximum metric
+ Initial SPF schedule delay 5000 msecs
+ Minimum hold time between two consecutive SPFs 10000 msecs
+ Maximum wait time between two consecutive SPFs 10000 msecs
+ Incremental-SPF disabled
+ Minimum LSA interval 5 secs
+ Minimum LSA arrival 1000 msecs
+ LSA group pacing timer 240 secs
+ Interface flood pacing timer 33 msecs
+ Retransmission pacing timer 66 msecs
+ Number of external LSA 0. Checksum Sum 0x000000
+ Number of opaque AS LSA 0. Checksum Sum 0x000000
+ Number of DCbitless external and opaque AS LSA 0
+ Number of DoNotAge external and opaque AS LSA 0
+ Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+ Number of areas transit capable is 0
+ External flood list length 0
+ IETF NSF helper support enabled
+ Cisco NSF helper support enabled
+ Reference bandwidth unit is 100 mbps
+    Area BACKBONE(0)
+        Number of interfaces in this area is 3 (1 loopback)
+	Area has no authentication
+	SPF algorithm last executed 00:15:22.696 ago
+	SPF algorithm executed 3 times
+	Area ranges are
+	Number of LSA 6. Checksum Sum 0x019A83
+	Number of opaque link LSA 0. Checksum Sum 0x000000
+	Number of DCbitless LSA 0
+	Number of indication LSA 0
+	Number of DoNotAge LSA 0
+	Flood list length 0
+
+
+2026-03-12 17:10:59,654 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:10:59,654 [INFO] OSPF INTERFACE STATUS ON R2
+2026-03-12 17:10:59,654 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:10:59,744 [INFO] Interface    PID   Area            IP Address/Mask    Cost  State Nbrs F/C
+Lo0          1     0               17.17.17.2/32      1     LOOP  0/0
+Gi0/0        1     0               5.0.234.2/24       1     BDR   2/2
+Se0/0/0      1     0               5.0.12.2/30        64    P2P   1/1
+
+2026-03-12 17:10:59,756 [INFO] Disconnected from R2
+
+2026-03-12 17:10:59,757 [INFO] 
+======================================================================
+2026-03-12 17:10:59,757 [INFO] OSPF NEIGHBOR ESTABLISHMENT EXPLANATION
+2026-03-12 17:10:59,757 [INFO] ======================================================================
+2026-03-12 17:10:59,757 [INFO] 
+The OSPF neighbor establishment process goes through multiple states:
+
+1. DOWN
+   - Initial state when no Hello packets have been received from the neighbor
+   - OSPF process is running but no communication with neighbor yet
+
+2. INIT
+   - Router has received at least one Hello packet from the neighbor
+   - BUT the receiving router's own router ID is NOT in neighbor's Hello packet yet
+   - One-way communication is happening (asymmetric)
+
+3. 2-WAY
+   - Both routers have seen each other's Hello packets
+   - The receiving router sees its own router ID in the neighbor's Hello packet
+   - Bidirectional communication is established (symmetric)
+   - THIS IS THE KEY POINT: After this stage, routers decide if they will form an adjacency
+   - On multi-access networks (Ethernet), only DR and BDR form full adjacencies with all routers
+
+4. EXSTART
+   - Routers are negotiating DBD (Database Descriptor) exchange parameters
+   - Master/Slave relationship is established based on router IDs
+   - Higher router ID becomes the Master (controls DBD sequence numbers)
+
+5. EXCHANGE
+   - Database Descriptor (DBD) packets are exchanged
+   - Each router sends a summary of its link state database
+   - Routers identify which LSAs they need to request
+
+6. LOADING
+   - Link State Request (LSR) packets are sent
+   - Link State Update (LSU) packets are received and processed
+   - Full Link State Database synchronization in progress
+
+7. FULL
+   - Adjacency is fully established and operational
+   - Both routers have synchronized link state databases
+   - Routing can now occur through this adjacency
+   - Routers are updated when topology changes occur
+
+TIMELINE EXAMPLE:
+- Before OSPF config: DOWN (no routes advertising OSPF yet)
+- Immediate after config on R2: DOWN (no neighbors configured yet)
+- When other routers start OSPF: Hellos arrive → INIT state
+- Exchange of Hellos completes: 2-WAY state
+- DBD negotiation: EXSTART → EXCHANGE
+- Database sync: LOADING
+- Complete: FULL (neighbor fully adjacent)
+
+The debug output in the log shows these state transitions as they happen,
+revealing the exact sequence and timing of neighbor establishment.
+
+2026-03-12 17:10:59,757 [INFO] 
+======================================================================
+2026-03-12 17:10:59,757 [INFO] DEBUG CAPTURE COMPLETE
+2026-03-12 17:10:59,757 [INFO] ======================================================================
+2026-03-12 17:10:59,758 [INFO] Results saved to: debug_ospf_neighbor_establishment.log
+2026-03-12 17:10:59,758 [INFO] ======================================================================

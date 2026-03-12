@@ -1,0 +1,516 @@
+2026-03-12 17:23:26,263 [INFO] Loading configuration...
+2026-03-12 17:23:26,263 [INFO] ✓ Loaded 5 routers from /Users/AndyZ/Desktop/IP-Routing-and-Protocols/lab1/router_config.json
+
+2026-03-12 17:23:26,263 [INFO] 
+======================================================================
+2026-03-12 17:23:26,263 [INFO] STEP 1: Configure OSPF Interface Priorities
+2026-03-12 17:23:26,263 [INFO] ======================================================================
+2026-03-12 17:23:26,263 [INFO] 
+>>> Configuring 5R2 (Designated Router - priority 200)
+2026-03-12 17:23:26,263 [INFO] Configuring priority 200 on 5R2 interface GigabitEthernet0/0
+2026-03-12 17:23:26,271 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:26,661 [INFO] Authentication (password) successful!
+2026-03-12 17:23:27,006 [INFO] ✓ Priority 200 set on 5R2 GigabitEthernet0/0
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R2(config)#interface GigabitEthernet0/0
+5R2(config-if)#no ip ospf priority
+5R2(config-if)#ip ospf priority 200
+5R2(config-if)#exit
+5R2(config)#end
+5R2#
+2026-03-12 17:23:27,020 [INFO] Configuring priority 200 on 5R2 interface Serial0/0/0
+2026-03-12 17:23:27,024 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:27,654 [INFO] Authentication (password) successful!
+2026-03-12 17:23:27,984 [INFO] ✓ Priority 200 set on 5R2 Serial0/0/0
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R2(config)#interface Serial0/0/0
+5R2(config-if)#no ip ospf priority
+5R2(config-if)#ip ospf priority 200
+5R2(config-if)#exit
+5R2(config)#end
+5R2#
+2026-03-12 17:23:27,996 [INFO] Configuring priority 200 on 5R2 interface Loopback0
+2026-03-12 17:23:28,001 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:28,622 [INFO] Authentication (password) successful!
+2026-03-12 17:23:28,946 [INFO] ✓ Priority 200 set on 5R2 Loopback0
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R2(config)#interface Loopback0
+5R2(config-if)#no ip ospf priority
+5R2(config-if)#ip ospf priority 200
+5R2(config-if)#exit
+5R2(config)#end
+5R2#
+2026-03-12 17:23:28,957 [INFO] 
+>>> Configuring 5R4 (Backup Designated Router - priority 50)
+2026-03-12 17:23:28,957 [INFO] Configuring priority 50 on 5R4 interface GigabitEthernet0/0
+2026-03-12 17:23:28,962 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:29,570 [INFO] Authentication (password) successful!
+2026-03-12 17:23:29,912 [INFO] ✓ Priority 50 set on 5R4 GigabitEthernet0/0
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R4(config)#interface GigabitEthernet0/0
+5R4(config-if)#no ip ospf priority
+5R4(config-if)#ip ospf priority 50
+5R4(config-if)#exit
+5R4(config)#end
+5R4#
+2026-03-12 17:23:29,927 [INFO] Configuring priority 50 on 5R4 interface Loopback0
+2026-03-12 17:23:29,932 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:30,559 [INFO] Authentication (password) successful!
+2026-03-12 17:23:30,893 [INFO] ✓ Priority 50 set on 5R4 Loopback0
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R4(config)#interface Loopback0
+5R4(config-if)#no ip ospf priority
+5R4(config-if)#ip ospf priority 50
+5R4(config-if)#exit
+5R4(config)#end
+5R4#
+2026-03-12 17:23:30,905 [INFO] 
+>>> Configuring 5R3 (DROther - priority 0, never competes)
+2026-03-12 17:23:30,905 [INFO] Configuring priority 0 on 5R3 interface GigabitEthernet0/0
+2026-03-12 17:23:30,911 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:31,334 [INFO] Authentication (password) successful!
+2026-03-12 17:23:31,656 [INFO] ✓ Priority 0 set on 5R3 GigabitEthernet0/0
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R3(config)#interface GigabitEthernet0/0
+5R3(config-if)#no ip ospf priority
+5R3(config-if)#exit
+5R3(config)#end
+5R3#
+2026-03-12 17:23:31,670 [INFO] Configuring priority 0 on 5R3 interface Serial0/0/0
+2026-03-12 17:23:31,674 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:32,299 [INFO] Authentication (password) successful!
+2026-03-12 17:23:32,619 [INFO] ✓ Priority 0 set on 5R3 Serial0/0/0
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R3(config)#interface Serial0/0/0
+5R3(config-if)#no ip ospf priority
+5R3(config-if)#exit
+5R3(config)#end
+5R3#
+2026-03-12 17:23:32,633 [INFO] Configuring priority 0 on 5R3 interface Loopback0
+2026-03-12 17:23:32,637 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:33,259 [INFO] Authentication (password) successful!
+2026-03-12 17:23:33,572 [INFO] ✓ Priority 0 set on 5R3 Loopback0
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R3(config)#interface Loopback0
+5R3(config-if)#no ip ospf priority
+5R3(config-if)#exit
+5R3(config)#end
+5R3#
+2026-03-12 17:23:33,585 [INFO] 
+======================================================================
+2026-03-12 17:23:33,585 [INFO] STEP 2: Clear OSPF Process on All Routers
+2026-03-12 17:23:33,585 [INFO] ======================================================================
+2026-03-12 17:23:33,585 [INFO] (This forces all OSPF adjacencies down and triggers new election)
+2026-03-12 17:23:33,585 [INFO] Clearing OSPF process on 5R1 to force re-election...
+2026-03-12 17:23:33,590 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:34,214 [INFO] Authentication (password) successful!
+2026-03-12 17:23:44,498 [ERROR] Error clearing OSPF process on 5R1: 
+Pattern not detected: '5R1\\#' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2026-03-12 17:23:45,502 [INFO] Clearing OSPF process on 5R2 to force re-election...
+2026-03-12 17:23:45,509 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:45,937 [INFO] Authentication (password) successful!
+2026-03-12 17:23:56,199 [ERROR] Error clearing OSPF process on 5R2: 
+Pattern not detected: '5R2\\#' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2026-03-12 17:23:57,201 [INFO] Clearing OSPF process on 5R3 to force re-election...
+2026-03-12 17:23:57,208 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:23:57,625 [INFO] Authentication (password) successful!
+2026-03-12 17:24:07,900 [ERROR] Error clearing OSPF process on 5R3: 
+Pattern not detected: '5R3\\#' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2026-03-12 17:24:08,905 [INFO] Clearing OSPF process on 5R4 to force re-election...
+2026-03-12 17:24:08,912 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:24:09,324 [INFO] Authentication (password) successful!
+2026-03-12 17:24:19,622 [ERROR] Error clearing OSPF process on 5R4: 
+Pattern not detected: '5R4\\#' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2026-03-12 17:24:20,625 [INFO] Clearing OSPF process on 5R5 to force re-election...
+2026-03-12 17:24:20,632 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:24:21,063 [INFO] Authentication (password) successful!
+2026-03-12 17:24:31,338 [ERROR] Error clearing OSPF process on 5R5: 
+Pattern not detected: '5R5\\#' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2026-03-12 17:24:32,340 [INFO] 
+======================================================================
+2026-03-12 17:24:32,341 [INFO] STEP 3: Wait for OSPF Election to Complete
+2026-03-12 17:24:32,341 [INFO] ======================================================================
+2026-03-12 17:24:32,341 [INFO] Waiting 45 seconds for neighbors to re-establish and elect DR/BDR...
+2026-03-12 17:24:32,341 [INFO]   ... 45 seconds remaining
+2026-03-12 17:24:47,386 [INFO]   ... 30 seconds remaining
+2026-03-12 17:25:02,439 [INFO]   ... 15 seconds remaining
+2026-03-12 17:25:17,476 [INFO] 
+✓ Election complete
+
+2026-03-12 17:25:17,477 [INFO] 
+======================================================================
+2026-03-12 17:25:17,478 [INFO] STEP 4: Display Final OSPF Configuration
+2026-03-12 17:25:17,478 [INFO] ======================================================================
+2026-03-12 17:25:17,478 [INFO] 
+----------------------------------------------------------------------
+2026-03-12 17:25:17,478 [INFO] OSPF STATUS ON 5R1
+2026-03-12 17:25:17,479 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:25:17,486 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:25:18,114 [INFO] Authentication (password) successful!
+2026-03-12 17:25:18,414 [INFO] 
+Neighbors on 5R1:
+2026-03-12 17:25:18,511 [INFO] 
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+17.17.17.2        0   FULL/  -        00:00:39    5.0.12.2        Serial0/2/0
+2026-03-12 17:25:18,511 [INFO] 
+OSPF Interfaces on 5R1:
+2026-03-12 17:25:18,609 [INFO] Interface    PID   Area            IP Address/Mask    Cost  State Nbrs F/C
+Lo0          1     0               17.17.17.1/32      1     LOOP  0/0
+Se0/2/0      1     0               5.0.12.1/30        64    P2P   1/1
+2026-03-12 17:25:18,609 [INFO] 
+OSPF Process on 5R1:
+2026-03-12 17:25:18,705 [INFO] 
+2026-03-12 17:25:18,705 [INFO] 
+Detailed OSPF Interface Status on 5R1:
+2026-03-12 17:25:18,800 [INFO] Loopback0 is up, line protocol is up 
+  Internet Address 17.17.17.1/32, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 17.17.17.1, Network Type LOOPBACK, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Loopback interface is treated as a stub Host
+Serial0/2/0 is up, line protocol is up 
+  Internet Address 5.0.12.1/30, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 17.17.17.1, Network Type POINT_TO_POINT, Cost: 64
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           64        no          no            Base
+  Transmit Delay is 1 sec, State POINT_TO_POINT
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:07
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Index 2/2, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 17.17.17.2
+  Suppress hello for 0 neighbor(s)
+2026-03-12 17:25:18,813 [INFO] 
+----------------------------------------------------------------------
+2026-03-12 17:25:18,813 [INFO] OSPF STATUS ON 5R2
+2026-03-12 17:25:18,813 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:25:18,819 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:25:19,238 [INFO] Authentication (password) successful!
+2026-03-12 17:25:19,540 [INFO] 
+Neighbors on 5R2:
+2026-03-12 17:25:19,651 [INFO] 
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+17.17.17.3        1   FULL/DROTHER    00:00:39    5.0.234.3       GigabitEthernet0/0
+17.17.17.4       50   FULL/BDR        00:00:32    5.0.234.4       GigabitEthernet0/0
+17.17.17.1        0   FULL/  -        00:00:37    5.0.12.1        Serial0/0/0
+2026-03-12 17:25:19,652 [INFO] 
+OSPF Interfaces on 5R2:
+2026-03-12 17:25:19,745 [INFO] Interface    PID   Area            IP Address/Mask    Cost  State Nbrs F/C
+Lo0          1     0               17.17.17.2/32      1     LOOP  0/0
+Gi0/0        1     0               5.0.234.2/24       1     DR    2/2
+Se0/0/0      1     0               5.0.12.2/30        64    P2P   1/1
+2026-03-12 17:25:19,746 [INFO] 
+OSPF Process on 5R2:
+2026-03-12 17:25:19,855 [INFO] 
+2026-03-12 17:25:19,855 [INFO] 
+Detailed OSPF Interface Status on 5R2:
+2026-03-12 17:25:19,946 [INFO] Loopback0 is up, line protocol is up 
+  Internet Address 17.17.17.2/32, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 17.17.17.2, Network Type LOOPBACK, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Loopback interface is treated as a stub Host
+GigabitEthernet0/0 is up, line protocol is up 
+  Internet Address 5.0.234.2/24, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 17.17.17.2, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Transmit Delay is 1 sec, State DR, Priority 200
+  Designated Router (ID) 17.17.17.2, Interface address 5.0.234.2
+  Backup Designated router (ID) 17.17.17.4, Interface address 5.0.234.4
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:07
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Index 3/3, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 2, Adjacent neighbor count is 2 
+    Adjacent with neighbor 17.17.17.3
+    Adjacent with neighbor 17.17.17.4  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+Serial0/0/0 is up, line protocol is up 
+  Internet Address 5.0.12.2/30, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 17.17.17.2, Network Type POINT_TO_POINT, Cost: 64
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           64        no          no            Base
+  Transmit Delay is 1 sec, State POINT_TO_POINT
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:08
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Index 2/2, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 2
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 17.17.17.1
+  Suppress hello for 0 neighbor(s)
+2026-03-12 17:25:19,961 [INFO] 
+----------------------------------------------------------------------
+2026-03-12 17:25:19,961 [INFO] OSPF STATUS ON 5R3
+2026-03-12 17:25:19,961 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:25:19,971 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:25:20,596 [INFO] Authentication (password) successful!
+2026-03-12 17:25:20,888 [INFO] 
+Neighbors on 5R3:
+2026-03-12 17:25:20,983 [INFO] 
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+17.17.17.5        0   FULL/  -        00:00:38    5.0.34.2        Serial0/0/0
+17.17.17.2      200   FULL/DR         00:00:37    5.0.234.2       GigabitEthernet0/0
+17.17.17.4       50   FULL/BDR        00:00:31    5.0.234.4       GigabitEthernet0/0
+2026-03-12 17:25:20,983 [INFO] 
+OSPF Interfaces on 5R3:
+2026-03-12 17:25:21,087 [INFO] Interface    PID   Area            IP Address/Mask    Cost  State Nbrs F/C
+Lo0          1     0               17.17.17.3/32      1     LOOP  0/0
+Se0/0/0      1     0               5.0.34.1/30        64    P2P   1/1
+Gi0/0        1     0               5.0.234.3/24       1     DROTH 2/2
+2026-03-12 17:25:21,088 [INFO] 
+OSPF Process on 5R3:
+2026-03-12 17:25:21,195 [INFO] 
+2026-03-12 17:25:21,195 [INFO] 
+Detailed OSPF Interface Status on 5R3:
+2026-03-12 17:25:21,294 [INFO] Loopback0 is up, line protocol is up 
+  Internet Address 17.17.17.3/32, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 17.17.17.3, Network Type LOOPBACK, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Loopback interface is treated as a stub Host
+Serial0/0/0 is up, line protocol is up 
+  Internet Address 5.0.34.1/30, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 17.17.17.3, Network Type POINT_TO_POINT, Cost: 64
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           64        no          no            Base
+  Transmit Delay is 1 sec, State POINT_TO_POINT
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:09
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Index 3/3, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 17.17.17.5
+  Suppress hello for 0 neighbor(s)
+GigabitEthernet0/0 is up, line protocol is up 
+  Internet Address 5.0.234.3/24, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 17.17.17.3, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Transmit Delay is 1 sec, State DROTHER, Priority 1
+  Designated Router (ID) 17.17.17.2, Interface address 5.0.234.2
+  Backup Designated router (ID) 17.17.17.4, Interface address 5.0.234.4
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:07
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Index 2/2, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 0, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 2, Adjacent neighbor count is 2 
+    Adjacent with neighbor 17.17.17.2  (Designated Router)
+    Adjacent with neighbor 17.17.17.4  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+2026-03-12 17:25:21,308 [INFO] 
+----------------------------------------------------------------------
+2026-03-12 17:25:21,308 [INFO] OSPF STATUS ON 5R4
+2026-03-12 17:25:21,308 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:25:21,312 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:25:21,938 [INFO] Authentication (password) successful!
+2026-03-12 17:25:22,236 [INFO] 
+Neighbors on 5R4:
+2026-03-12 17:25:22,328 [INFO] 
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+17.17.17.2      200   FULL/DR         00:00:35    5.0.234.2       GigabitEthernet0/0
+17.17.17.3        1   FULL/DROTHER    00:00:36    5.0.234.3       GigabitEthernet0/0
+2026-03-12 17:25:22,329 [INFO] 
+OSPF Interfaces on 5R4:
+2026-03-12 17:25:22,428 [INFO] Interface    PID   Area            IP Address/Mask    Cost  State Nbrs F/C
+Lo0          1     0               17.17.17.4/32      1     LOOP  0/0
+Gi0/0        1     0               5.0.234.4/24       1     BDR   2/2
+2026-03-12 17:25:22,429 [INFO] 
+OSPF Process on 5R4:
+2026-03-12 17:25:22,534 [INFO] 
+2026-03-12 17:25:22,534 [INFO] 
+Detailed OSPF Interface Status on 5R4:
+2026-03-12 17:25:22,629 [INFO] Loopback0 is up, line protocol is up 
+  Internet Address 17.17.17.4/32, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 17.17.17.4, Network Type LOOPBACK, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Loopback interface is treated as a stub Host
+GigabitEthernet0/0 is up, line protocol is up 
+  Internet Address 5.0.234.4/24, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 17.17.17.4, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Transmit Delay is 1 sec, State BDR, Priority 50
+  Designated Router (ID) 17.17.17.2, Interface address 5.0.234.2
+  Backup Designated router (ID) 17.17.17.4, Interface address 5.0.234.4
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:08
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Index 2/2, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 0, maximum is 3
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 2, Adjacent neighbor count is 2 
+    Adjacent with neighbor 17.17.17.2  (Designated Router)
+    Adjacent with neighbor 17.17.17.3
+  Suppress hello for 0 neighbor(s)
+2026-03-12 17:25:22,643 [INFO] 
+----------------------------------------------------------------------
+2026-03-12 17:25:22,644 [INFO] OSPF STATUS ON 5R5
+2026-03-12 17:25:22,644 [INFO] ----------------------------------------------------------------------
+2026-03-12 17:25:22,648 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 17:25:23,271 [INFO] Authentication (password) successful!
+2026-03-12 17:25:23,586 [INFO] 
+Neighbors on 5R5:
+2026-03-12 17:25:23,685 [INFO] 
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+17.17.17.3        0   FULL/  -        00:00:37    5.0.34.1        Serial0/2/0
+2026-03-12 17:25:23,685 [INFO] 
+OSPF Interfaces on 5R5:
+2026-03-12 17:25:23,779 [INFO] Interface    PID   Area            IP Address/Mask    Cost  State Nbrs F/C
+Lo0          1     0               17.17.17.5/32      1     LOOP  0/0
+Se0/2/0      1     0               5.0.34.2/30        64    P2P   1/1
+2026-03-12 17:25:23,779 [INFO] 
+OSPF Process on 5R5:
+2026-03-12 17:25:23,879 [INFO] 
+2026-03-12 17:25:23,879 [INFO] 
+Detailed OSPF Interface Status on 5R5:
+2026-03-12 17:25:23,969 [INFO] Loopback0 is up, line protocol is up 
+  Internet Address 17.17.17.5/32, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 17.17.17.5, Network Type LOOPBACK, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Loopback interface is treated as a stub Host
+Serial0/2/0 is up, line protocol is up 
+  Internet Address 5.0.34.2/30, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 17.17.17.5, Network Type POINT_TO_POINT, Cost: 64
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           64        no          no            Base
+  Transmit Delay is 1 sec, State POINT_TO_POINT
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:05
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Index 2/2, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 17.17.17.3
+  Suppress hello for 0 neighbor(s)
+2026-03-12 17:25:23,981 [INFO] 
+======================================================================
+2026-03-12 17:25:23,981 [INFO] OSPF DR/BDR ELECTION SUMMARY
+2026-03-12 17:25:23,981 [INFO] ======================================================================
+2026-03-12 17:25:23,982 [INFO] 
+EXPECTED RESULTS:
+=================
+Network: 5.0.234.0/24 (connects R2, R3, R4)
+
+Designated Router (DR):
+  - 5R2 with priority 200 (highest priority)
+  
+Backup Designated Router (BDR):
+  - 5R4 with priority 50 (second highest)
+  
+DROther routers:
+  - 5R3 with priority 0 (never competes)
+  - Other routers remain DROther with default priorities
+
+Other networks (5.0.12.x, 5.0.34.x - point-to-point or different segments):
+  - Will have their own DR/BDR elections
+  - On point-to-point links, both routers become adjacent (no DR/BDR needed)
+
+VERIFICATION:
+=============
+Check the output above for:
+1. show ip ospf neighbor - shows DR/BDR roles and adjacency states
+2. show ip ospf interface - shows priority, DR, BDR, and state (WAITING, BACKUP, DR)
+3. show ip ospf - shows router ID and OSPF process info
+
+Key indicators:
+- R2 should show as "DR" on the 5.0.234.0/24 network
+- R4 should show as "BDR" on the 5.0.234.0/24 network
+- R3 should show as "DROTHER" (passive participant)
+
+2026-03-12 17:25:23,982 [INFO] 
+======================================================================
+2026-03-12 17:25:23,982 [INFO] CONFIGURATION COMPLETE
+2026-03-12 17:25:23,982 [INFO] ======================================================================
+2026-03-12 17:25:23,982 [INFO] Results saved to: configure_ospf_dr_bdr.log
+2026-03-12 17:25:23,982 [INFO] ======================================================================
