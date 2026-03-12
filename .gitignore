@@ -1,5 +1,7 @@
 #Virtual environment
 venv/
+.venv/
 __pycache__/
 *.pyc
 .DS_Store
+lab1/workVenv/

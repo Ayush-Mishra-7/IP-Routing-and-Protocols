@@ -1,0 +1,270 @@
+[2026-03-12 15:52:27.431037] Ping Output & Debugs: Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:52:32.733991] Ping Output & Debugs: Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:52:38.036605] Ping Output & Debugs: Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:52:43.339058] Ping Output & Debugs: Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+5R3#
+*Mar 12 22:37:21.301: RIP: sending v2 update to 224.0.0.9 via Loopback0 (17.17.17.3)
+*Mar 12 22:37:21.301: RIP: build update entries - suppressing null update
+[2026-03-12 15:52:50.742488] Ping Output & Debugs: Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+--- R3 SUBNET 2 INTERFACE MOVED TO NEW VLAN AT 2026-03-12 15:52:56.140938 ---
+[2026-03-12 15:52:56.141380] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+5R3#
+*Mar 12 22:37:32.497: %SYS-5-CONFIG_I: Configured from console by cisco on vty1 (10.0.0.100)
+[2026-03-12 15:53:01.444209] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:53:06.747327] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:53:12.050701] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+5R3#
+*Mar 12 22:37:49.909: RIP: sending v2 update to 224.0.0.9 via Loopback0 (17.17.17.3)
+*Mar 12 22:37:49.909: RIP: build update entries - suppressing null update
+[2026-03-12 15:53:19.454344] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:53:24.757570] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:53:30.059848] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:53:35.362806] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:53:40.665547] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+5R3#
+*Mar 12 22:38:18.161: RIP: sending v2 update to 224.0.0.9 via Loopback0 (17.17.17.3)
+*Mar 12 22:38:18.161: RIP: build update entries - suppressing null update
+[2026-03-12 15:53:48.069129] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:53:53.372062] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:53:58.674889] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:54:03.977741] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:54:09.280605] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+5R3#
+*Mar 12 22:38:45.745: RIP: sending v2 update to 224.0.0.9 via Loopback0 (17.17.17.3)
+*Mar 12 22:38:45.745: RIP: build update entries - suppressing null update
+[2026-03-12 15:54:14.583872] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:54:19.886734] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:54:25.189092] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:54:30.492032] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:54:35.794386] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+
+*Mar 12 22:39:11.617: RIP: sending v2 update to 224.0.0.9 via Loopback0 (17.17.17.3)
+*Mar 12 22:39:11.617: RIP: build update entries - suppressing null update.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:54:41.097106] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:54:46.399896] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:54:51.703041] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:54:57.006517] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:55:02.308607] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+5R3#
+*Mar 12 22:39:40.661: RIP: sending v2 update to 224.0.0.9 via Loopback0 (17.17.17.3)
+*Mar 12 22:39:40.661: RIP: build update entries - suppressing null update
+[2026-03-12 15:55:09.712899] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:55:15.016269] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:55:20.319271] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:55:25.622177] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:55:30.925357] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+5R3#
+*Mar 12 22:40:07.525: RIP: sending v2 update to 224.0.0.9 via Loopback0 (17.17.17.3)
+*Mar 12 22:40:07.525: RIP: build update entries - suppressing null update
+[2026-03-12 15:55:36.228651] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:55:41.531519] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:55:46.834378] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:55:52.137602] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:55:57.440810] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+5R3#
+*Mar 12 22:40:35.077: is_up: GigabitEthernet0/0 0 state: 5 sub state: 1 line: 0
+*Mar 12 22:40:35.097: %SYS-5-CONFIG_I: Configured from console by cisco on vty0 (10.0.0.100)
+*Mar 12 22:40:36.965: %LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to reset
+[2026-03-12 15:56:04.945161] 
+*Mar 12 22:40:39.741: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to up
+*Mar 12 22:40:40.741: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to upping 17.17.17.4 source Loopback0 repeat 1 timeout 1
+Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:56:10.248536] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:56:15.551199] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:56:20.854112] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:56:26.156698] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:56:31.459685] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+.
+Success rate is 0 percent (0/1)
+[2026-03-12 15:56:36.762066] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+!
+Success rate is 100 percent (1/1), round-trip min/avg/max = 1/1/1 ms
+[2026-03-12 15:56:39.964670] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+!
+Success rate is 100 percent (1/1), round-trip min/avg/max = 1/1/1 ms
+[2026-03-12 15:56:43.166560] Type escape sequence to abort.
+Sending 1, 100-byte ICMP Echos to 17.17.17.4, timeout is 1 seconds:
+Packet sent with a source address of 17.17.17.3 
+!
+Success rate is 100 percent (1/1), round-trip min/avg/max = 1/1/1 ms

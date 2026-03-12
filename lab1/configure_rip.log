@@ -534,3 +534,129 @@ Enter configuration commands, one per line.  End with CNTL/Z.
 5R5(config-router)#exit
 5R5(config)#end
 5R5#
+2026-03-12 15:38:00,010 [INFO] loaded 5 routers from C:\Users\dayus\Documents\IP-Routing-and-Protocols\lab1\router_config.json
+2026-03-12 15:38:00,010 [INFO] RIP commands:
+no router rip
+router rip
+version 2
+no auto-summary
+network 17.17.17.1
+network 17.17.17.2
+network 17.17.17.3
+network 17.17.17.4
+network 17.17.17.5
+network 200.200.200.0
+network 5.0.12.0
+network 5.0.234.0
+network 5.0.34.0
+exit
+2026-03-12 15:38:00,010 [INFO] connecting to 10.0.0.1
+2026-03-12 15:38:00,018 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 15:38:00,383 [INFO] Authentication (password) successful!
+2026-03-12 15:38:00,784 [INFO] applied config to 10.0.0.1:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R1(config)#no router rip
+5R1(config)#router rip
+5R1(config-router)#version 2
+5R1(config-router)#no auto-summary
+5R1(config-router)#network 17.17.17.1
+5R1(config-router)#network 17.17.17.2
+5R1(config-router)#network 17.17.17.3
+5R1(config-router)#network 17.17.17.4
+5R1(config-router)#network 17.17.17.5
+5R1(config-router)#network 200.200.200.0
+5R1(config-router)#network 5.0.12.0
+5R1(config-router)#network 5.0.234.0
+5R1(config-router)#network 5.0.34.0
+5R1(config-router)#exit
+5R1(config)#end
+5R1#
+2026-03-12 15:38:00,795 [INFO] connecting to 10.0.0.2
+2026-03-12 15:38:00,799 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 15:38:01,164 [INFO] Authentication (password) successful!
+2026-03-12 15:38:01,563 [INFO] applied config to 10.0.0.2:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R2(config)#no router rip
+5R2(config)#router rip
+5R2(config-router)#version 2
+5R2(config-router)#no auto-summary
+5R2(config-router)#network 17.17.17.1
+5R2(config-router)#network 17.17.17.2
+5R2(config-router)#network 17.17.17.3
+5R2(config-router)#network 17.17.17.4
+5R2(config-router)#network 17.17.17.5
+5R2(config-router)#network 200.200.200.0
+5R2(config-router)#network 5.0.12.0
+5R2(config-router)#network 5.0.234.0
+5R2(config-router)#network 5.0.34.0
+5R2(config-router)#exit
+5R2(config)#end
+5R2#
+2026-03-12 15:38:01,575 [INFO] connecting to 10.0.0.3
+2026-03-12 15:38:01,590 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 15:38:02,148 [INFO] Authentication (password) successful!
+2026-03-12 15:38:02,546 [INFO] applied config to 10.0.0.3:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R3(config)#no router rip
+5R3(config)#router rip
+5R3(config-router)#version 2
+5R3(config-router)#no auto-summary
+5R3(config-router)#network 17.17.17.1
+5R3(config-router)#network 17.17.17.2
+5R3(config-router)#network 17.17.17.3
+5R3(config-router)#network 17.17.17.4
+5R3(config-router)#network 17.17.17.5
+5R3(config-router)#network 200.200.200.0
+5R3(config-router)#network 5.0.12.0
+5R3(config-router)#network 5.0.234.0
+5R3(config-router)#network 5.0.34.0
+5R3(config-router)#exit
+5R3(config)#end
+5R3#
+2026-03-12 15:38:02,557 [INFO] connecting to 10.0.0.4
+2026-03-12 15:38:02,561 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 15:38:02,924 [INFO] Authentication (password) successful!
+2026-03-12 15:38:03,335 [INFO] applied config to 10.0.0.4:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R4(config)#no router rip
+5R4(config)#router rip
+5R4(config-router)#version 2
+5R4(config-router)#no auto-summary
+5R4(config-router)#network 17.17.17.1
+5R4(config-router)#network 17.17.17.2
+5R4(config-router)#network 17.17.17.3
+5R4(config-router)#network 17.17.17.4
+5R4(config-router)#network 17.17.17.5
+5R4(config-router)#network 200.200.200.0
+5R4(config-router)#network 5.0.12.0
+5R4(config-router)#network 5.0.234.0
+5R4(config-router)#network 5.0.34.0
+5R4(config-router)#exit
+5R4(config)#end
+5R4#
+2026-03-12 15:38:03,346 [INFO] connecting to 10.0.0.5
+2026-03-12 15:38:03,363 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-12 15:38:03,926 [INFO] Authentication (password) successful!
+2026-03-12 15:38:04,328 [INFO] applied config to 10.0.0.5:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R5(config)#no router rip
+5R5(config)#router rip
+5R5(config-router)#version 2
+5R5(config-router)#no auto-summary
+5R5(config-router)#network 17.17.17.1
+5R5(config-router)#network 17.17.17.2
+5R5(config-router)#network 17.17.17.3
+5R5(config-router)#network 17.17.17.4
+5R5(config-router)#network 17.17.17.5
+5R5(config-router)#network 200.200.200.0
+5R5(config-router)#network 5.0.12.0
+5R5(config-router)#network 5.0.234.0
+5R5(config-router)#network 5.0.34.0
+5R5(config-router)#exit
+5R5(config)#end
+5R5#
