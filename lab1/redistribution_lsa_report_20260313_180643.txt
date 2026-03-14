@@ -1,0 +1,664 @@
+=== 5R1 ===
+
+--- show ip ospf database external ---
+
+            OSPF Router with ID (17.17.17.1) (Process ID 1)
+
+		Type-5 AS External Link States
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 1396
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.0.0.0 (External Network Number )
+  Advertising Router: 1.255.255.2
+  LS Seq Number: 8000002E
+  Checksum: 0x6B04
+  Length: 36
+  Network Mask: /24
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  LS age: 621
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.0.0.0 (External Network Number )
+  Advertising Router: 1.255.255.3
+  LS Seq Number: 8000002F
+  Checksum: 0x630A
+  Length: 36
+  Network Mask: /8
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 621
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.0.0.255 (External Network Number )
+  Advertising Router: 1.255.255.3
+  LS Seq Number: 8000002E
+  Checksum: 0x6509
+  Length: 36
+  Network Mask: /24
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 864
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.0.1.0 (External Network Number )
+  Advertising Router: 1.255.255.3
+  LS Seq Number: 8000002E
+  Checksum: 0x541A
+  Length: 36
+  Network Mask: /31
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 1396
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.0.1.2 (External Network Number )
+  Advertising Router: 1.255.255.2
+  LS Seq Number: 8000002E
+  Checksum: 0x4627
+  Length: 36
+  Network Mask: /31
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 621
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.255.255.1 (External Network Number )
+  Advertising Router: 1.255.255.3
+  LS Seq Number: 8000002E
+  Checksum: 0x5B12
+  Length: 36
+  Network Mask: /32
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 864
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.255.255.2 (External Network Number )
+  Advertising Router: 1.255.255.3
+  LS Seq Number: 8000002E
+  Checksum: 0x511B
+  Length: 36
+  Network Mask: /32
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 1396
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.255.255.3 (External Network Number )
+  Advertising Router: 1.255.255.2
+  LS Seq Number: 8000002E
+  Checksum: 0x4D1F
+  Length: 36
+  Network Mask: /32
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 864
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.255.255.4 (External Network Number )
+  Advertising Router: 1.255.255.3
+  LS Seq Number: 8000002E
+  Checksum: 0x3D2D
+  Length: 36
+  Network Mask: /32
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 1396
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.255.255.5 (External Network Number )
+  Advertising Router: 1.255.255.2
+  LS Seq Number: 8000002E
+  Checksum: 0x3931
+  Length: 36
+  Network Mask: /32
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 47
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 5.0.234.0 (External Network Number )
+  Advertising Router: 17.17.17.2
+  LS Seq Number: 80000001
+  Checksum: 0xE892
+  Length: 36
+  Network Mask: /24
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  LS age: 47
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 5.0.234.0 (External Network Number )
+  Advertising Router: 17.17.17.3
+  LS Seq Number: 80000001
+  Checksum: 0xE297
+  Length: 36
+  Network Mask: /24
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 1579
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 6.0.0.0 (External Network Number )
+  Advertising Router: 6.0.3.2
+  LS Seq Number: 80000031
+  Checksum: 0xE17D
+  Length: 36
+  Network Mask: /24
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 1669
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 6.0.0.0 (External Network Number )
+  Advertising Router: 6.0.3.3
+  LS Seq Number: 80000031
+  Checksum: 0xDB82
+  Length: 36
+  Network Mask: /24
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 1669
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 6.0.3.4 (External Network Number )
+  Advertising Router: 6.0.3.3
+  LS Seq Number: 80000031
+  Checksum: 0x92C4
+  Length: 36
+  Network Mask: /32
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 47
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 17.17.17.4 (External Network Number )
+  Advertising Router: 17.17.17.3
+  LS Seq Number: 80000001
+  Checksum: 0xAD85
+  Length: 36
+  Network Mask: /32
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+
+--- show ip route ospf ---
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/8 is variably subnetted, 9 subnets, 4 masks
+O IA     1.0.0.0/8 [110/2] via 200.200.200.15, 02:38:15, GigabitEthernet0/0
+                   [110/2] via 200.200.200.11, 02:38:15, GigabitEthernet0/0
+O E2     1.0.0.0/24 [110/20] via 200.200.200.15, 02:38:15, GigabitEthernet0/0
+                    [110/20] via 200.200.200.11, 02:38:15, GigabitEthernet0/0
+O E2     1.0.1.0/31 [110/20] via 200.200.200.15, 02:38:15, GigabitEthernet0/0
+O E2     1.0.1.2/31 [110/20] via 200.200.200.11, 02:38:15, GigabitEthernet0/0
+O E2     1.255.255.1/32 
+           [110/20] via 200.200.200.15, 02:38:15, GigabitEthernet0/0
+O E2     1.255.255.2/32 
+           [110/20] via 200.200.200.15, 02:38:15, GigabitEthernet0/0
+O E2     1.255.255.3/32 
+           [110/20] via 200.200.200.11, 02:38:15, GigabitEthernet0/0
+O E2     1.255.255.4/32 
+           [110/20] via 200.200.200.15, 02:38:15, GigabitEthernet0/0
+O E2     1.255.255.5/32 
+           [110/20] via 200.200.200.11, 02:38:15, GigabitEthernet0/0
+      3.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+O        3.0.0.0/30 [110/65] via 200.200.200.31, 02:38:15, GigabitEthernet0/0
+O        3.0.0.4/30 [110/130] via 200.200.200.31, 02:38:15, GigabitEthernet0/0
+O        3.0.1.0/24 [110/66] via 200.200.200.31, 02:38:15, GigabitEthernet0/0
+      5.0.0.0/8 is variably subnetted, 4 subnets, 3 masks
+O IA     5.0.34.0/30 [110/65] via 200.200.200.55, 02:38:15, GigabitEthernet0/0
+O E2     5.0.234.0/24 [110/20] via 5.0.12.2, 00:00:42, Serial0/2/0
+      6.0.0.0/8 is variably subnetted, 8 subnets, 3 masks
+O E2     6.0.0.0/24 [110/20] via 200.200.200.65, 02:38:15, GigabitEthernet0/0
+                    [110/20] via 200.200.200.61, 02:38:15, GigabitEthernet0/0
+O        6.0.1.0/30 [110/65] via 200.200.200.61, 02:38:15, GigabitEthernet0/0
+O        6.0.1.4/30 [110/65] via 200.200.200.65, 02:38:15, GigabitEthernet0/0
+O        6.0.3.1/32 [110/2] via 200.200.200.61, 02:38:15, GigabitEthernet0/0
+O        6.0.3.2/32 [110/66] via 200.200.200.61, 02:38:15, GigabitEthernet0/0
+O        6.0.3.3/32 [110/66] via 200.200.200.65, 02:38:15, GigabitEthernet0/0
+O E2     6.0.3.4/32 [110/20] via 200.200.200.65, 02:38:15, GigabitEthernet0/0
+O        6.0.3.5/32 [110/2] via 200.200.200.65, 02:38:15, GigabitEthernet0/0
+      11.0.0.0/32 is subnetted, 1 subnets
+O        11.11.11.11 [110/2] via 200.200.200.31, 02:38:15, GigabitEthernet0/0
+      17.0.0.0/32 is subnetted, 5 subnets
+O        17.17.17.2 [110/65] via 5.0.12.2, 02:38:00, Serial0/2/0
+O IA     17.17.17.3 [110/66] via 200.200.200.55, 02:37:57, GigabitEthernet0/0
+O E2     17.17.17.4 [110/20] via 200.200.200.55, 00:00:32, GigabitEthernet0/0
+O IA     17.17.17.5 [110/2] via 200.200.200.55, 02:38:15, GigabitEthernet0/0
+      22.0.0.0/32 is subnetted, 1 subnets
+O        22.22.22.22 [110/66] via 200.200.200.31, 02:38:15, GigabitEthernet0/0
+      55.0.0.0/32 is subnetted, 1 subnets
+O        55.55.55.55 [110/67] via 200.200.200.31, 02:38:15, GigabitEthernet0/0
+      66.0.0.0/32 is subnetted, 1 subnets
+O        66.66.66.66 
+           [110/131] via 200.200.200.31, 02:38:15, GigabitEthernet0/0
+
+--- show ip route 17.17.17.4 ---
+Routing entry for 17.17.17.4/32
+  Known via "ospf 1", distance 110, metric 20, type extern 2, forward metric 65
+  Last update from 200.200.200.55 on GigabitEthernet0/0, 00:00:33 ago
+  Routing Descriptor Blocks:
+  * 200.200.200.55, from 17.17.17.3, 00:00:33 ago, via GigabitEthernet0/0
+      Route metric is 20, traffic share count is 1
+
+=== 5R5 ===
+
+--- show ip ospf database external ---
+
+            OSPF Router with ID (17.17.17.5) (Process ID 1)
+
+		Type-5 AS External Link States
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 1398
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.0.0.0 (External Network Number )
+  Advertising Router: 1.255.255.2
+  LS Seq Number: 8000002E
+  Checksum: 0x6B04
+  Length: 36
+  Network Mask: /24
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  LS age: 623
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.0.0.0 (External Network Number )
+  Advertising Router: 1.255.255.3
+  LS Seq Number: 8000002F
+  Checksum: 0x630A
+  Length: 36
+  Network Mask: /8
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 623
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.0.0.255 (External Network Number )
+  Advertising Router: 1.255.255.3
+  LS Seq Number: 8000002E
+  Checksum: 0x6509
+  Length: 36
+  Network Mask: /24
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 866
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.0.1.0 (External Network Number )
+  Advertising Router: 1.255.255.3
+  LS Seq Number: 8000002E
+  Checksum: 0x541A
+  Length: 36
+  Network Mask: /31
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 1398
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.0.1.2 (External Network Number )
+  Advertising Router: 1.255.255.2
+  LS Seq Number: 8000002E
+  Checksum: 0x4627
+  Length: 36
+  Network Mask: /31
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 623
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.255.255.1 (External Network Number )
+  Advertising Router: 1.255.255.3
+  LS Seq Number: 8000002E
+  Checksum: 0x5B12
+  Length: 36
+  Network Mask: /32
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 866
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.255.255.2 (External Network Number )
+  Advertising Router: 1.255.255.3
+  LS Seq Number: 8000002E
+  Checksum: 0x511B
+  Length: 36
+  Network Mask: /32
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 1398
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.255.255.3 (External Network Number )
+  Advertising Router: 1.255.255.2
+  LS Seq Number: 8000002E
+  Checksum: 0x4D1F
+  Length: 36
+  Network Mask: /32
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 866
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.255.255.4 (External Network Number )
+  Advertising Router: 1.255.255.3
+  LS Seq Number: 8000002E
+  Checksum: 0x3D2D
+  Length: 36
+  Network Mask: /32
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 1398
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 1.255.255.5 (External Network Number )
+  Advertising Router: 1.255.255.2
+  LS Seq Number: 8000002E
+  Checksum: 0x3931
+  Length: 36
+  Network Mask: /32
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  LS age: 49
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 5.0.234.0 (External Network Number )
+  Advertising Router: 17.17.17.2
+  LS Seq Number: 80000001
+  Checksum: 0xE892
+  Length: 36
+  Network Mask: /24
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 47
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 5.0.234.0 (External Network Number )
+  Advertising Router: 17.17.17.3
+  LS Seq Number: 80000001
+  Checksum: 0xE297
+  Length: 36
+  Network Mask: /24
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 1580
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 6.0.0.0 (External Network Number )
+  Advertising Router: 6.0.3.2
+  LS Seq Number: 80000031
+  Checksum: 0xE17D
+  Length: 36
+  Network Mask: /24
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 1671
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 6.0.0.0 (External Network Number )
+  Advertising Router: 6.0.3.3
+  LS Seq Number: 80000031
+  Checksum: 0xDB82
+  Length: 36
+  Network Mask: /24
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 1671
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 6.0.3.4 (External Network Number )
+  Advertising Router: 6.0.3.3
+  LS Seq Number: 80000031
+  Checksum: 0x92C4
+  Length: 36
+  Network Mask: /32
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+  Routing Bit Set on this LSA in topology Base with MTID 0
+  LS age: 47
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 17.17.17.4 (External Network Number )
+  Advertising Router: 17.17.17.3
+  LS Seq Number: 80000001
+  Checksum: 0xAD85
+  Length: 36
+  Network Mask: /32
+	Metric Type: 2 (Larger than any link state path)
+	MTID: 0 
+	Metric: 20 
+	Forward Address: 0.0.0.0
+	External Route Tag: 0
+
+
+--- show ip route ospf ---
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/8 is variably subnetted, 9 subnets, 4 masks
+O IA     1.0.0.0/8 [110/2] via 200.200.200.15, 02:38:14, GigabitEthernet0/0
+                   [110/2] via 200.200.200.11, 02:38:14, GigabitEthernet0/0
+O E2     1.0.0.0/24 [110/20] via 200.200.200.15, 02:38:14, GigabitEthernet0/0
+                    [110/20] via 200.200.200.11, 02:38:14, GigabitEthernet0/0
+O E2     1.0.1.0/31 [110/20] via 200.200.200.15, 02:38:14, GigabitEthernet0/0
+O E2     1.0.1.2/31 [110/20] via 200.200.200.11, 02:38:14, GigabitEthernet0/0
+O E2     1.255.255.1/32 
+           [110/20] via 200.200.200.15, 02:38:14, GigabitEthernet0/0
+O E2     1.255.255.2/32 
+           [110/20] via 200.200.200.15, 02:38:14, GigabitEthernet0/0
+O E2     1.255.255.3/32 
+           [110/20] via 200.200.200.11, 02:38:14, GigabitEthernet0/0
+O E2     1.255.255.4/32 
+           [110/20] via 200.200.200.15, 02:38:14, GigabitEthernet0/0
+O E2     1.255.255.5/32 
+           [110/20] via 200.200.200.11, 02:38:14, GigabitEthernet0/0
+      3.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+O        3.0.0.0/30 [110/65] via 200.200.200.31, 02:38:14, GigabitEthernet0/0
+O        3.0.0.4/30 [110/130] via 200.200.200.31, 02:38:14, GigabitEthernet0/0
+O        3.0.1.0/24 [110/66] via 200.200.200.31, 02:38:14, GigabitEthernet0/0
+      5.0.0.0/8 is variably subnetted, 4 subnets, 3 masks
+O IA     5.0.12.0/30 [110/65] via 200.200.200.51, 02:38:14, GigabitEthernet0/0
+O E2     5.0.234.0/24 [110/20] via 5.0.34.1, 00:00:42, Serial0/2/0
+      6.0.0.0/8 is variably subnetted, 8 subnets, 3 masks
+O E2     6.0.0.0/24 [110/20] via 200.200.200.65, 02:38:14, GigabitEthernet0/0
+                    [110/20] via 200.200.200.61, 02:38:14, GigabitEthernet0/0
+O        6.0.1.0/30 [110/65] via 200.200.200.61, 02:38:14, GigabitEthernet0/0
+O        6.0.1.4/30 [110/65] via 200.200.200.65, 02:38:14, GigabitEthernet0/0
+O        6.0.3.1/32 [110/2] via 200.200.200.61, 02:38:14, GigabitEthernet0/0
+O        6.0.3.2/32 [110/66] via 200.200.200.61, 02:38:14, GigabitEthernet0/0
+O        6.0.3.3/32 [110/66] via 200.200.200.65, 02:38:14, GigabitEthernet0/0
+O E2     6.0.3.4/32 [110/20] via 200.200.200.65, 02:38:14, GigabitEthernet0/0
+O        6.0.3.5/32 [110/2] via 200.200.200.65, 02:38:14, GigabitEthernet0/0
+      11.0.0.0/32 is subnetted, 1 subnets
+O        11.11.11.11 [110/2] via 200.200.200.31, 02:38:14, GigabitEthernet0/0
+      17.0.0.0/32 is subnetted, 5 subnets
+O IA     17.17.17.1 [110/2] via 200.200.200.51, 02:38:14, GigabitEthernet0/0
+O IA     17.17.17.2 [110/66] via 200.200.200.51, 02:37:59, GigabitEthernet0/0
+O        17.17.17.3 [110/65] via 5.0.34.1, 02:37:59, Serial0/2/0
+O E2     17.17.17.4 [110/20] via 5.0.34.1, 00:00:42, Serial0/2/0
+      22.0.0.0/32 is subnetted, 1 subnets
+O        22.22.22.22 [110/66] via 200.200.200.31, 02:38:14, GigabitEthernet0/0
+      55.0.0.0/32 is subnetted, 1 subnets
+O        55.55.55.55 [110/67] via 200.200.200.31, 02:38:14, GigabitEthernet0/0
+      66.0.0.0/32 is subnetted, 1 subnets
+O        66.66.66.66 
+           [110/131] via 200.200.200.31, 02:38:14, GigabitEthernet0/0
+
+--- show ip route 17.17.17.4 ---
+Routing entry for 17.17.17.4/32
+  Known via "ospf 1", distance 110, metric 20, type extern 2, forward metric 64
+  Last update from 5.0.34.1 on Serial0/2/0, 00:00:42 ago
+  Routing Descriptor Blocks:
+  * 5.0.34.1, from 17.17.17.3, 00:00:42 ago, via Serial0/2/0
+      Route metric is 20, traffic share count is 1
+

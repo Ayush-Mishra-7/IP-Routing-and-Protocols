@@ -73,51 +73,54 @@ def build_device_dict(router: dict, creds: dict) -> dict:
     return device
 
 
-def compute_ospf_networks(routers: Iterable[dict]) -> dict[str, str]:
-    """Return dict of network addresses to wildcard masks for OSPF.
+def compute_ospf_networks(router: dict) -> list[tuple[str, str, str]]:
+    """Return list of (network, wildcard, area) tuples for OSPF.
 
-    Management interfaces are skipped.  Additionally, any network whose
-    address falls inside 200.200.200.0/24 is treated as a backbone link
-    and excluded per the assignment.
+    Management interfaces are skipped.  Additionally, networks on Gi0/0
+    for R1 and R5 are placed in area 0, while everything else is in stub area 5.
     """
-    networks: dict[str, str] = {}
+    networks = []
     backbone_net = ipaddress.IPv4Network("200.200.200.0/24")
-    for r in routers:
-        for ifname, cfg in r.get("interfaces", {}).items():
-            # ignore management
-            if ifname.lower() == "gi0/1":
-                continue
-            ip = cfg.get("ip")
-            mask = cfg.get("subnet")
-            if not ip or not mask:
-                continue
-            try:
-                net = ipaddress.IPv4Network(f"{ip}/{mask}", strict=False)
-            except Exception as e:
-                logger.warning("skipping invalid address %s/%s: %s", ip, mask, e)
-                continue
-            if net.subnet_of(backbone_net):
-                # backbone-facing link; do not include
-                continue
-            # Calculate wildcard mask as inverse of netmask
-            wildcard_int = int(ipaddress.IPv4Address("255.255.255.255")) - int(net.netmask)
-            wildcard = str(ipaddress.IPv4Address(wildcard_int))
-            networks[str(net.network_address)] = wildcard
+    rname = router.get("RouterName", "")
+    for ifname, cfg in router.get("interfaces", {}).items():
+        # ignore management
+        if ifname.lower() == "gi0/1":
+            continue
+        ip = cfg.get("ip")
+        mask = cfg.get("subnet")
+        if not ip or not mask:
+            continue
+        try:
+            net = ipaddress.IPv4Network(f"{ip}/{mask}", strict=False)
+        except Exception as e:
+            logger.warning("skipping invalid address %s/%s: %s", ip, mask, e)
+            continue
+            
+        area = "5"
+        # R1 and R5 have Gi0/0 facing the backbone (200.200.200.0/24)
+        if rname in ["5R1", "5R5"] and net.subnet_of(backbone_net):
+            area = "0"
+            
+        # Calculate wildcard mask as inverse of netmask
+        wildcard_int = int(ipaddress.IPv4Address("255.255.255.255")) - int(net.netmask)
+        wildcard = str(ipaddress.IPv4Address(wildcard_int))
+        networks.append((str(net.network_address), wildcard, area))
     return networks
 
 
-def build_ospf_commands(networks: dict[str, str]) -> list[str]:
+def build_ospf_commands(networks: list[tuple[str, str, str]]) -> list[str]:
+    areas = {area for _, _, area in networks}
     cmds = [
         "no router rip",          # remove existing RIP
         "no router ospf 1",
         "router ospf 1",
-        # we could add additional OSPF settings here if desired
     ]
-    for net in sorted(networks.keys()):
-        # Use the wildcard mask calculated for each network's actual subnet
-        wildcard = networks[net]
-        cmds.append(f"network {net} {wildcard} area 0")
+    if "5" in areas:
+        cmds.append("area 5 stub")
+    for net, wildcard, area in sorted(networks, key=lambda x: x[0]):
+        cmds.append(f"network {net} {wildcard} area {area}")
     cmds.append("exit")
+
     return cmds
 
 
@@ -155,20 +158,30 @@ def main():
 
     logger.info("loaded %d routers from %s", len(routers), config_path)
 
-    networks = compute_ospf_networks(routers)
-    if not networks:
-        logger.error("no networks could be calculated from router interfaces")
-        sys.exit(1)
-
-    ospf_cmds = build_ospf_commands(networks)
-    logger.info("OSPF commands:\n%s", "\n".join(ospf_cmds))
-
     for router in routers:
         try:
             device = build_device_dict(router, creds)
         except ValueError as ve:
             logger.warning("skipping router due to config issue: %s", ve)
             continue
+        
+        networks = compute_ospf_networks(router)
+        if not networks:
+            logger.warning("no networks could be calculated for router %s", device.get("host"))
+            continue
+
+        ospf_cmds = build_ospf_commands(networks)
+        
+        rname = router.get("RouterName")
+        # if rname in ["5R2", "5R3", "5R4"]:
+        #     ospf_cmds.extend([
+        #         "interface GigabitEthernet0/0",
+        #         "ip ospf authentication",
+        #         f"ip ospf authentication-key {'cisco123' if rname == '5R4' else 'cisco12'}",
+        #         "exit"
+        #     ])
+
+        logger.info("OSPF commands for %s:\n%s", device.get("host"), "\n".join(ospf_cmds))
         configure_router(device, ospf_cmds)
 
 

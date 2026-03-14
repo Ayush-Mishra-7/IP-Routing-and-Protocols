@@ -1,0 +1,25 @@
+--- Ping Failover Test Results ---
+Link Shutdown Time: 14:20:55.450
+
+Pings:
+[14:20:48.562] Success: True - Duration: 93ms
+[14:20:49.155] Success: True - Duration: 93ms
+[14:20:49.749] Success: True - Duration: 93ms
+[14:20:50.343] Success: True - Duration: 93ms
+[14:20:50.937] Success: True - Duration: 92ms
+[14:20:51.529] Success: True - Duration: 95ms
+[14:20:52.125] Success: True - Duration: 93ms
+[14:20:52.719] Success: True - Duration: 93ms
+[14:20:53.312] Success: True - Duration: 93ms
+[14:20:53.906] Success: True - Duration: 94ms
+[14:20:54.500] Success: True - Duration: 93ms
+[14:20:55.094] Success: True - Duration: 93ms
+[14:20:55.687] Success: False - Duration: 1084ms
+[14:20:57.271] Success: False - Duration: 1083ms
+[14:20:58.856] Success: False - Duration: 1083ms
+[14:21:00.439] Success: False - Duration: 1083ms
+[14:21:02.023] Success: False - Duration: 1083ms
+[14:21:03.607] Success: True - Duration: 93ms
+[14:21:04.200] Success: True - Duration: 94ms
+[14:21:04.794] Success: True - Duration: 92ms
+[14:21:05.387] Success: True - Duration: 93ms

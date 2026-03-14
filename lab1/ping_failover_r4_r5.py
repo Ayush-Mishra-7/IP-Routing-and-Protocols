@@ -29,19 +29,18 @@ def main():
     routers = config.get('routers', [])
 
     r3_info = get_router_by_name(routers, '5R3')
+    r4_info = get_router_by_name(routers, '5R4')
     r5_info = get_router_by_name(routers, '5R5')
 
-    if not r3_info or not r5_info:
-        print("Could not find configuration for 5R3 or 5R5 in router_config.json.")
+    if not r3_info or not r4_info or not r5_info:
+        print("Could not find configuration for 5R3, 5R4, or 5R5.")
         return
 
-    try:
-        r3_ip = r3_info['management_interfaces']['Gi0/1']['ip']
-        r5_ip = r5_info['management_interfaces']['Gi0/1']['ip']
-        r5_loopback_ip = r5_info['interfaces']['Loopback0']['ip']
-    except KeyError as e:
-        print(f"Missing expected interface or IP in config: {e}")
-        return
+    r3_ip = r3_info['management_interfaces']['Gi0/1']['ip']
+    r4_ip = r4_info['management_interfaces']['Gi0/1']['ip']
+    r5_loopback_ip = r5_info['interfaces']['Loopback0']['ip']
+
+    r3_loopback_ip = r3_info['interfaces']['Loopback0']['ip']
 
     r3_device = {
         'device_type': 'cisco_ios',
@@ -51,9 +50,9 @@ def main():
         'secret': credentials.get('secret')
     }
 
-    r5_device = {
+    r4_device = {
         'device_type': 'cisco_ios',
-        'host': r5_ip,
+        'host': r4_ip,
         'username': credentials.get('username'),
         'password': credentials.get('password'),
         'secret': credentials.get('secret')
@@ -61,16 +60,16 @@ def main():
 
     def pinger():
         try:
-            print(f"Connecting to R3 ({r3_ip}) to start pinging...")
-            conn = ConnectHandler(**r3_device)
+            print(f"Connecting to R4 ({r4_ip}) to start pinging...")
+            conn = ConnectHandler(**r4_device)
             conn.enable()
             
             consecutive_successes = 0
             
             while not state['stop_pinging']:
                 start_time = datetime.now()
-                # Sending a single ping with 1 second timeout
-                output = conn.send_command(f"ping {r5_loopback_ip} repeat 1 timeout 1")
+                # Sending a single ping from Loopback0
+                output = conn.send_command(f"ping {r3_loopback_ip} source Loopback0 repeat 1 timeout 1")
                 end_time = datetime.now()
                 
                 # Check for "!" which usually indicates success in Cisco IOS
@@ -87,7 +86,7 @@ def main():
                 state['ping_results'].append(result)
                 
                 status_str = "SUCCESS" if success else "FAIL"
-                print(f"[{timestamp}] Ping to {r5_loopback_ip}: {status_str} (Time: {duration_ms:.0f}ms)")
+                print(f"[{timestamp}] Ping from R4 Loopback to {r3_loopback_ip}: {status_str} (Time: {duration_ms:.0f}ms)")
                 
                 if state['link_down']:
                     if success:
@@ -109,30 +108,11 @@ def main():
             state['stop_pinging'] = True
 
     def link_shutter():
-        try:
-            # Let pinger establish connection and do some initial pings first
-            time.sleep(7)
-            
-            if state['stop_pinging']:
-                return
 
-            print(f"\nConnecting to R5 ({r5_ip}) to shut down Serial0/2/0...")
-            conn = ConnectHandler(**r5_device)
-            conn.enable()
-            
-            ts = datetime.now().strftime('%H:%M:%S.%f')[:-3]
-            print(f"[{ts}] === SHUTTING DOWN INTERFACE Serial0/2/0 ON R5 ===")
-            
-            commands = ["interface Serial0/2/0", "shutdown"]
-            conn.send_config_set(commands)
-            
-            state['link_down_time'] = datetime.now().strftime('%H:%M:%S.%f')[:-3]
-            state['link_down'] = True
-            
-            conn.disconnect()
-        except Exception as e:
-            print(f"Link shutter encountered an error: {e}")
-            state['stop_pinging'] = True
+        print(f" [{datetime.now().strftime('%H:%M:%S.%f')[:-3]}] === configuring VLAN mismatch for R3 interface on Switch ===")
+        
+        state['link_down']
+        state['link_down_time'] = datetime.now().strftime('%H:%M:%S.%f')[:-3]
 
     # Start threads
     t1 = threading.Thread(target=pinger)
@@ -141,9 +121,15 @@ def main():
     t1.start()
     t2.start()
 
-    # Wait for test to finish
-    t1.join()
-    t2.join()
+    try:
+        # Wait for test to finish
+        while t1.is_alive() or t2.is_alive():
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("\nTest interrupted by user. Saving results so far...")
+        state['stop_pinging'] = True
+        t1.join()
+        t2.join()
 
     print("\nTest completed.")
     print(f"Total pings sent: {len(state['ping_results'])}")
@@ -151,12 +137,13 @@ def main():
         print(f"Link was shut down at: {state['link_down_time']}")
 
     # Write output to results file
-    results_file = 'ping_failover_results.txt'
+    results_file = 'test.txt'
     try:
         with open(results_file, 'w') as f:
-            f.write("--- Ping Failover Test Results ---\n")
-            f.write(f"Link Shutdown Time: {state['link_down_time']}\n\n")
-            f.write("Pings:\n")
+            f.write("--- Ping Failover Test Results (R4 Loopback to R3 Loopback) ---\n")
+            f.write(f"Interface VLAN mismatch Time (R3 Gi0/0): {state['link_down_time']}\n\n")
+            f.write("Time Stamps | Status | Duration\n")
+            f.write("-" * 40 + "\n")
             for res in state['ping_results']:
                 f.write(f"[{res['timestamp']}] Success: {res['success']} - Duration: {res['duration_ms']:.0f}ms\n")
         print(f"Results saved to {results_file}.")

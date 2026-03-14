@@ -1,0 +1,536 @@
+=== 5R1 (10.0.0.1) ===
+
+--- show ip ospf database ---
+
+            OSPF Router with ID (17.17.17.1) (Process ID 1)
+
+		Router Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+1.1.1.1         1.1.1.1         1751        0x80000090 0x00841A 4
+1.255.255.1     1.255.255.1     88          0x8000002F 0x007A88 1
+1.255.255.5     1.255.255.5     78          0x8000002E 0x007483 1
+3.3.3.3         3.3.3.3         1567        0x80000093 0x00FD6F 4
+5.5.5.5         5.5.5.5         1201        0x8000009E 0x005A57 4
+6.0.3.1         6.0.3.1         21          0x8000018E 0x006F21 4
+6.0.3.2         6.0.3.2         1365        0x80000032 0x000523 3
+6.0.3.3         6.0.3.3         1558        0x80000036 0x0026EF 3
+6.0.3.5         6.0.3.5         1706        0x8000015F 0x009F06 4
+6.6.6.6         6.6.6.6         1304        0x80000087 0x00C0F1 3
+17.17.17.1      17.17.17.1      393         0x80000006 0x00158A 1
+17.17.17.5      17.17.17.5      390         0x80000004 0x001184 1
+
+		Net Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+3.0.1.1         3.3.3.3         1567        0x80000083 0x006521
+200.200.200.61  6.0.3.1         277         0x80000004 0x0015DB
+
+		Summary Net Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+1.0.0.0         1.255.255.1     88          0x8000002C 0x0021EC
+1.0.0.0         1.255.255.5     573         0x8000002B 0x000BFF
+5.0.12.0        17.17.17.1      388         0x80000001 0x009426
+5.0.12.0        17.17.17.5      343         0x80000001 0x00096C
+5.0.34.0        17.17.17.1      342         0x80000001 0x002E35
+5.0.34.0        17.17.17.5      386         0x80000001 0x008917
+5.0.234.0       17.17.17.1      388         0x80000001 0x001DBA
+5.0.234.0       17.17.17.5      386         0x80000001 0x0005CE
+17.17.17.1      17.17.17.1      388         0x80000001 0x008350
+17.17.17.1      17.17.17.5      343         0x80000001 0x007AD3
+17.17.17.2      17.17.17.1      388         0x80000001 0x00FB96
+17.17.17.2      17.17.17.5      343         0x80000001 0x00ED9F
+17.17.17.3      17.17.17.1      342         0x80000001 0x00FB94
+17.17.17.3      17.17.17.5      386         0x80000001 0x00D9B3
+17.17.17.4      17.17.17.1      342         0x80000001 0x00F19D
+17.17.17.4      17.17.17.5      343         0x80000001 0x00D9B1
+17.17.17.5      17.17.17.1      342         0x80000001 0x006AE3
+17.17.17.5      17.17.17.5      386         0x80000001 0x004388
+
+		Summary ASB Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+1.255.255.2     1.255.255.1     588         0x80000029 0x007D51
+1.255.255.3     1.255.255.5     818         0x80000029 0x005B6E
+
+		Router Link States (Area 5)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+17.17.17.1      17.17.17.1      393         0x80000002 0x002A77 3
+17.17.17.2      17.17.17.2      357         0x80000002 0x003774 4
+17.17.17.3      17.17.17.3      358         0x80000003 0x001067 4
+17.17.17.4      17.17.17.4      356         0x80000002 0x00A8EE 2
+17.17.17.5      17.17.17.5      397         0x80000001 0x004523 3
+
+		Net Link States (Area 5)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+5.0.234.2       17.17.17.2      352         0x80000002 0x006A03
+
+		Summary Net Link States (Area 5)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+0.0.0.0         17.17.17.1      398         0x80000001 0x0012F7
+0.0.0.0         17.17.17.5      398         0x80000001 0x00F90C
+1.0.0.0         17.17.17.1      388         0x80000001 0x000FF8
+1.0.0.0         17.17.17.5      388         0x80000001 0x00F60D
+3.0.0.0         17.17.17.1      388         0x80000001 0x005B6E
+3.0.0.0         17.17.17.5      388         0x80000001 0x004382
+3.0.0.4         17.17.17.1      388         0x80000001 0x00BFC4
+3.0.0.4         17.17.17.5      388         0x80000001 0x00A7D8
+3.0.1.0         17.17.17.1      388         0x80000001 0x006C58
+3.0.1.0         17.17.17.5      388         0x80000001 0x00546C
+6.0.1.0         17.17.17.1      388         0x80000001 0x00299C
+6.0.1.0         17.17.17.5      388         0x80000001 0x0011B0
+6.0.1.4         17.17.17.1      388         0x80000001 0x0001C0
+6.0.1.4         17.17.17.5      388         0x80000001 0x00E8D4
+6.0.3.1         17.17.17.1      388         0x80000001 0x00A25C
+6.0.3.1         17.17.17.5      388         0x80000001 0x008A70
+6.0.3.2         17.17.17.1      388         0x80000001 0x001BA2
+6.0.3.2         17.17.17.5      388         0x80000001 0x0003B6
+6.0.3.3         17.17.17.1      388         0x80000001 0x0011AB
+6.0.3.3         17.17.17.5      388         0x80000001 0x00F8BF
+6.0.3.5         17.17.17.1      388         0x80000001 0x007A80
+6.0.3.5         17.17.17.5      388         0x80000001 0x006294
+11.11.11.11     17.17.17.1      388         0x80000001 0x0020BC
+11.11.11.11     17.17.17.5      388         0x80000001 0x0008D0
+22.22.22.22     17.17.17.1      388         0x80000001 0x00A6C9
+22.22.22.22     17.17.17.5      388         0x80000001 0x008EDD
+55.55.55.55     17.17.17.1      388         0x80000001 0x00BC2E
+55.55.55.55     17.17.17.5      388         0x80000001 0x00A442
+66.66.66.66     17.17.17.1      388         0x80000001 0x00433B
+66.66.66.66     17.17.17.5      388         0x80000001 0x002B4F
+200.200.200.0   17.17.17.1      388         0x80000001 0x00D5D9
+200.200.200.0   17.17.17.5      388         0x80000001 0x00BDED
+
+		Type-5 AS External Link States
+
+Link ID         ADV Router      Age         Seq#       Checksum Tag
+1.0.0.0         1.255.255.2     1214        0x80000029 0x0075FE 0
+1.0.0.0         1.255.255.3     515         0x8000002A 0x006D05 0
+1.0.0.255       1.255.255.3     515         0x80000029 0x006F04 0
+1.0.1.0         1.255.255.3     771         0x80000029 0x005E15 0
+1.0.1.2         1.255.255.2     1214        0x80000029 0x005022 0
+1.255.255.1     1.255.255.3     515         0x80000029 0x00650D 0
+1.255.255.2     1.255.255.3     771         0x80000029 0x005B16 0
+1.255.255.3     1.255.255.2     1214        0x80000029 0x00571A 0
+1.255.255.4     1.255.255.3     771         0x80000029 0x004728 0
+1.255.255.5     1.255.255.2     1214        0x80000029 0x00432C 0
+6.0.0.0         6.0.3.2         1365        0x8000002C 0x00EB78 0
+6.0.0.0         6.0.3.3         1558        0x8000002C 0x00E57D 0
+6.0.3.4         6.0.3.3         1558        0x8000002C 0x009CBF 0
+
+--- show ip route ---
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/8 is variably subnetted, 9 subnets, 4 masks
+O IA     1.0.0.0/8 [110/2] via 200.200.200.15, 00:06:29, GigabitEthernet0/0
+                   [110/2] via 200.200.200.11, 00:06:29, GigabitEthernet0/0
+O E2     1.0.0.0/24 [110/20] via 200.200.200.15, 00:06:29, GigabitEthernet0/0
+                    [110/20] via 200.200.200.11, 00:06:29, GigabitEthernet0/0
+O E2     1.0.1.0/31 [110/20] via 200.200.200.15, 00:06:29, GigabitEthernet0/0
+O E2     1.0.1.2/31 [110/20] via 200.200.200.11, 00:06:29, GigabitEthernet0/0
+O E2     1.255.255.1/32 
+           [110/20] via 200.200.200.15, 00:06:29, GigabitEthernet0/0
+O E2     1.255.255.2/32 
+           [110/20] via 200.200.200.15, 00:06:29, GigabitEthernet0/0
+O E2     1.255.255.3/32 
+           [110/20] via 200.200.200.11, 00:06:29, GigabitEthernet0/0
+O E2     1.255.255.4/32 
+           [110/20] via 200.200.200.15, 00:06:29, GigabitEthernet0/0
+O E2     1.255.255.5/32 
+           [110/20] via 200.200.200.11, 00:06:29, GigabitEthernet0/0
+      3.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+O        3.0.0.0/30 [110/65] via 200.200.200.31, 00:06:29, GigabitEthernet0/0
+O        3.0.0.4/30 [110/130] via 200.200.200.31, 00:06:29, GigabitEthernet0/0
+O        3.0.1.0/24 [110/66] via 200.200.200.31, 00:06:29, GigabitEthernet0/0
+      5.0.0.0/8 is variably subnetted, 4 subnets, 3 masks
+C        5.0.12.0/30 is directly connected, Serial0/2/0
+L        5.0.12.1/32 is directly connected, Serial0/2/0
+O        5.0.34.0/30 [110/129] via 5.0.12.2, 00:05:42, Serial0/2/0
+O        5.0.234.0/24 [110/65] via 5.0.12.2, 00:06:29, Serial0/2/0
+      6.0.0.0/8 is variably subnetted, 8 subnets, 3 masks
+O E2     6.0.0.0/24 [110/20] via 200.200.200.65, 00:06:29, GigabitEthernet0/0
+                    [110/20] via 200.200.200.61, 00:06:29, GigabitEthernet0/0
+O        6.0.1.0/30 [110/65] via 200.200.200.61, 00:06:29, GigabitEthernet0/0
+O        6.0.1.4/30 [110/65] via 200.200.200.65, 00:06:29, GigabitEthernet0/0
+O        6.0.3.1/32 [110/2] via 200.200.200.61, 00:06:29, GigabitEthernet0/0
+O        6.0.3.2/32 [110/66] via 200.200.200.61, 00:06:29, GigabitEthernet0/0
+O        6.0.3.3/32 [110/66] via 200.200.200.65, 00:06:29, GigabitEthernet0/0
+O E2     6.0.3.4/32 [110/20] via 200.200.200.65, 00:06:29, GigabitEthernet0/0
+O        6.0.3.5/32 [110/2] via 200.200.200.65, 00:06:29, GigabitEthernet0/0
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.0.0.0/24 is directly connected, GigabitEthernet0/1
+L        10.0.0.1/32 is directly connected, GigabitEthernet0/1
+      11.0.0.0/32 is subnetted, 1 subnets
+O        11.11.11.11 [110/2] via 200.200.200.31, 00:06:29, GigabitEthernet0/0
+      17.0.0.0/32 is subnetted, 5 subnets
+C        17.17.17.1 is directly connected, Loopback0
+O        17.17.17.2 [110/65] via 5.0.12.2, 00:06:29, Serial0/2/0
+O        17.17.17.3 [110/66] via 5.0.12.2, 00:05:42, Serial0/2/0
+O        17.17.17.4 [110/66] via 5.0.12.2, 00:05:42, Serial0/2/0
+O        17.17.17.5 [110/130] via 5.0.12.2, 00:05:42, Serial0/2/0
+      22.0.0.0/32 is subnetted, 1 subnets
+O        22.22.22.22 [110/66] via 200.200.200.31, 00:06:29, GigabitEthernet0/0
+      55.0.0.0/32 is subnetted, 1 subnets
+O        55.55.55.55 [110/67] via 200.200.200.31, 00:06:29, GigabitEthernet0/0
+      66.0.0.0/32 is subnetted, 1 subnets
+O        66.66.66.66 
+           [110/131] via 200.200.200.31, 00:06:29, GigabitEthernet0/0
+      200.200.200.0/24 is variably subnetted, 2 subnets, 2 masks
+C        200.200.200.0/24 is directly connected, GigabitEthernet0/0
+L        200.200.200.51/32 is directly connected, GigabitEthernet0/0
+
+--- show ip route ospf ---
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/8 is variably subnetted, 9 subnets, 4 masks
+O IA     1.0.0.0/8 [110/2] via 200.200.200.15, 00:06:29, GigabitEthernet0/0
+                   [110/2] via 200.200.200.11, 00:06:29, GigabitEthernet0/0
+O E2     1.0.0.0/24 [110/20] via 200.200.200.15, 00:06:29, GigabitEthernet0/0
+                    [110/20] via 200.200.200.11, 00:06:29, GigabitEthernet0/0
+O E2     1.0.1.0/31 [110/20] via 200.200.200.15, 00:06:29, GigabitEthernet0/0
+O E2     1.0.1.2/31 [110/20] via 200.200.200.11, 00:06:29, GigabitEthernet0/0
+O E2     1.255.255.1/32 
+           [110/20] via 200.200.200.15, 00:06:29, GigabitEthernet0/0
+O E2     1.255.255.2/32 
+           [110/20] via 200.200.200.15, 00:06:29, GigabitEthernet0/0
+O E2     1.255.255.3/32 
+           [110/20] via 200.200.200.11, 00:06:29, GigabitEthernet0/0
+O E2     1.255.255.4/32 
+           [110/20] via 200.200.200.15, 00:06:29, GigabitEthernet0/0
+O E2     1.255.255.5/32 
+           [110/20] via 200.200.200.11, 00:06:29, GigabitEthernet0/0
+      3.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+O        3.0.0.0/30 [110/65] via 200.200.200.31, 00:06:29, GigabitEthernet0/0
+O        3.0.0.4/30 [110/130] via 200.200.200.31, 00:06:29, GigabitEthernet0/0
+O        3.0.1.0/24 [110/66] via 200.200.200.31, 00:06:29, GigabitEthernet0/0
+      5.0.0.0/8 is variably subnetted, 4 subnets, 3 masks
+O        5.0.34.0/30 [110/129] via 5.0.12.2, 00:05:42, Serial0/2/0
+O        5.0.234.0/24 [110/65] via 5.0.12.2, 00:06:29, Serial0/2/0
+      6.0.0.0/8 is variably subnetted, 8 subnets, 3 masks
+O E2     6.0.0.0/24 [110/20] via 200.200.200.65, 00:06:29, GigabitEthernet0/0
+                    [110/20] via 200.200.200.61, 00:06:29, GigabitEthernet0/0
+O        6.0.1.0/30 [110/65] via 200.200.200.61, 00:06:29, GigabitEthernet0/0
+O        6.0.1.4/30 [110/65] via 200.200.200.65, 00:06:29, GigabitEthernet0/0
+O        6.0.3.1/32 [110/2] via 200.200.200.61, 00:06:29, GigabitEthernet0/0
+O        6.0.3.2/32 [110/66] via 200.200.200.61, 00:06:29, GigabitEthernet0/0
+O        6.0.3.3/32 [110/66] via 200.200.200.65, 00:06:29, GigabitEthernet0/0
+O E2     6.0.3.4/32 [110/20] via 200.200.200.65, 00:06:29, GigabitEthernet0/0
+O        6.0.3.5/32 [110/2] via 200.200.200.65, 00:06:29, GigabitEthernet0/0
+      11.0.0.0/32 is subnetted, 1 subnets
+O        11.11.11.11 [110/2] via 200.200.200.31, 00:06:29, GigabitEthernet0/0
+      17.0.0.0/32 is subnetted, 5 subnets
+O        17.17.17.2 [110/65] via 5.0.12.2, 00:06:29, Serial0/2/0
+O        17.17.17.3 [110/66] via 5.0.12.2, 00:05:42, Serial0/2/0
+O        17.17.17.4 [110/66] via 5.0.12.2, 00:05:42, Serial0/2/0
+O        17.17.17.5 [110/130] via 5.0.12.2, 00:05:42, Serial0/2/0
+      22.0.0.0/32 is subnetted, 1 subnets
+O        22.22.22.22 [110/66] via 200.200.200.31, 00:06:29, GigabitEthernet0/0
+      55.0.0.0/32 is subnetted, 1 subnets
+O        55.55.55.55 [110/67] via 200.200.200.31, 00:06:29, GigabitEthernet0/0
+      66.0.0.0/32 is subnetted, 1 subnets
+O        66.66.66.66 
+           [110/131] via 200.200.200.31, 00:06:29, GigabitEthernet0/0
+
+=== 5R5 (10.0.0.5) ===
+
+--- show ip ospf database ---
+
+            OSPF Router with ID (17.17.17.5) (Process ID 1)
+
+		Router Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+1.1.1.1         1.1.1.1         1753        0x80000090 0x00841A 4
+1.255.255.1     1.255.255.1     90          0x8000002F 0x007A88 1
+1.255.255.5     1.255.255.5     80          0x8000002E 0x007483 1
+3.3.3.3         3.3.3.3         1569        0x80000093 0x00FD6F 4
+5.5.5.5         5.5.5.5         1202        0x8000009E 0x005A57 4
+6.0.3.1         6.0.3.1         22          0x8000018E 0x006F21 4
+6.0.3.2         6.0.3.2         1365        0x80000032 0x000523 3
+6.0.3.3         6.0.3.3         1560        0x80000036 0x0026EF 3
+6.0.3.5         6.0.3.5         1708        0x8000015F 0x009F06 4
+6.6.6.6         6.6.6.6         1306        0x80000087 0x00C0F1 3
+17.17.17.1      17.17.17.1      395         0x80000006 0x00158A 1
+17.17.17.5      17.17.17.5      390         0x80000004 0x001184 1
+
+		Net Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+3.0.1.1         3.3.3.3         1569        0x80000083 0x006521
+200.200.200.61  6.0.3.1         278         0x80000004 0x0015DB
+
+		Summary Net Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+1.0.0.0         1.255.255.1     90          0x8000002C 0x0021EC
+1.0.0.0         1.255.255.5     574         0x8000002B 0x000BFF
+5.0.12.0        17.17.17.1      390         0x80000001 0x009426
+5.0.12.0        17.17.17.5      343         0x80000001 0x00096C
+5.0.34.0        17.17.17.1      344         0x80000001 0x002E35
+5.0.34.0        17.17.17.5      386         0x80000001 0x008917
+5.0.234.0       17.17.17.1      390         0x80000001 0x001DBA
+5.0.234.0       17.17.17.5      386         0x80000001 0x0005CE
+17.17.17.1      17.17.17.1      390         0x80000001 0x008350
+17.17.17.1      17.17.17.5      343         0x80000001 0x007AD3
+17.17.17.2      17.17.17.1      390         0x80000001 0x00FB96
+17.17.17.2      17.17.17.5      343         0x80000001 0x00ED9F
+17.17.17.3      17.17.17.1      344         0x80000001 0x00FB94
+17.17.17.3      17.17.17.5      386         0x80000001 0x00D9B3
+17.17.17.4      17.17.17.1      344         0x80000001 0x00F19D
+17.17.17.4      17.17.17.5      343         0x80000001 0x00D9B1
+17.17.17.5      17.17.17.1      344         0x80000001 0x006AE3
+17.17.17.5      17.17.17.5      386         0x80000001 0x004388
+
+		Summary ASB Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+1.255.255.2     1.255.255.1     589         0x80000029 0x007D51
+1.255.255.3     1.255.255.5     819         0x80000029 0x005B6E
+
+		Router Link States (Area 5)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+17.17.17.1      17.17.17.1      397         0x80000002 0x002A77 3
+17.17.17.2      17.17.17.2      358         0x80000002 0x003774 4
+17.17.17.3      17.17.17.3      358         0x80000003 0x001067 4
+17.17.17.4      17.17.17.4      357         0x80000002 0x00A8EE 2
+17.17.17.5      17.17.17.5      395         0x80000001 0x004523 3
+
+		Net Link States (Area 5)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+5.0.234.2       17.17.17.2      354         0x80000002 0x006A03
+
+		Summary Net Link States (Area 5)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+0.0.0.0         17.17.17.1      401         0x80000001 0x0012F7
+0.0.0.0         17.17.17.5      396         0x80000001 0x00F90C
+1.0.0.0         17.17.17.1      392         0x80000001 0x000FF8
+1.0.0.0         17.17.17.5      386         0x80000001 0x00F60D
+3.0.0.0         17.17.17.1      392         0x80000001 0x005B6E
+3.0.0.0         17.17.17.5      386         0x80000001 0x004382
+3.0.0.4         17.17.17.1      392         0x80000001 0x00BFC4
+3.0.0.4         17.17.17.5      386         0x80000001 0x00A7D8
+3.0.1.0         17.17.17.1      392         0x80000001 0x006C58
+3.0.1.0         17.17.17.5      386         0x80000001 0x00546C
+6.0.1.0         17.17.17.1      392         0x80000001 0x00299C
+6.0.1.0         17.17.17.5      386         0x80000001 0x0011B0
+6.0.1.4         17.17.17.1      392         0x80000001 0x0001C0
+6.0.1.4         17.17.17.5      386         0x80000001 0x00E8D4
+6.0.3.1         17.17.17.1      392         0x80000001 0x00A25C
+6.0.3.1         17.17.17.5      386         0x80000001 0x008A70
+6.0.3.2         17.17.17.1      392         0x80000001 0x001BA2
+6.0.3.2         17.17.17.5      386         0x80000001 0x0003B6
+6.0.3.3         17.17.17.1      392         0x80000001 0x0011AB
+6.0.3.3         17.17.17.5      386         0x80000001 0x00F8BF
+6.0.3.5         17.17.17.1      392         0x80000001 0x007A80
+6.0.3.5         17.17.17.5      386         0x80000001 0x006294
+11.11.11.11     17.17.17.1      392         0x80000001 0x0020BC
+11.11.11.11     17.17.17.5      386         0x80000001 0x0008D0
+22.22.22.22     17.17.17.1      392         0x80000001 0x00A6C9
+22.22.22.22     17.17.17.5      386         0x80000001 0x008EDD
+55.55.55.55     17.17.17.1      392         0x80000001 0x00BC2E
+55.55.55.55     17.17.17.5      386         0x80000001 0x00A442
+66.66.66.66     17.17.17.1      392         0x80000001 0x00433B
+66.66.66.66     17.17.17.5      386         0x80000001 0x002B4F
+200.200.200.0   17.17.17.1      392         0x80000001 0x00D5D9
+200.200.200.0   17.17.17.5      386         0x80000001 0x00BDED
+
+		Type-5 AS External Link States
+
+Link ID         ADV Router      Age         Seq#       Checksum Tag
+1.0.0.0         1.255.255.2     1215        0x80000029 0x0075FE 0
+1.0.0.0         1.255.255.3     517         0x8000002A 0x006D05 0
+1.0.0.255       1.255.255.3     517         0x80000029 0x006F04 0
+1.0.1.0         1.255.255.3     773         0x80000029 0x005E15 0
+1.0.1.2         1.255.255.2     1215        0x80000029 0x005022 0
+1.255.255.1     1.255.255.3     517         0x80000029 0x00650D 0
+1.255.255.2     1.255.255.3     773         0x80000029 0x005B16 0
+1.255.255.3     1.255.255.2     1215        0x80000029 0x00571A 0
+1.255.255.4     1.255.255.3     773         0x80000029 0x004728 0
+1.255.255.5     1.255.255.2     1215        0x80000029 0x00432C 0
+6.0.0.0         6.0.3.2         1365        0x8000002C 0x00EB78 0
+6.0.0.0         6.0.3.3         1560        0x8000002C 0x00E57D 0
+6.0.3.4         6.0.3.3         1560        0x8000002C 0x009CBF 0
+
+--- show ip route ---
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/8 is variably subnetted, 9 subnets, 4 masks
+O IA     1.0.0.0/8 [110/2] via 200.200.200.15, 00:06:26, GigabitEthernet0/0
+                   [110/2] via 200.200.200.11, 00:06:26, GigabitEthernet0/0
+O E2     1.0.0.0/24 [110/20] via 200.200.200.15, 00:06:26, GigabitEthernet0/0
+                    [110/20] via 200.200.200.11, 00:06:26, GigabitEthernet0/0
+O E2     1.0.1.0/31 [110/20] via 200.200.200.15, 00:06:26, GigabitEthernet0/0
+O E2     1.0.1.2/31 [110/20] via 200.200.200.11, 00:06:26, GigabitEthernet0/0
+O E2     1.255.255.1/32 
+           [110/20] via 200.200.200.15, 00:06:26, GigabitEthernet0/0
+O E2     1.255.255.2/32 
+           [110/20] via 200.200.200.15, 00:06:26, GigabitEthernet0/0
+O E2     1.255.255.3/32 
+           [110/20] via 200.200.200.11, 00:06:26, GigabitEthernet0/0
+O E2     1.255.255.4/32 
+           [110/20] via 200.200.200.15, 00:06:26, GigabitEthernet0/0
+O E2     1.255.255.5/32 
+           [110/20] via 200.200.200.11, 00:06:26, GigabitEthernet0/0
+      3.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+O        3.0.0.0/30 [110/65] via 200.200.200.31, 00:06:26, GigabitEthernet0/0
+O        3.0.0.4/30 [110/130] via 200.200.200.31, 00:06:26, GigabitEthernet0/0
+O        3.0.1.0/24 [110/66] via 200.200.200.31, 00:06:26, GigabitEthernet0/0
+      5.0.0.0/8 is variably subnetted, 4 subnets, 3 masks
+O        5.0.12.0/30 [110/129] via 5.0.34.1, 00:05:43, Serial0/2/0
+C        5.0.34.0/30 is directly connected, Serial0/2/0
+L        5.0.34.2/32 is directly connected, Serial0/2/0
+O        5.0.234.0/24 [110/65] via 5.0.34.1, 00:05:53, Serial0/2/0
+      6.0.0.0/8 is variably subnetted, 8 subnets, 3 masks
+O E2     6.0.0.0/24 [110/20] via 200.200.200.65, 00:06:26, GigabitEthernet0/0
+                    [110/20] via 200.200.200.61, 00:06:26, GigabitEthernet0/0
+O        6.0.1.0/30 [110/65] via 200.200.200.61, 00:06:26, GigabitEthernet0/0
+O        6.0.1.4/30 [110/65] via 200.200.200.65, 00:06:26, GigabitEthernet0/0
+O        6.0.3.1/32 [110/2] via 200.200.200.61, 00:06:26, GigabitEthernet0/0
+O        6.0.3.2/32 [110/66] via 200.200.200.61, 00:06:26, GigabitEthernet0/0
+O        6.0.3.3/32 [110/66] via 200.200.200.65, 00:06:26, GigabitEthernet0/0
+O E2     6.0.3.4/32 [110/20] via 200.200.200.65, 00:06:26, GigabitEthernet0/0
+O        6.0.3.5/32 [110/2] via 200.200.200.65, 00:06:26, GigabitEthernet0/0
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.0.0.0/24 is directly connected, GigabitEthernet0/1
+L        10.0.0.5/32 is directly connected, GigabitEthernet0/1
+      11.0.0.0/32 is subnetted, 1 subnets
+O        11.11.11.11 [110/2] via 200.200.200.31, 00:06:26, GigabitEthernet0/0
+      17.0.0.0/32 is subnetted, 5 subnets
+O        17.17.17.1 [110/130] via 5.0.34.1, 00:05:43, Serial0/2/0
+O        17.17.17.2 [110/66] via 5.0.34.1, 00:05:43, Serial0/2/0
+O        17.17.17.3 [110/65] via 5.0.34.1, 00:06:26, Serial0/2/0
+O        17.17.17.4 [110/66] via 5.0.34.1, 00:05:43, Serial0/2/0
+C        17.17.17.5 is directly connected, Loopback0
+      22.0.0.0/32 is subnetted, 1 subnets
+O        22.22.22.22 [110/66] via 200.200.200.31, 00:06:26, GigabitEthernet0/0
+      55.0.0.0/32 is subnetted, 1 subnets
+O        55.55.55.55 [110/67] via 200.200.200.31, 00:06:26, GigabitEthernet0/0
+      66.0.0.0/32 is subnetted, 1 subnets
+O        66.66.66.66 
+           [110/131] via 200.200.200.31, 00:06:26, GigabitEthernet0/0
+      200.200.200.0/24 is variably subnetted, 2 subnets, 2 masks
+C        200.200.200.0/24 is directly connected, GigabitEthernet0/0
+L        200.200.200.55/32 is directly connected, GigabitEthernet0/0
+
+--- show ip route ospf ---
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/8 is variably subnetted, 9 subnets, 4 masks
+O IA     1.0.0.0/8 [110/2] via 200.200.200.15, 00:06:26, GigabitEthernet0/0
+                   [110/2] via 200.200.200.11, 00:06:26, GigabitEthernet0/0
+O E2     1.0.0.0/24 [110/20] via 200.200.200.15, 00:06:26, GigabitEthernet0/0
+                    [110/20] via 200.200.200.11, 00:06:26, GigabitEthernet0/0
+O E2     1.0.1.0/31 [110/20] via 200.200.200.15, 00:06:26, GigabitEthernet0/0
+O E2     1.0.1.2/31 [110/20] via 200.200.200.11, 00:06:26, GigabitEthernet0/0
+O E2     1.255.255.1/32 
+           [110/20] via 200.200.200.15, 00:06:26, GigabitEthernet0/0
+O E2     1.255.255.2/32 
+           [110/20] via 200.200.200.15, 00:06:26, GigabitEthernet0/0
+O E2     1.255.255.3/32 
+           [110/20] via 200.200.200.11, 00:06:26, GigabitEthernet0/0
+O E2     1.255.255.4/32 
+           [110/20] via 200.200.200.15, 00:06:26, GigabitEthernet0/0
+O E2     1.255.255.5/32 
+           [110/20] via 200.200.200.11, 00:06:26, GigabitEthernet0/0
+      3.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+O        3.0.0.0/30 [110/65] via 200.200.200.31, 00:06:26, GigabitEthernet0/0
+O        3.0.0.4/30 [110/130] via 200.200.200.31, 00:06:26, GigabitEthernet0/0
+O        3.0.1.0/24 [110/66] via 200.200.200.31, 00:06:26, GigabitEthernet0/0
+      5.0.0.0/8 is variably subnetted, 4 subnets, 3 masks
+O        5.0.12.0/30 [110/129] via 5.0.34.1, 00:05:43, Serial0/2/0
+O        5.0.234.0/24 [110/65] via 5.0.34.1, 00:05:53, Serial0/2/0
+      6.0.0.0/8 is variably subnetted, 8 subnets, 3 masks
+O E2     6.0.0.0/24 [110/20] via 200.200.200.65, 00:06:26, GigabitEthernet0/0
+                    [110/20] via 200.200.200.61, 00:06:26, GigabitEthernet0/0
+O        6.0.1.0/30 [110/65] via 200.200.200.61, 00:06:26, GigabitEthernet0/0
+O        6.0.1.4/30 [110/65] via 200.200.200.65, 00:06:26, GigabitEthernet0/0
+O        6.0.3.1/32 [110/2] via 200.200.200.61, 00:06:26, GigabitEthernet0/0
+O        6.0.3.2/32 [110/66] via 200.200.200.61, 00:06:26, GigabitEthernet0/0
+O        6.0.3.3/32 [110/66] via 200.200.200.65, 00:06:26, GigabitEthernet0/0
+O E2     6.0.3.4/32 [110/20] via 200.200.200.65, 00:06:26, GigabitEthernet0/0
+O        6.0.3.5/32 [110/2] via 200.200.200.65, 00:06:26, GigabitEthernet0/0
+      11.0.0.0/32 is subnetted, 1 subnets
+O        11.11.11.11 [110/2] via 200.200.200.31, 00:06:26, GigabitEthernet0/0
+      17.0.0.0/32 is subnetted, 5 subnets
+O        17.17.17.1 [110/130] via 5.0.34.1, 00:05:43, Serial0/2/0
+O        17.17.17.2 [110/66] via 5.0.34.1, 00:05:43, Serial0/2/0
+O        17.17.17.3 [110/65] via 5.0.34.1, 00:06:26, Serial0/2/0
+O        17.17.17.4 [110/66] via 5.0.34.1, 00:05:43, Serial0/2/0
+      22.0.0.0/32 is subnetted, 1 subnets
+O        22.22.22.22 [110/66] via 200.200.200.31, 00:06:26, GigabitEthernet0/0
+      55.0.0.0/32 is subnetted, 1 subnets
+O        55.55.55.55 [110/67] via 200.200.200.31, 00:06:26, GigabitEthernet0/0
+      66.0.0.0/32 is subnetted, 1 subnets
+O        66.66.66.66 
+           [110/131] via 200.200.200.31, 00:06:26, GigabitEthernet0/0
+
+Comparison Summary
+==================
+Both R1 and R5 should look very similar because each router is acting as an ABR between backbone area 0 and stub area 5.
+
+R1 route counts: 30 OSPF routes, 1 inter-area, 10 external.
+R5 route counts: 30 OSPF routes, 1 inter-area, 10 external.
+
+Expected interpretation:
+1. The LSDB should not contain Type-5 external LSAs for the stub area because stub areas block external LSAs.
+2. R1 and R5 may still show area-0 LSAs for the 200.200.200.0/24 backbone segment in addition to summary information for area 5 because they border both areas.
+3. If a default route appears as O*IA, that is normal for stub-area behavior: the ABR injects a default route instead of flooding external LSAs into the stub area.
+4. Any remaining differences between R1 and R5 are usually local-interface differences, such as their directly connected loopback or serial networks and which specific next hop is used toward the opposite side of the topology.
+
+5R1 quick summary:
+- Router LSA sections found: 2
+- Network LSA sections found: 4
+- Summary LSA sections found: 2
+- External LSA sections found: 1
+- Has OSPF default route: False
+- Has gateway of last resort: True
+
+5R5 quick summary:
+- Router LSA sections found: 2
+- Network LSA sections found: 4
+- Summary LSA sections found: 2
+- External LSA sections found: 1
+- Has OSPF default route: False
+- Has gateway of last resort: True

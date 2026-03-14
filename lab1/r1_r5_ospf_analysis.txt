@@ -1,0 +1,17 @@
+Examination of the LSA Database and Routing Table of R1 and R5
+===============================================================
+
+R1 and R5 are very similar because both routers are acting as ABRs between area 0 and area 5. In the OSPF database, both routers contain Router Link States for area 0 and area 5, Net Link States for both areas, and Summary Net Link States for both areas. This shows that each router has visibility into the backbone and the stub area.
+
+The area 5 LSDB entries are nearly identical on both routers. Each one contains summary information for the same internal networks, including the 0.0.0.0 summary entry that represents a default route being advertised into the stub area. This symmetry is expected because both R1 and R5 sit at the edge of the stub area and perform the same function from opposite sides of the topology.
+
+The routing tables are also mostly the same. Both routers learn the same OSPF inter-area route for 1.0.0.0/8, both have the same intra-area routes for the lab networks, and both contain the same OSPF external routes marked as O E2. This means they are learning the same set of remote destinations from the backbone.
+
+The main differences are local and topology-based. R1 has its own directly connected serial network 5.0.12.0/30 and loopback 17.17.17.1, while R5 has its own directly connected serial network 5.0.34.0/30 and loopback 17.17.17.5. Their next hops are mirrored as well: R1 reaches the area 5 side through 5.0.12.2, while R5 reaches it through 5.0.34.1. The OSPF costs are also mirrored, reflecting that each router is closer to the routers on its own side of the topology.
+
+One important observation is that both R1 and R5 still show Type-5 AS External LSAs and O E2 external routes. This does not contradict the stub-area design. Since R1 and R5 are ABRs and still belong to area 0, they continue to learn external LSAs from the backbone. The stub restriction mainly affects what is flooded into area 5 for the internal routers, not what the ABRs themselves know from area 0.
+
+Another observation is that neither R1 nor R5 has a gateway of last resort installed in its routing table. That is also reasonable. In a stub area, the ABR injects a default route for the internal routers in the stub area. The ABRs themselves do not necessarily need to install that default route if they already have full knowledge of external destinations through area 0.
+
+Conclusion:
+R1 and R5 are the same in overall OSPF role, LSDB structure, and learned remote routes because both function as ABRs between area 0 and area 5. They differ mainly in their directly connected interfaces, local loopbacks, next hops, and path costs. The presence of external LSAs on both routers is expected because they are backbone-connected ABRs, while the stub-area behavior primarily affects the internal routers inside area 5.

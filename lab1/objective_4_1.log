@@ -1,0 +1,145 @@
+2026-03-13 15:28:26,088 [INFO] Commands for 5R1:
+no router rip
+router ospf 1
+no area 5 stub
+exit
+2026-03-13 15:28:26,088 [INFO] Connecting to 5R1 (10.0.0.1)
+2026-03-13 15:28:26,108 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-13 15:28:26,679 [INFO] Authentication (password) successful!
+2026-03-13 15:28:26,975 [INFO] Applied config to 5R1:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R1(config)#no router rip
+5R1(config)#router ospf 1
+5R1(config-router)#no area 5 stub
+5R1(config-router)#exit
+5R1(config)#end
+5R1#
+2026-03-13 15:28:26,986 [INFO] Commands for 5R2:
+router ospf 1
+no area 5 stub
+exit
+router ospf 1
+no network 5.0.234.0 0.0.0.255 area 0
+no network 5.0.234.0 0.0.0.255 area 5
+exit
+no router rip
+router rip
+version 2
+no auto-summary
+passive-interface default
+no passive-interface GigabitEthernet0/0
+network 5.0.234.0
+network 17.17.17.2
+exit
+2026-03-13 15:28:26,987 [INFO] Connecting to 5R2 (10.0.0.2)
+2026-03-13 15:28:26,991 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-13 15:28:27,353 [INFO] Authentication (password) successful!
+2026-03-13 15:28:27,815 [INFO] Applied config to 5R2:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R2(config)#router ospf 1
+5R2(config-router)#no area 5 stub
+5R2(config-router)#exit
+5R2(config)#router ospf 1
+5R2(config-router)#no network 5.0.234.0 0.0.0.255 area 0
+5R2(config-router)#no network 5.0.234.0 0.0.0.255 area 5
+5R2(config-router)#exit
+5R2(config)#no router rip
+5R2(config)#router rip
+5R2(config-router)#version 2
+5R2(config-router)#no auto-summary
+5R2(config-router)#passive-interface default
+5R2(config-router)#no passive-interface GigabitEthernet0/0
+5R2(config-router)#network 5.0.234.0
+5R2(config-router)#network 17.17.17.2
+5R2(config-router)#exit
+5R2(config)#end
+5R2#
+2026-03-13 15:28:27,826 [INFO] Commands for 5R3:
+router ospf 1
+no area 5 stub
+exit
+router ospf 1
+no network 5.0.234.0 0.0.0.255 area 0
+no network 5.0.234.0 0.0.0.255 area 5
+exit
+no router rip
+router rip
+version 2
+no auto-summary
+passive-interface default
+no passive-interface GigabitEthernet0/0
+network 5.0.234.0
+network 17.17.17.3
+exit
+2026-03-13 15:28:27,827 [INFO] Connecting to 5R3 (10.0.0.3)
+2026-03-13 15:28:27,831 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-13 15:28:28,195 [INFO] Authentication (password) successful!
+2026-03-13 15:28:28,647 [INFO] Applied config to 5R3:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R3(config)#router ospf 1
+5R3(config-router)#no area 5 stub
+5R3(config-router)#exit
+5R3(config)#router ospf 1
+5R3(config-router)#no network 5.0.234.0 0.0.0.255 area 0
+5R3(config-router)#no network 5.0.234.0 0.0.0.255 area 5
+5R3(config-router)#exit
+5R3(config)#no router rip
+5R3(config)#router rip
+5R3(config-router)#version 2
+5R3(config-router)#no auto-summary
+5R3(config-router)#passive-interface default
+5R3(config-router)#no passive-interface GigabitEthernet0/0
+5R3(config-router)#network 5.0.234.0
+5R3(config-router)#network 17.17.17.3
+5R3(config-router)#exit
+5R3(config)#end
+5R3#
+2026-03-13 15:28:28,659 [INFO] Commands for 5R4:
+no router ospf 1
+no router rip
+router rip
+version 2
+no auto-summary
+passive-interface default
+no passive-interface GigabitEthernet0/0
+network 5.0.234.0
+network 17.17.17.4
+exit
+2026-03-13 15:28:28,659 [INFO] Connecting to 5R4 (10.0.0.4)
+2026-03-13 15:28:28,663 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-13 15:28:29,025 [INFO] Authentication (password) successful!
+2026-03-13 15:28:29,443 [INFO] Applied config to 5R4:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R4(config)#no router ospf 1
+5R4(config)#no router rip
+5R4(config)#router rip
+5R4(config-router)#version 2
+5R4(config-router)#no auto-summary
+5R4(config-router)#passive-interface default
+5R4(config-router)#no passive-interface GigabitEthernet0/0
+5R4(config-router)#network 5.0.234.0
+5R4(config-router)#network 17.17.17.4
+5R4(config-router)#exit
+5R4(config)#end
+5R4#
+2026-03-13 15:28:29,455 [INFO] Commands for 5R5:
+no router rip
+router ospf 1
+no area 5 stub
+exit
+2026-03-13 15:28:29,455 [INFO] Connecting to 5R5 (10.0.0.5)
+2026-03-13 15:28:29,459 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-13 15:28:29,837 [INFO] Authentication (password) successful!
+2026-03-13 15:28:30,131 [INFO] Applied config to 5R5:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+5R5(config)#no router rip
+5R5(config)#router ospf 1
+5R5(config-router)#no area 5 stub
+5R5(config-router)#exit
+5R5(config)#end
+5R5#
