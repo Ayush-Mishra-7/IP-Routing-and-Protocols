@@ -1,0 +1,45 @@
+2026-03-13 14:02:38,495 [INFO] loaded 5 routers from /Users/AndyZ/Desktop/IP-Routing-and-Protocols/lab1/router_config.json
+2026-03-13 14:02:38,495 [INFO] found 2 target routers: ['R1', 'R5']
+2026-03-13 14:02:38,495 [INFO] connecting to 5R1 (10.0.0.1)
+2026-03-13 14:02:38,506 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-13 14:02:38,909 [INFO] Authentication (password) successful!
+2026-03-13 14:02:39,214 [INFO] successfully retrieved LSA database from 5R1
+2026-03-13 14:02:39,228 [INFO] saved output to R1_LSA_20260313_140239.txt
+2026-03-13 14:02:39,228 [INFO] LSA database saved for R1 to R1_LSA_20260313_140239.txt
+2026-03-13 14:02:39,228 [INFO] connecting to 5R5 (10.0.0.5)
+2026-03-13 14:02:39,234 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-13 14:02:39,631 [INFO] Authentication (password) successful!
+2026-03-13 14:02:39,932 [INFO] successfully retrieved LSA database from 5R5
+2026-03-13 14:02:39,948 [INFO] saved output to R5_LSA_20260313_140239.txt
+2026-03-13 14:02:39,948 [INFO] LSA database saved for R5 to R5_LSA_20260313_140239.txt
+2026-03-13 14:02:39,948 [INFO] LSA database retrieval complete
+2026-03-13 14:10:02,015 [INFO] loaded 5 routers from /Users/AndyZ/Desktop/IP-Routing-and-Protocols/lab1/router_config.json
+2026-03-13 14:10:02,015 [INFO] found 2 target routers: ['R1', 'R5']
+2026-03-13 14:10:02,015 [INFO] connecting to 5R1 (10.0.0.1)
+2026-03-13 14:10:02,023 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-13 14:10:02,428 [INFO] Authentication (password) successful!
+2026-03-13 14:10:02,735 [INFO] successfully retrieved LSA database from 5R1
+2026-03-13 14:10:02,750 [INFO] saved output to R1_LSA_20260313_141002.txt
+2026-03-13 14:10:02,750 [INFO] LSA database saved for R1 to R1_LSA_20260313_141002.txt
+2026-03-13 14:10:02,751 [INFO] connecting to 5R5 (10.0.0.5)
+2026-03-13 14:10:02,755 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-13 14:10:03,151 [INFO] Authentication (password) successful!
+2026-03-13 14:10:03,446 [INFO] successfully retrieved LSA database from 5R5
+2026-03-13 14:10:03,459 [INFO] saved output to R5_LSA_20260313_141003.txt
+2026-03-13 14:10:03,459 [INFO] LSA database saved for R5 to R5_LSA_20260313_141003.txt
+2026-03-13 14:10:03,459 [INFO] LSA database retrieval complete
+2026-03-13 14:10:35,915 [INFO] loaded 5 routers from /Users/AndyZ/Desktop/IP-Routing-and-Protocols/lab1/router_config.json
+2026-03-13 14:10:35,916 [INFO] found 2 target routers: ['R1', 'R5']
+2026-03-13 14:10:35,916 [INFO] connecting to 5R1 (10.0.0.1)
+2026-03-13 14:10:35,924 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-13 14:10:36,544 [INFO] Authentication (password) successful!
+2026-03-13 14:10:36,845 [INFO] successfully retrieved LSA database from 5R1
+2026-03-13 14:10:36,859 [INFO] saved output to R1_LSA_20260313_141036.txt
+2026-03-13 14:10:36,859 [INFO] LSA database saved for R1 to R1_LSA_20260313_141036.txt
+2026-03-13 14:10:36,859 [INFO] connecting to 5R5 (10.0.0.5)
+2026-03-13 14:10:36,864 [INFO] Connected (version 1.99, client Cisco-1.25)
+2026-03-13 14:10:37,455 [INFO] Authentication (password) successful!
+2026-03-13 14:10:37,775 [INFO] successfully retrieved LSA database from 5R5
+2026-03-13 14:10:37,790 [INFO] saved output to R5_LSA_20260313_141037.txt
+2026-03-13 14:10:37,790 [INFO] LSA database saved for R5 to R5_LSA_20260313_141037.txt
+2026-03-13 14:10:37,790 [INFO] LSA database retrieval complete
