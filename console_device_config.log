@@ -1,0 +1,398 @@
+2026-04-06 14:00:11,849 [INFO] Loading router config from C:\Users\dayus\Documents\IP-Routing-and-Protocols\lab1\get_config_routers.json
+2026-04-06 14:00:11,849 [INFO] Found 5 router(s) to back up
+2026-04-06 14:00:11,849 [INFO] 
+2026-04-06 14:00:11,849 [INFO] ============================================================
+2026-04-06 14:00:11,849 [INFO]   5R1  —  telnet 1.1.1.1 2002
+2026-04-06 14:00:11,850 [INFO] ============================================================
+2026-04-06 14:00:11,850 [INFO] Opening serial connection on COM5 @ 9600 baud
+2026-04-06 14:00:11,850 [WARNING] Serial port access denied. Attempting to close blocking applications (e.g., PuTTY) before retrying...
+2026-04-06 14:00:12,303 [INFO] Successfully killed putty.exe
+2026-04-06 14:00:12,303 [INFO] Killed apps: putty.exe
+2026-04-06 14:00:17,972 [INFO] Wake output: 5R1>
+5R1>
+5R1>
+5R1>
+5R1>
+5R1>
+2026-04-06 14:00:17,973 [INFO] Detected state: {'location': 'router', 'hostname': '5R1', 'mode': 'user'}
+2026-04-06 14:00:17,973 [WARNING] Stale router session detected (5R1, mode=user). Exiting back to comm server ...
+2026-04-06 14:00:24,780 [INFO] Escaped back to comm server
+2026-04-06 14:00:25,881 [INFO] State after escape: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-04-06 14:00:25,882 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-04-06 14:00:25,882 [INFO] Serial connection ready on COM5
+2026-04-06 14:00:25,882 [INFO] Preparing line 2 before telnet (attempt 1/3) ...
+2026-04-06 14:00:25,882 [INFO]   clear line 2  (attempt 1/3)
+2026-04-06 14:00:27,984 [INFO]   clear line 2  (attempt 2/3)
+2026-04-06 14:00:30,086 [INFO]   clear line 2  (attempt 3/3)
+2026-04-06 14:00:32,188 [INFO]   Cleared line 2 (3 times)
+2026-04-06 14:00:32,189 [INFO] Telneting to 1.1.1.1 2002 ...
+2026-04-06 14:00:35,290 [INFO] Telnet output: telnet 1.1.1.1 2002
+Trying 1.1.1.1, 2002 ... Open
+2026-04-06 14:00:35,291 [INFO] Waiting for router output to settle (max 10s) ...
+2026-04-06 14:00:38,102 [INFO] Garbage/boot output (20 chars) consumed
+2026-04-06 14:00:40,104 [INFO] Router prompt: 
+2026-04-06 14:00:42,105 [WARNING] Hostname detection attempt 1/3 failed. Output snippet: 
+2026-04-06 14:00:45,308 [WARNING] Hostname detection attempt 2/3 failed. Output snippet: Translating "end"...domain server (255.255.255.255)
+2026-04-06 14:00:48,310 [WARNING] Hostname detection attempt 3/3 failed. Output snippet: 
+2026-04-06 14:00:48,310 [ERROR] Could not detect hostname after 3 attempts.
+2026-04-06 14:00:48,311 [ERROR] Could not detect hostname — expected '5R1'
+2026-04-06 14:00:48,311 [ERROR] Hostname mismatch for 5R1 — skipping
+2026-04-06 14:00:48,312 [INFO] Disconnecting from device ...
+2026-04-06 14:00:50,314 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-04-06 14:00:55,119 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-04-06 14:00:55,120 [INFO] Disconnected from device [OK]
+2026-04-06 14:00:55,172 [INFO] Serial connection closed
+2026-04-06 14:00:55,172 [INFO] 
+2026-04-06 14:00:55,173 [INFO] ============================================================
+2026-04-06 14:00:55,173 [INFO]   5R2  —  telnet 1.1.1.1 2003
+2026-04-06 14:00:55,173 [INFO] ============================================================
+2026-04-06 14:00:55,173 [INFO] Opening serial connection on COM5 @ 9600 baud
+2026-04-06 14:00:58,839 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-04-06 14:00:58,840 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-04-06 14:00:58,840 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-04-06 14:00:58,840 [INFO] Serial connection ready on COM5
+2026-04-06 14:00:58,840 [INFO] Preparing line 3 before telnet (attempt 1/3) ...
+2026-04-06 14:00:58,840 [INFO]   clear line 3  (attempt 1/3)
+2026-04-06 14:01:00,942 [INFO]   clear line 3  (attempt 2/3)
+2026-04-06 14:01:03,045 [INFO]   clear line 3  (attempt 3/3)
+2026-04-06 14:01:05,147 [INFO]   Cleared line 3 (3 times)
+2026-04-06 14:01:05,148 [INFO] Telneting to 1.1.1.1 2003 ...
+2026-04-06 14:01:08,249 [INFO] Telnet output: telnet 1.1.1.1 2003
+Trying 1.1.1.1, 2003 ... Open
+2026-04-06 14:01:08,250 [INFO] Waiting for router output to settle (max 10s) ...
+2026-04-06 14:01:12,360 [INFO] Router prompt: 5R2>
+5R2>
+5R2>
+5R2>
+2026-04-06 14:01:14,462 [INFO] Detected hostname: '5R2'
+2026-04-06 14:01:14,462 [INFO] [OK] Hostname verified: '5R2' matches expected '5R2'
+2026-04-06 14:01:14,463 [INFO] Retrieving running-config ...
+2026-04-06 14:01:15,564 [INFO] Router mode detected: user
+2026-04-06 14:01:15,565 [INFO] Entering enable mode ...
+2026-04-06 14:01:23,972 [INFO] Configuration saved to C:\Users\dayus\Documents\IP-Routing-and-Protocols\lab1\config\5R2_20260406_140123.txt
+2026-04-06 14:01:23,972 [INFO] Disconnecting from device ...
+2026-04-06 14:01:25,975 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-04-06 14:01:30,779 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-04-06 14:01:30,780 [INFO] Disconnected from device [OK]
+2026-04-06 14:01:30,832 [INFO] Serial connection closed
+2026-04-06 14:01:30,832 [INFO] 
+2026-04-06 14:01:30,832 [INFO] ============================================================
+2026-04-06 14:01:30,832 [INFO]   5R3  —  telnet 1.1.1.1 2004
+2026-04-06 14:01:30,833 [INFO] ============================================================
+2026-04-06 14:01:30,833 [INFO] Opening serial connection on COM5 @ 9600 baud
+2026-04-06 14:01:34,500 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-04-06 14:01:34,501 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-04-06 14:01:34,501 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-04-06 14:01:34,501 [INFO] Serial connection ready on COM5
+2026-04-06 14:01:34,501 [INFO] Preparing line 4 before telnet (attempt 1/3) ...
+2026-04-06 14:01:34,501 [INFO]   clear line 4  (attempt 1/3)
+2026-04-06 14:01:36,603 [INFO]   clear line 4  (attempt 2/3)
+2026-04-06 14:01:38,706 [INFO]   clear line 4  (attempt 3/3)
+2026-04-06 14:01:40,809 [INFO]   Cleared line 4 (3 times)
+2026-04-06 14:01:40,809 [INFO] Telneting to 1.1.1.1 2004 ...
+2026-04-06 14:01:43,911 [INFO] Telnet output: telnet 1.1.1.1 2004
+Trying 1.1.1.1, 2004 ... Open
+2026-04-06 14:01:43,911 [INFO] Waiting for router output to settle (max 10s) ...
+2026-04-06 14:01:48,023 [INFO] Router prompt: 5R3>
+5R3>
+5R3>
+5R3>
+2026-04-06 14:01:50,124 [INFO] Detected hostname: '5R3'
+2026-04-06 14:01:50,125 [INFO] [OK] Hostname verified: '5R3' matches expected '5R3'
+2026-04-06 14:01:50,126 [INFO] Retrieving running-config ...
+2026-04-06 14:01:51,228 [INFO] Router mode detected: user
+2026-04-06 14:01:51,228 [INFO] Entering enable mode ...
+2026-04-06 14:01:59,632 [INFO] Configuration saved to C:\Users\dayus\Documents\IP-Routing-and-Protocols\lab1\config\5R3_20260406_140159.txt
+2026-04-06 14:01:59,633 [INFO] Disconnecting from device ...
+2026-04-06 14:02:01,635 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-04-06 14:02:06,439 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-04-06 14:02:06,440 [INFO] Disconnected from device [OK]
+2026-04-06 14:02:06,491 [INFO] Serial connection closed
+2026-04-06 14:02:06,492 [INFO] 
+2026-04-06 14:02:06,492 [INFO] ============================================================
+2026-04-06 14:02:06,492 [INFO]   5R4  —  telnet 1.1.1.1 2005
+2026-04-06 14:02:06,492 [INFO] ============================================================
+2026-04-06 14:02:06,492 [INFO] Opening serial connection on COM5 @ 9600 baud
+2026-04-06 14:02:10,158 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-04-06 14:02:10,159 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-04-06 14:02:10,160 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-04-06 14:02:10,160 [INFO] Serial connection ready on COM5
+2026-04-06 14:02:10,160 [INFO] Preparing line 5 before telnet (attempt 1/3) ...
+2026-04-06 14:02:10,161 [INFO]   clear line 5  (attempt 1/3)
+2026-04-06 14:02:12,263 [INFO]   clear line 5  (attempt 2/3)
+2026-04-06 14:02:14,365 [INFO]   clear line 5  (attempt 3/3)
+2026-04-06 14:02:16,468 [INFO]   Cleared line 5 (3 times)
+2026-04-06 14:02:16,468 [INFO] Telneting to 1.1.1.1 2005 ...
+2026-04-06 14:02:19,569 [INFO] Telnet output: telnet 1.1.1.1 2005
+Trying 1.1.1.1, 2005 ... Open
+2026-04-06 14:02:19,570 [INFO] Waiting for router output to settle (max 10s) ...
+2026-04-06 14:02:23,681 [INFO] Router prompt: 5R4>
+5R4>
+5R4>
+5R4>
+2026-04-06 14:02:25,783 [INFO] Detected hostname: '5R4'
+2026-04-06 14:02:25,783 [INFO] [OK] Hostname verified: '5R4' matches expected '5R4'
+2026-04-06 14:02:25,784 [INFO] Retrieving running-config ...
+2026-04-06 14:02:26,885 [INFO] Router mode detected: user
+2026-04-06 14:02:26,885 [INFO] Entering enable mode ...
+2026-04-06 14:02:35,290 [INFO] Configuration saved to C:\Users\dayus\Documents\IP-Routing-and-Protocols\lab1\config\5R4_20260406_140235.txt
+2026-04-06 14:02:35,291 [INFO] Disconnecting from device ...
+2026-04-06 14:02:37,293 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-04-06 14:02:42,099 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-04-06 14:02:42,099 [INFO] Disconnected from device [OK]
+2026-04-06 14:02:42,151 [INFO] Serial connection closed
+2026-04-06 14:02:42,151 [INFO] 
+2026-04-06 14:02:42,151 [INFO] ============================================================
+2026-04-06 14:02:42,152 [INFO]   5R5  —  telnet 1.1.1.1 2006
+2026-04-06 14:02:42,152 [INFO] ============================================================
+2026-04-06 14:02:42,152 [INFO] Opening serial connection on COM5 @ 9600 baud
+2026-04-06 14:02:45,818 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-04-06 14:02:45,818 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-04-06 14:02:45,819 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-04-06 14:02:45,819 [INFO] Serial connection ready on COM5
+2026-04-06 14:02:45,819 [INFO] Preparing line 6 before telnet (attempt 1/3) ...
+2026-04-06 14:02:45,820 [INFO]   clear line 6  (attempt 1/3)
+2026-04-06 14:02:47,921 [INFO]   clear line 6  (attempt 2/3)
+2026-04-06 14:02:50,024 [INFO]   clear line 6  (attempt 3/3)
+2026-04-06 14:02:52,126 [INFO]   Cleared line 6 (3 times)
+2026-04-06 14:02:52,127 [INFO] Telneting to 1.1.1.1 2006 ...
+2026-04-06 14:02:55,228 [INFO] Telnet output: telnet 1.1.1.1 2006
+Trying 1.1.1.1, 2006 ... Open
+2026-04-06 14:02:55,229 [INFO] Waiting for router output to settle (max 10s) ...
+2026-04-06 14:02:59,340 [INFO] Router prompt: 5R5>
+5R5>
+5R5>
+5R5>
+2026-04-06 14:03:01,442 [INFO] Detected hostname: '5R5'
+2026-04-06 14:03:01,442 [INFO] [OK] Hostname verified: '5R5' matches expected '5R5'
+2026-04-06 14:03:01,443 [INFO] Retrieving running-config ...
+2026-04-06 14:03:02,545 [INFO] Router mode detected: user
+2026-04-06 14:03:02,545 [INFO] Entering enable mode ...
+2026-04-06 14:03:10,951 [INFO] Configuration saved to C:\Users\dayus\Documents\IP-Routing-and-Protocols\lab1\config\5R5_20260406_140310.txt
+2026-04-06 14:03:10,951 [INFO] Disconnecting from device ...
+2026-04-06 14:03:12,954 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-04-06 14:03:17,760 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-04-06 14:03:17,760 [INFO] Disconnected from device [OK]
+2026-04-06 14:03:17,812 [INFO] Serial connection closed
+2026-04-06 14:03:24,072 [INFO] Loading router config from C:\Users\dayus\Documents\IP-Routing-and-Protocols\lab1\get_config_routers.json
+2026-04-06 14:03:24,073 [INFO] Found 5 router(s) to back up
+2026-04-06 14:03:24,073 [INFO] 
+2026-04-06 14:03:24,073 [INFO] ============================================================
+2026-04-06 14:03:24,073 [INFO]   5R1  —  telnet 1.1.1.1 2002
+2026-04-06 14:03:24,074 [INFO] ============================================================
+2026-04-06 14:03:24,074 [INFO] Opening serial connection on COM5 @ 9600 baud
+2026-04-06 14:03:27,741 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-04-06 14:03:27,742 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-04-06 14:03:27,742 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-04-06 14:03:27,743 [INFO] Serial connection ready on COM5
+2026-04-06 14:03:27,743 [INFO] Preparing line 2 before telnet (attempt 1/3) ...
+2026-04-06 14:03:27,743 [INFO]   clear line 2  (attempt 1/3)
+2026-04-06 14:03:29,845 [INFO]   clear line 2  (attempt 2/3)
+2026-04-06 14:03:31,947 [INFO]   clear line 2  (attempt 3/3)
+2026-04-06 14:03:34,050 [INFO]   Cleared line 2 (3 times)
+2026-04-06 14:03:34,050 [INFO] Telneting to 1.1.1.1 2002 ...
+2026-04-06 14:03:37,153 [INFO] Telnet output: telnet 1.1.1.1 2002
+Trying 1.1.1.1, 2002 ... Open
+2026-04-06 14:03:37,154 [INFO] Waiting for router output to settle (max 10s) ...
+2026-04-06 14:03:41,266 [INFO] Router prompt: 5R1>
+5R1>
+5R1>
+5R1>
+2026-04-06 14:03:43,368 [INFO] Detected hostname: '5R1'
+2026-04-06 14:03:43,369 [INFO] [OK] Hostname verified: '5R1' matches expected '5R1'
+2026-04-06 14:03:43,370 [INFO] Retrieving running-config ...
+2026-04-06 14:03:44,473 [INFO] Router mode detected: user
+2026-04-06 14:03:44,473 [INFO] Entering enable mode ...
+2026-04-06 14:03:52,879 [INFO] Configuration saved to C:\Users\dayus\Documents\IP-Routing-and-Protocols\lab1\config\5R1_20260406_140352.txt
+2026-04-06 14:03:52,880 [INFO] Disconnecting from device ...
+2026-04-06 14:03:54,882 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-04-06 14:03:59,686 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-04-06 14:03:59,687 [INFO] Disconnected from device [OK]
+2026-04-06 14:03:59,739 [INFO] Serial connection closed
+2026-04-06 14:03:59,739 [INFO] 
+2026-04-06 14:03:59,739 [INFO] ============================================================
+2026-04-06 14:03:59,739 [INFO]   5R2  —  telnet 1.1.1.1 2003
+2026-04-06 14:03:59,740 [INFO] ============================================================
+2026-04-06 14:03:59,740 [INFO] Opening serial connection on COM5 @ 9600 baud
+2026-04-06 14:04:03,406 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-04-06 14:04:03,407 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-04-06 14:04:03,407 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-04-06 14:04:03,408 [INFO] Serial connection ready on COM5
+2026-04-06 14:04:03,408 [INFO] Preparing line 3 before telnet (attempt 1/3) ...
+2026-04-06 14:04:03,408 [INFO]   clear line 3  (attempt 1/3)
+2026-04-06 14:04:05,511 [INFO]   clear line 3  (attempt 2/3)
+2026-04-06 14:04:07,613 [INFO]   clear line 3  (attempt 3/3)
+2026-04-06 14:04:09,715 [INFO]   Cleared line 3 (3 times)
+2026-04-06 14:04:09,716 [INFO] Telneting to 1.1.1.1 2003 ...
+2026-04-06 14:04:12,818 [INFO] Telnet output: telnet 1.1.1.1 2003
+Trying 1.1.1.1, 2003 ... Open
+2026-04-06 14:04:12,818 [INFO] Waiting for router output to settle (max 10s) ...
+2026-04-06 14:04:16,928 [INFO] Router prompt: 5R2>
+5R2>
+5R2>
+5R2>
+2026-04-06 14:04:19,030 [INFO] Detected hostname: '5R2'
+2026-04-06 14:04:19,031 [INFO] [OK] Hostname verified: '5R2' matches expected '5R2'
+2026-04-06 14:04:19,032 [INFO] Retrieving running-config ...
+2026-04-06 14:04:20,133 [INFO] Router mode detected: user
+2026-04-06 14:04:20,134 [INFO] Entering enable mode ...
+2026-04-06 14:04:28,540 [INFO] Configuration saved to C:\Users\dayus\Documents\IP-Routing-and-Protocols\lab1\config\5R2_20260406_140428.txt
+2026-04-06 14:04:28,540 [INFO] Disconnecting from device ...
+2026-04-06 14:04:30,542 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-04-06 14:04:35,347 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-04-06 14:04:35,348 [INFO] Disconnected from device [OK]
+2026-04-06 14:04:35,400 [INFO] Serial connection closed
+2026-04-06 14:04:35,400 [INFO] 
+2026-04-06 14:04:35,400 [INFO] ============================================================
+2026-04-06 14:04:35,401 [INFO]   5R3  —  telnet 1.1.1.1 2004
+2026-04-06 14:04:35,401 [INFO] ============================================================
+2026-04-06 14:04:35,401 [INFO] Opening serial connection on COM5 @ 9600 baud
+2026-04-06 14:04:39,068 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-04-06 14:04:39,068 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-04-06 14:04:39,068 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-04-06 14:04:39,069 [INFO] Serial connection ready on COM5
+2026-04-06 14:04:39,069 [INFO] Preparing line 4 before telnet (attempt 1/3) ...
+2026-04-06 14:04:39,069 [INFO]   clear line 4  (attempt 1/3)
+2026-04-06 14:04:41,171 [INFO]   clear line 4  (attempt 2/3)
+2026-04-06 14:04:43,273 [INFO]   clear line 4  (attempt 3/3)
+2026-04-06 14:04:45,376 [INFO]   Cleared line 4 (3 times)
+2026-04-06 14:04:45,376 [INFO] Telneting to 1.1.1.1 2004 ...
+2026-04-06 14:04:48,477 [INFO] Telnet output: telnet 1.1.1.1 2004
+Trying 1.1.1.1, 2004 ... Open
+2026-04-06 14:04:48,478 [INFO] Waiting for router output to settle (max 10s) ...
+2026-04-06 14:04:52,586 [INFO] Router prompt: 5R3>
+5R3>
+5R3>
+5R3>
+2026-04-06 14:04:54,687 [INFO] Detected hostname: '5R3'
+2026-04-06 14:04:54,688 [INFO] [OK] Hostname verified: '5R3' matches expected '5R3'
+2026-04-06 14:04:54,688 [INFO] Retrieving running-config ...
+2026-04-06 14:04:55,789 [INFO] Router mode detected: user
+2026-04-06 14:04:55,790 [INFO] Entering enable mode ...
+2026-04-06 14:05:04,197 [INFO] Configuration saved to C:\Users\dayus\Documents\IP-Routing-and-Protocols\lab1\config\5R3_20260406_140504.txt
+2026-04-06 14:05:04,197 [INFO] Disconnecting from device ...
+2026-04-06 14:05:06,200 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-04-06 14:05:11,005 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-04-06 14:05:11,006 [INFO] Disconnected from device [OK]
+2026-04-06 14:05:11,058 [INFO] Serial connection closed
+2026-04-06 14:05:11,058 [INFO] 
+2026-04-06 14:05:11,058 [INFO] ============================================================
+2026-04-06 14:05:11,058 [INFO]   5R4  —  telnet 1.1.1.1 2005
+2026-04-06 14:05:11,059 [INFO] ============================================================
+2026-04-06 14:05:11,059 [INFO] Opening serial connection on COM5 @ 9600 baud
+2026-04-06 14:05:14,726 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-04-06 14:05:14,726 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-04-06 14:05:14,727 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-04-06 14:05:14,727 [INFO] Serial connection ready on COM5
+2026-04-06 14:05:14,728 [INFO] Preparing line 5 before telnet (attempt 1/3) ...
+2026-04-06 14:05:14,728 [INFO]   clear line 5  (attempt 1/3)
+2026-04-06 14:05:16,829 [INFO]   clear line 5  (attempt 2/3)
+2026-04-06 14:05:18,931 [INFO]   clear line 5  (attempt 3/3)
+2026-04-06 14:05:21,034 [INFO]   Cleared line 5 (3 times)
+2026-04-06 14:05:21,034 [INFO] Telneting to 1.1.1.1 2005 ...
+2026-04-06 14:05:24,135 [INFO] Telnet output: telnet 1.1.1.1 2005
+Trying 1.1.1.1, 2005 ... Open
+2026-04-06 14:05:24,136 [INFO] Waiting for router output to settle (max 10s) ...
+2026-04-06 14:05:28,245 [INFO] Router prompt: 5R4>
+5R4>
+5R4>
+5R4>
+2026-04-06 14:05:30,347 [INFO] Detected hostname: '5R4'
+2026-04-06 14:05:30,348 [INFO] [OK] Hostname verified: '5R4' matches expected '5R4'
+2026-04-06 14:05:30,348 [INFO] Retrieving running-config ...
+2026-04-06 14:05:31,450 [INFO] Router mode detected: user
+2026-04-06 14:05:31,451 [INFO] Entering enable mode ...
+2026-04-06 14:05:39,858 [INFO] Configuration saved to C:\Users\dayus\Documents\IP-Routing-and-Protocols\lab1\config\5R4_20260406_140539.txt
+2026-04-06 14:05:39,859 [INFO] Disconnecting from device ...
+2026-04-06 14:05:41,862 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-04-06 14:05:46,668 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-04-06 14:05:46,668 [INFO] Disconnected from device [OK]
+2026-04-06 14:05:46,719 [INFO] Serial connection closed
+2026-04-06 14:05:46,720 [INFO] 
+2026-04-06 14:05:46,720 [INFO] ============================================================
+2026-04-06 14:05:46,720 [INFO]   5R5  —  telnet 1.1.1.1 2006
+2026-04-06 14:05:46,720 [INFO] ============================================================
+2026-04-06 14:05:46,720 [INFO] Opening serial connection on COM5 @ 9600 baud
+2026-04-06 14:05:50,386 [INFO] Wake output: commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+commserver#
+2026-04-06 14:05:50,386 [INFO] Detected state: {'location': 'comm_server', 'hostname': 'commserver', 'mode': 'privileged'}
+2026-04-06 14:05:50,387 [INFO] [OK] Comm server already in privileged EXEC mode
+2026-04-06 14:05:50,387 [INFO] Serial connection ready on COM5
+2026-04-06 14:05:50,387 [INFO] Preparing line 6 before telnet (attempt 1/3) ...
+2026-04-06 14:05:50,388 [INFO]   clear line 6  (attempt 1/3)
+2026-04-06 14:05:52,489 [INFO]   clear line 6  (attempt 2/3)
+2026-04-06 14:05:54,592 [INFO]   clear line 6  (attempt 3/3)
+2026-04-06 14:05:56,694 [INFO]   Cleared line 6 (3 times)
+2026-04-06 14:05:56,694 [INFO] Telneting to 1.1.1.1 2006 ...
+2026-04-06 14:05:59,796 [INFO] Telnet output: telnet 1.1.1.1 2006
+Trying 1.1.1.1, 2006 ... Open
+2026-04-06 14:05:59,797 [INFO] Waiting for router output to settle (max 10s) ...
+2026-04-06 14:06:03,908 [INFO] Router prompt: 5R5>
+5R5>
+5R5>
+5R5>
+2026-04-06 14:06:06,010 [INFO] Detected hostname: '5R5'
+2026-04-06 14:06:06,010 [INFO] [OK] Hostname verified: '5R5' matches expected '5R5'
+2026-04-06 14:06:06,011 [INFO] Retrieving running-config ...
+2026-04-06 14:06:07,113 [INFO] Router mode detected: user
+2026-04-06 14:06:07,113 [INFO] Entering enable mode ...
+2026-04-06 14:06:15,521 [INFO] Configuration saved to C:\Users\dayus\Documents\IP-Routing-and-Protocols\lab1\config\5R5_20260406_140615.txt
+2026-04-06 14:06:15,521 [INFO] Disconnecting from device ...
+2026-04-06 14:06:17,524 [INFO]   Sending Ctrl+Shift+6, x ...
+2026-04-06 14:06:22,330 [INFO]   Comm server prompt: commserver#
+commserver#
+2026-04-06 14:06:22,331 [INFO] Disconnected from device [OK]
+2026-04-06 14:06:22,384 [INFO] Serial connection closed

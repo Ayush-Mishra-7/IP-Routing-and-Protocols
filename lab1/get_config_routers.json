@@ -1,0 +1,34 @@
+{
+  "credentials": {
+    "username": "cisco",
+    "password": "lab123",
+    "secret": "lab123"
+  },
+  "routers": [
+    {
+      "RouterName": "5R1",
+      "PortNo": "2002",
+      "management_ip": "10.0.0.1"
+    },
+    {
+      "RouterName": "5R2",
+      "PortNo": "2003",
+      "management_ip": "10.0.0.2"
+    },
+    {
+      "RouterName": "5R3",
+      "PortNo": "2004",
+      "management_ip": "10.0.0.3"
+    },
+    {
+      "RouterName": "5R4",
+      "PortNo": "2005",
+      "management_ip": "10.0.0.4"
+    },
+    {
+      "RouterName": "5R5",
+      "PortNo": "2006",
+      "management_ip": "10.0.0.5"
+    }
+  ]
+}

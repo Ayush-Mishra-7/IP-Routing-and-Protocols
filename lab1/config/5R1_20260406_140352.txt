@@ -1,0 +1,162 @@
+show running-config
+Building configuration...
+
+
+Current configuration : 1915 bytes
+!
+! Last configuration change at 23:33:23 UTC Fri Mar 13 2026 by cisco
+version 15.1
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname 5R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable password lab123
+!
+no aaa new-model
+!
+!
+dot11 syslog
+ip source-route
+!
+!
+!
+ip cef
+!
+!
+ip domain name test.com
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+voice-card 0
+!
+!
+!
+!
+!
+!
+!
+crypto pki token default removal timeout 0
+!
+!
+!
+!
+license udi pid CISCO3825 sn FTX1237A1TC
+license accept end user agreement
+username cisco privilege 15 secret 5 $1$UyM9$8PwWBzxeLc85WLAtUSrzv/
+!
+redundancy
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 17.17.17.1 255.255.255.255
+!
+interface GigabitEthernet0/0
+ ip address 200.200.200.51 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ ip address 10.0.0.1 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface Serial0/2/0
+ ip address 5.0.12.1 255.255.255.252
+ no fair-queue
+!
+interface Serial0/2/1
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+interface Serial0/3/0
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+interface Serial0/3/1
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+interface Serial2/0
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+interface Serial2/1
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+interface Serial2/2
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+interface Serial2/3
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+router ospf 1
+ network 5.0.12.0 0.0.0.3 area 5
+ network 17.17.17.1 0.0.0.0 area 5
+ network 200.200.200.0 0.0.0.255 area 0
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+mgcp profile default
+!
+!
+!
+!
+!
+!
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ login local
+ transport input all
+!
+scheduler allocate 20000 1000
+end
+
+5R1#
+5R1#
