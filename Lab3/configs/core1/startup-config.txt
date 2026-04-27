@@ -1,0 +1,76 @@
+! CORE1.SJO1 - AS1 Route Reflector
+! Loopback: 1.0.0.1/32
+! GE0/0: to CORE2  1.255.0.1/30
+! GE0/1: to EDGE1  1.255.0.5/30
+! GE0/2: to EDGE2  1.255.0.9/30
+!
+version 12.4
+hostname CORE1.SJO1
+!
+no ip domain-lookup
+!
+interface Loopback0
+ ip address 1.0.0.1 255.255.255.255
+ ip ospf 1 area 0
+!
+interface GigabitEthernet0/0
+ description to CORE2.SJO1
+ ip address 1.255.0.1 255.255.255.252
+ ip ospf 1 area 0
+ ip ospf network point-to-point
+ no shutdown
+!
+interface GigabitEthernet0/1
+ description to EDGE1.SJO1
+ ip address 1.255.0.5 255.255.255.252
+ ip ospf 1 area 0
+ ip ospf network point-to-point
+ no shutdown
+!
+interface GigabitEthernet0/2
+ description to EDGE2.SJO1
+ ip address 1.255.0.9 255.255.255.252
+ ip ospf 1 area 0
+ ip ospf network point-to-point
+ no shutdown
+!
+! Only static route in the network - aggregate for BGP origination
+ip route 1.0.0.0 255.0.0.0 Null0
+!
+router ospf 1
+ router-id 1.0.0.1
+ passive-interface Loopback0
+!
+router bgp 1
+ bgp router-id 1.0.0.1
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ !
+ ! Regular iBGP peer to other CORE (no RR between cores)
+ neighbor 1.0.0.2 remote-as 1
+ neighbor 1.0.0.2 description CORE2.SJO1
+ neighbor 1.0.0.2 update-source Loopback0
+ !
+ ! EDGE routers are RR clients of CORE1
+ neighbor 1.0.0.3 remote-as 1
+ neighbor 1.0.0.3 description EDGE1.SJO1
+ neighbor 1.0.0.3 update-source Loopback0
+ !
+ neighbor 1.0.0.4 remote-as 1
+ neighbor 1.0.0.4 description EDGE2.SJO1
+ neighbor 1.0.0.4 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 1.0.0.2 activate
+  neighbor 1.0.0.2 next-hop-self
+  neighbor 1.0.0.3 activate
+  neighbor 1.0.0.3 route-reflector-client
+  neighbor 1.0.0.3 next-hop-self
+  neighbor 1.0.0.4 activate
+  neighbor 1.0.0.4 route-reflector-client
+  neighbor 1.0.0.4 next-hop-self
+  ! Originate the /8 into BGP (requires static route above)
+  network 1.0.0.0 mask 255.0.0.0
+ exit-address-family
+!
+end

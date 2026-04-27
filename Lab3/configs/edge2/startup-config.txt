@@ -1,0 +1,52 @@
+! EDGE2.SJO1 - AS1 RR Client
+! Loopback: 1.0.0.4/32
+! GE0/0: to CORE1  1.255.0.10/30
+! GE0/1: to CORE2  1.255.0.18/30
+!
+version 12.4
+hostname EDGE2.SJO1
+!
+no ip domain-lookup
+!
+interface Loopback0
+ ip address 1.0.0.4 255.255.255.255
+ ip ospf 1 area 0
+!
+interface GigabitEthernet0/0
+ description to CORE1.SJO1
+ ip address 1.255.0.10 255.255.255.252
+ ip ospf 1 area 0
+ ip ospf network point-to-point
+ no shutdown
+!
+interface GigabitEthernet0/1
+ description to CORE2.SJO1
+ ip address 1.255.0.18 255.255.255.252
+ ip ospf 1 area 0
+ ip ospf network point-to-point
+ no shutdown
+!
+router ospf 1
+ router-id 1.0.0.4
+ passive-interface Loopback0
+!
+router bgp 1
+ bgp router-id 1.0.0.4
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ !
+ ! Peer with both CORE RRs for redundancy
+ neighbor 1.0.0.1 remote-as 1
+ neighbor 1.0.0.1 description CORE1.SJO1
+ neighbor 1.0.0.1 update-source Loopback0
+ !
+ neighbor 1.0.0.2 remote-as 1
+ neighbor 1.0.0.2 description CORE2.SJO1
+ neighbor 1.0.0.2 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 1.0.0.1 activate
+  neighbor 1.0.0.2 activate
+ exit-address-family
+!
+end

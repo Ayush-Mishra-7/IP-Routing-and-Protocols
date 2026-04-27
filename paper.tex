@@ -1,0 +1,319 @@
+\documentclass[10pt,twocolumn]{article}
+
+\usepackage[margin=0.75in,top=0.8in,bottom=0.8in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\setlist{noitemsep, topsep=2pt}
+
+\captionsetup{font=small, labelfont=bf}
+\titlespacing{\section}{0pt}{6pt}{3pt}
+\titlespacing{\subsection}{0pt}{4pt}{2pt}
+
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+
+\title{\textbf{Control-Plane Traffic in VxLAN Fabrics:\\BGP EVPN vs.\ OSPF Flood-and-Learn}\\[4pt]
+\normalsize Course Research Project --- IP Routing and Protocols, April 2026}
+\author{Ayush Mishra}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+%% ============================================================
+\begin{abstract}
+Virtual Extensible LAN (VxLAN) standardises the data-plane encapsulation of
+Ethernet frames over UDP, but leaves the choice of control plane---how VTEPs
+learn remote MAC/IP bindings---entirely to the operator.  Two dominant
+strategies exist: OSPF-underlaid \emph{flood-and-learn}, in which unknown
+traffic is replicated to every VTEP in the fabric, and \emph{BGP EVPN}, which
+distributes host reachability via MP-BGP before any data frame arrives.  Using
+ContainerLab with FRRouting containers, we emulate spine-leaf fabrics at two
+scales (4 and 8 VTEPs) and capture live packet data across ten runs per
+scenario.  Our measurements show that per-host-addition control-plane traffic
+in flood-and-learn is roughly \textbf{3.4--4.1$\times$} higher than in BGP
+EVPN and grows closer to linearly with fabric size, while BGP EVPN grows
+sub-linearly---providing concrete empirical grounding for the industry's
+near-universal adoption of BGP EVPN in modern data centres.
+\end{abstract}
+
+%% ============================================================
+\section{Introduction and Motivation}
+
+Modern data centres require seamless Layer 2 connectivity across physically
+distributed, Layer 3 routed infrastructure.  Tenant workloads must communicate
+as if on the same LAN segment even when hosted on servers in different racks or
+buildings, and east-west traffic now dominates the traffic matrix of
+hyperscale providers such as AWS, Azure, and Google Cloud.
+
+VxLAN (RFC 7348) addresses this by encapsulating Ethernet frames inside UDP
+packets on port 4789, prepending a 24-bit VxLAN Network Identifier (VNI) that
+supports over 16 million logical segments.  The boundary between the logical
+overlay and the physical underlay is the \textbf{VTEP} (VxLAN Tunnel
+Endpoint), typically a Top-of-Rack switch.  RFC 7348 deliberately leaves the
+\emph{control plane}---how a VTEP learns which remote VTEP hosts a given
+destination MAC---unspecified, creating the central design question this paper
+investigates.
+
+Without a control plane, VTEPs resort to \textbf{BUM flooding} (Broadcast,
+Unknown unicast, Multicast): when a host sends to an unknown destination, the
+originating VTEP replicates the frame and forwards a copy to \emph{every}
+other VTEP in the fabric.  In a fabric with $n$ VTEPs, a single ARP request
+generates $n-1$ replicated copies.  At 200 VTEPs with 100 hosts joining
+simultaneously---a typical rack power-on scenario---this produces nearly
+20,000 replicated packets within seconds, stressing uplink bandwidth and VTEP
+CPU alike.
+
+The practitioner's question is therefore: \emph{at what scale does the
+overhead of flood-and-learn justify the added operational complexity of BGP
+EVPN?}  Industry design guides advocate BGP EVPN qualitatively; this paper
+provides side-by-side empirical measurements at fabric sizes representative of
+small-to-medium deployments.
+
+%% ============================================================
+\section{VxLAN Background}
+
+\subsection{What VxLAN Solves}
+
+Traditional Ethernet is constrained by the 12-bit VLAN tag, limiting
+deployments to 4,094 segments---far too few for multi-tenant clouds.  VxLAN's
+24-bit VNI extends this to over 16 million segments.  More importantly, VxLAN
+tunnels Layer 2 frames over routed IP infrastructure, allowing hypervisors on
+physically distant servers to appear on the same broadcast domain.  A VTEP
+receiving a native frame from a local host (1) looks up the destination MAC to
+find the remote VTEP's IP, (2) wraps the frame in VxLAN/UDP/IP, and (3) sends
+it across the underlay.  The remote VTEP strips the header and delivers the
+original frame---transparent to the end hosts.
+
+\subsection{The Control-Plane Gap}
+
+RFC 7348 defines the encapsulation format but says nothing about how VTEPs
+populate their MAC-to-VTEP forwarding tables.  Two strategies dominate:
+
+\textbf{Flood-and-Learn} configures the underlay with a routing protocol (OSPF
+in our experiments) to provide IP reachability between VTEPs.  The overlay
+itself is stateless.  When a VTEP encounters an unknown destination it floods
+the frame using \emph{ingress replication} (head-end replication): one
+encapsulated copy per remote VTEP is sent individually.  VTEPs learn remote
+MACs reactively by inspecting the source addresses of incoming encapsulated
+frames---the same mechanism a conventional switch uses.
+
+\textbf{BGP EVPN} (RFC 7432, RFC 8365) introduces a distributed control plane
+on top of the same OSPF underlay.  Each VTEP acts as a BGP speaker and
+advertises locally learned host bindings as \emph{EVPN Route Type 2
+(MAC/IP Advertisement)} messages.  Spine switches act as BGP Route Reflectors,
+redistributing each advertisement to all leaf VTEPs so that every VTEP knows
+every host \emph{before} any data traffic arrives.  BGP EVPN also enables
+\textbf{ARP suppression}: a VTEP that already holds a remote host's IP-to-MAC
+binding can answer ARP requests locally, eliminating cross-fabric ARP floods
+entirely.
+
+%% ============================================================
+\section{Implementation in Practice}
+
+In a spine-leaf data centre fabric the BGP EVPN deployment follows a standard
+pattern.  Spine switches run OSPF on their downlinks (the underlay) and also
+act as iBGP Route Reflectors for the EVPN overlay.  Leaf switches (VTEPs) peer
+with both spines via iBGP with the \texttt{l2vpn evpn} address family
+activated.  Each leaf's VxLAN interface is created with the \texttt{nolearning}
+flag set---disabling the flood-and-learn data plane---so that all forwarding
+table population comes exclusively from BGP.
+
+When a new host connects to Leaf 1, the sequence is: (1) the host sends a GARP
+or ARP; (2) Leaf 1's kernel VXLAN driver detects the new MAC and FRRouting's
+\texttt{bgpd} generates an EVPN Type 2 UPDATE; (3) the UPDATE propagates to
+both spine Route Reflectors; (4) the spines reflect the UPDATE to all other
+leaf peers; (5) each remote leaf installs the MAC/IP binding in its forwarding
+table.  Steps 1--5 complete in seconds, \emph{before} any remote host needs to
+reach the new host.  Subsequent traffic is sent directly to the correct VTEP
+without any flooding.
+
+In our experiments we used \textbf{ContainerLab} with \textbf{FRRouting (FRR)}
+Docker containers as the emulation platform.  FRR provides production-grade
+\texttt{ospfd} and \texttt{bgpd} daemons; VxLAN functionality is provided by
+the Linux kernel's native VXLAN driver (the same code path used by Cumulus
+Linux and SONiC).  Cisco NX-OSv/CSR images were excluded on resource grounds
+(6--8 GB RAM per node vs.\ $\sim$150 MB for an FRR container).
+
+%% ============================================================
+\section{Experiments and Results}
+
+\subsection{Setup and Metrics}
+
+We emulated two spine-leaf topologies: a \textbf{small} fabric (2 spines + 4
+leaf VTEPs) and a \textbf{medium} fabric (2 spines + 8 leaf VTEPs).  Each
+scenario---flood-and-learn and BGP EVPN---was run ten times per fabric size, for
+40 experimental runs total.  In each run a new host was added to Leaf 1 by
+assigning an IP address and triggering ARP and ICMP traffic.  Packet captures
+were collected with \texttt{tcpdump} on all leaf uplink interfaces and parsed
+with Scapy to extract:
+
+\begin{itemize}
+  \item \textbf{Control-plane packet count}: VxLAN-encapsulated packets
+        (flood-learn) or BGP UPDATE messages (BGP EVPN) per host-add event.
+  \item \textbf{Control-plane byte volume}: aggregate bytes of the above.
+  \item \textbf{Convergence time}: elapsed time from the first control-plane
+        packet to the last in the capture window.
+\end{itemize}
+
+\subsection{Packet and Byte Overhead}
+
+Figure~\ref{fig:bar_packets} shows the mean control-plane packet count per
+host-add event across all four scenario-topology combinations; Figure~\ref{fig:bar_bytes}
+shows the equivalent byte volumes.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{captures/plots/bar_packets.png}
+  \caption{Mean control-plane packets per host-add event ($\pm$\,std\,dev,
+  10 runs).  Blue bars: 4-leaf fabric; orange bars: 8-leaf fabric.
+  Darker shades = BGP EVPN; lighter shades = flood-and-learn.}
+  \label{fig:bar_packets}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{captures/plots/bar_bytes.png}
+  \caption{Mean control-plane byte volume per host-add event (KB,
+  $\pm$\,std\,dev).  Same colour coding as Figure~\ref{fig:bar_packets}.}
+  \label{fig:bar_bytes}
+\end{figure}
+
+In the 4-leaf fabric, flood-and-learn generated a mean of \textbf{86 VxLAN
+packets} (10.3\,KB) per host-add event compared to \textbf{23 BGP UPDATE
+packets} (2.5\,KB) for BGP EVPN---a \textbf{4.1$\times$ byte reduction}.  In
+the 8-leaf fabric the gap widens: flood-and-learn produced \textbf{204 VxLAN
+packets} (24.3\,KB) vs.\ \textbf{60 BGP UPDATE packets} (6.7\,KB) for BGP
+EVPN---a \textbf{3.6$\times$ byte reduction} with substantially more absolute
+overhead.  The BGP EVPN mean for the medium topology is skewed by the first
+two runs in which BGP sessions were still being established; the steady-state
+packet count (runs 4--10) was consistently \textbf{18 packets}---approximately
+$1.8\times$ the 4-leaf steady-state of 10 packets, versus flood-and-learn
+scaling by $2.4\times$ over the same doubling of VTEPs.
+
+Table~\ref{tab:summary} summarises the mean values.
+
+\begin{table}[H]
+\centering
+\caption{Summary of control-plane traffic per host-add event (non-zero runs).}
+\label{tab:summary}
+\small
+\begin{tabular}{lrr}
+\toprule
+Scenario & Pkts & KB \\
+\midrule
+4-leaf Flood-Learn  & 86  & 10.3 \\
+4-leaf BGP EVPN     & 23  & 2.5  \\
+8-leaf Flood-Learn  & 204 & 24.3 \\
+8-leaf BGP EVPN     & 60  & 6.7  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Scalability}
+
+Figure~\ref{fig:scaling} plots mean control-plane packet count against fabric
+size (number of VTEPs), clearly showing the diverging growth rates.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{captures/plots/scaling.png}
+  \caption{Scalability: mean control-plane packets vs.\ number of VTEPs.
+  Flood-and-learn (orange) grows faster than BGP EVPN (indigo) as the
+  fabric expands.  Error bars show $\pm$\,std\,dev.}
+  \label{fig:scaling}
+\end{figure}
+
+The flood-and-learn slope ($\approx$30 extra packets per additional VTEP) is
+consistent with the ingress replication model: each additional VTEP is added to
+every other VTEP's flood list, producing a near-linear increase.  BGP EVPN
+grows more slowly ($\approx$9 packets per additional VTEP in steady state)
+because the extra UPDATE messages are small, structured, and Route-Reflector
+mediated---they do not require point-to-multipoint frame replication.
+
+\subsection{Convergence Time}
+
+Figure~\ref{fig:convergence} shows per-run convergence times.  Across both
+scenarios and fabric sizes, convergence settled in the \textbf{6--10\,s} range.
+Contrary to the hypothesis that BGP EVPN would converge faster, both protocols
+showed similar median convergence times ($\approx$7.7\,s flood-learn vs.\
+$\approx$8.1\,s BGP EVPN for the 8-leaf fabric).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{captures/plots/convergence.png}
+  \caption{Convergence time (ms) per experimental run.  Solid lines: BGP EVPN;
+  dashed lines: flood-and-learn.  Circles: 4-leaf fabric; squares: 8-leaf.}
+  \label{fig:convergence}
+\end{figure}
+
+The similarity is attributable to the emulation environment: ContainerLab
+virtual links and Docker networking introduce artificial latency that masks the
+sub-second BGP propagation advantage seen on real hardware.  Specifically, BGP
+session TCP setup and FRR daemon scheduling delays dominate the convergence
+measurement, whereas on physical ASIC-based switches BGP EVPN convergence is
+typically 100--500\,ms vs.\ seconds for flood-and-learn.  On physical gear,
+flood-and-learn also suffers from the additional round-trip time of waiting for
+the flooded ARP response before the forwarding table entry is installed.
+
+The convergence measurements also exposed a warm-up artifact in the first one
+or two runs of each experiment: BGP sessions were being established during the
+run, inflating both the packet count and the convergence time.  Excluding these
+warm-up runs (runs 1--2), steady-state measurements are highly consistent
+across all remaining runs, validating the reproducibility of the emulated
+testbed.
+
+%% ============================================================
+\section{Discussion and Conclusion}
+
+Our experiments confirm, with empirical packet-level evidence, the qualitative
+claims found in vendor design guides.  Flood-and-learn generates
+\textbf{3.4--4.1$\times$ more control-plane traffic per host addition} than BGP
+EVPN, and this advantage grows with fabric size.  At the 8-leaf scale the
+absolute difference is already significant (204 vs.\ 60 packets; 24.3 vs.\
+6.7\,KB per event); at hyperscale---hundreds of VTEPs---flood-and-learn becomes
+operationally untenable.
+
+The steady-state packet count for BGP EVPN ($\approx$10 at 4 leaves,
+$\approx$18 at 8 leaves) reflects the bounded, protocol-defined cost of
+propagating one EVPN Type 2 UPDATE through two Route Reflectors to all remote
+VTEPs.  This cost is largely independent of the size of individual Ethernet
+frames and does not flood tenant traffic onto unrelated VTEPs.
+
+\textbf{Limitations.}  The emulated environment constrains convergence time
+measurements and limits fabric scale to 8 VTEPs; physical hardware experiments
+would strengthen the scalability argument.  Results also represent a single VNI
+with low background traffic; production fabrics carry many VNIs and continuous
+ARP/NDP background load that would widen the flood-and-learn overhead further.
+
+\textbf{Design takeaway.}  For fabrics of 4 or fewer VTEPs, the 4.1$\times$
+byte overhead of flood-and-learn may be acceptable given its simpler
+configuration.  Beyond 8 VTEPs the overhead accumulates rapidly; BGP EVPN's
+added configuration complexity pays for itself through substantially reduced
+BUM traffic, eliminated ARP floods (via ARP suppression), and predictable
+scaling behaviour.
+
+%% ============================================================
+\section*{References}
+\begin{enumerate}[leftmargin=*, label={[\arabic*]}]
+\small
+  \item Mahalingam et~al., \emph{Virtual eXtensible Local Area Network
+        (VXLAN)}, RFC 7348, IETF, 2014.
+  \item Sajassi et~al., \emph{BGP MPLS-Based Ethernet VPN}, RFC 7432,
+        IETF, 2015.
+  \item Sajassi et~al., \emph{A Network Virtualization Overlay Solution
+        Using EVPN}, RFC 8365, IETF, 2018.
+  \item Cisco Systems, \emph{NX-OS VXLAN Configuration Guide for Nexus
+        9000}, 2023.
+  \item Arista Networks, \emph{EVPN Deployment and Design Guide}, 2022.
+\end{enumerate}
+
+\end{document}

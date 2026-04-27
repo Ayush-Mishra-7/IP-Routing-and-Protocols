@@ -1,0 +1,47 @@
+name: lab3-obj1
+
+# FRR (Free Range Routing) - pulls directly from Docker Hub, no image building needed
+# Deploy: sudo clab deploy -t objective1.clab.yml
+# Connect: sudo docker exec -it clab-lab3-obj1-core1 vtysh
+
+topology:
+  defaults:
+    kind: linux
+    image: frrouting/frr:latest
+
+  nodes:
+    core1:
+      binds:
+        - configs/core1/frr.conf:/etc/frr/frr.conf
+        - configs/core1/daemons:/etc/frr/daemons
+        - configs/core1/vtysh.conf:/etc/frr/vtysh.conf
+
+    core2:
+      binds:
+        - configs/core2/frr.conf:/etc/frr/frr.conf
+        - configs/core2/daemons:/etc/frr/daemons
+        - configs/core2/vtysh.conf:/etc/frr/vtysh.conf
+
+    edge1:
+      binds:
+        - configs/edge1/frr.conf:/etc/frr/frr.conf
+        - configs/edge1/daemons:/etc/frr/daemons
+        - configs/edge1/vtysh.conf:/etc/frr/vtysh.conf
+
+    edge2:
+      binds:
+        - configs/edge2/frr.conf:/etc/frr/frr.conf
+        - configs/edge2/daemons:/etc/frr/daemons
+        - configs/edge2/vtysh.conf:/etc/frr/vtysh.conf
+
+  links:
+    # CORE1 eth1 <-> CORE2 eth1  (1.255.0.0/30)
+    - endpoints: ["core1:eth1", "core2:eth1"]
+    # CORE1 eth2 <-> EDGE1 eth1  (1.255.0.4/30)
+    - endpoints: ["core1:eth2", "edge1:eth1"]
+    # CORE1 eth3 <-> EDGE2 eth1  (1.255.0.8/30)
+    - endpoints: ["core1:eth3", "edge2:eth1"]
+    # CORE2 eth2 <-> EDGE1 eth2  (1.255.0.12/30)
+    - endpoints: ["core2:eth2", "edge1:eth2"]
+    # CORE2 eth3 <-> EDGE2 eth2  (1.255.0.16/30)
+    - endpoints: ["core2:eth3", "edge2:eth2"]
